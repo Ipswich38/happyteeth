@@ -12,8 +12,9 @@ export function Toaster() {
   const [toasts, setToasts] = useState<Toast[]>([]);
 
   useEffect(() => {
-    const addToast = (event: CustomEvent) => {
-      const { message, type = 'info' } = event.detail;
+    const addToast = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      const { message, type = 'info' } = customEvent.detail;
       const id = Math.random().toString(36).substr(2, 9);
       const newToast = { id, message, type };
 
@@ -24,8 +25,8 @@ export function Toaster() {
       }, 5000);
     };
 
-    window.addEventListener('show-toast' as keyof WindowEventMap, addToast);
-    return () => window.removeEventListener('show-toast' as keyof WindowEventMap, addToast);
+    window.addEventListener('show-toast', addToast);
+    return () => window.removeEventListener('show-toast', addToast);
   }, []);
 
   const removeToast = (id: string) => {
