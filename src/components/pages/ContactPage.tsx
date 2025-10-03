@@ -31,7 +31,7 @@ export function ContactPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Get in touch with us today. We're here to answer your questions and help you schedule your visit.
+            Get in touch with us today. We&apos;re here to answer your questions and help you schedule your visit.
           </p>
         </div>
 

@@ -64,7 +64,7 @@ export function AppointmentPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Book an Appointment</h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Schedule your visit with our dental team. We'll get back to you within 24 hours to confirm your appointment.
+            Schedule your visit with our dental team. We&apos;ll get back to you within 24 hours to confirm your appointment.
           </p>
         </div>
 
@@ -222,7 +222,7 @@ export function AppointmentPage() {
             <div className="bg-blue-50 p-4 rounded-lg">
               <h3 className="font-semibold text-gray-900 mb-2">What to Expect</h3>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• We'll contact you within 24 hours to confirm your appointment</li>
+                <li>• We&apos;ll contact you within 24 hours to confirm your appointment</li>
                 <li>• Please arrive 15 minutes early for paperwork</li>
                 <li>• Bring a valid ID and insurance card</li>
                 <li>• New patients should arrive 30 minutes early</li>

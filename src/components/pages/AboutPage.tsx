@@ -5,7 +5,7 @@ export function AboutPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">About Us</h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            At HappyTeeth, we're committed to providing exceptional dental care
+            At HappyTeeth, we&apos;re committed to providing exceptional dental care
             in a warm, welcoming environment that puts our patients at ease.
           </p>
         </div>
@@ -23,7 +23,7 @@ export function AboutPage() {
               care to ensure the best possible outcomes for our patients.
             </p>
             <p className="text-gray-600">
-              We're proud to be your trusted dental care provider and look forward
+              We&apos;re proud to be your trusted dental care provider and look forward
               to helping you maintain optimal oral health for years to come.
             </p>
           </div>

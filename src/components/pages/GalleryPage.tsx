@@ -19,7 +19,7 @@ export function GalleryPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Gallery</h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Take a look at our modern facility, advanced technology, and the beautiful smiles we've helped create
+            Take a look at our modern facility, advanced technology, and the beautiful smiles we&apos;ve helped create
           </p>
         </div>
 

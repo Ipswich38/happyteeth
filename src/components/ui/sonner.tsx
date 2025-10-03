@@ -24,8 +24,8 @@ export function Toaster() {
       }, 5000);
     };
 
-    window.addEventListener('show-toast' as any, addToast);
-    return () => window.removeEventListener('show-toast' as any, addToast);
+    window.addEventListener('show-toast' as keyof WindowEventMap, addToast);
+    return () => window.removeEventListener('show-toast' as keyof WindowEventMap, addToast);
   }, []);
 
   const removeToast = (id: string) => {
