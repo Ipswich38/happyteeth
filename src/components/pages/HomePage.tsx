@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface HomePageProps {
   onNavigate: (page: string) => void;
 }
@@ -8,12 +10,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="bg-gradient-to-br from-white via-primary-50 to-primary-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="flex justify-center mb-6">
-              <div className="flex space-x-2">
-                <span className="text-4xl animate-bounce" style={{animationDelay: '0s'}}>🌟</span>
-                <span className="text-4xl animate-bounce" style={{animationDelay: '0.2s'}}>🦷</span>
-                <span className="text-4xl animate-bounce" style={{animationDelay: '0.4s'}}>✨</span>
-              </div>
+            <div className="flex justify-center mb-8">
+              <Image
+                src="/happyteethlogo.png"
+                alt="HappyTeeth Logo"
+                width={96}
+                height={96}
+                className="object-contain animate-pulse"
+              />
             </div>
             <h1 className="text-4xl md:text-6xl font-playfair font-semibold mb-6 text-gray-800 leading-tight">
               Welcome to <span className="text-primary-500 bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">HappyTeeth</span>

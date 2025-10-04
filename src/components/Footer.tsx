@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface FooterProps {
   onNavigate: (page: string) => void;
 }
@@ -8,10 +10,14 @@ export function Footer({ onNavigate }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-300 to-primary-400 rounded-full flex items-center justify-center text-lg">
-                😊
-              </div>
+            <div className="flex items-center space-x-3 mb-6">
+              <Image
+                src="/happyteethlogo.png"
+                alt="HappyTeeth Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
               <h3 className="text-2xl font-playfair font-semibold text-primary-600">HappyTeeth</h3>
             </div>
             <p className="text-gray-600 font-inter leading-relaxed">
