@@ -5,21 +5,41 @@ interface HomePageProps {
 export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <div className="min-h-screen">
-      <section className="bg-primary-50 py-24">
+      <section className="bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-playfair font-semibold mb-8 text-gray-900 leading-tight">
-              Welcome to <span className="text-primary-600">HappyTeeth</span>
+            <div className="flex justify-center mb-6">
+              <div className="flex space-x-2">
+                <span className="text-4xl animate-bounce" style={{animationDelay: '0s'}}>🌟</span>
+                <span className="text-4xl animate-bounce" style={{animationDelay: '0.2s'}}>🦷</span>
+                <span className="text-4xl animate-bounce" style={{animationDelay: '0.4s'}}>✨</span>
+              </div>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-playfair font-semibold mb-6 text-gray-800 leading-tight">
+              Welcome to <span className="text-primary-500 bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">HappyTeeth</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-12 text-gray-700 font-inter font-normal max-w-3xl mx-auto">
-              Your smile is our priority – experience premium dental care in a serene, comfortable environment
+            <h2 className="text-2xl md:text-3xl font-inter font-light mb-8 text-secondary-600">
+              Where Little Smiles Shine Bright! ✨
+            </h2>
+            <p className="text-lg md:text-xl mb-10 text-gray-600 font-inter max-w-3xl mx-auto leading-relaxed">
+              Making dental visits fun and stress-free for children and families. Our gentle, caring approach helps kids develop healthy habits for life!
             </p>
-            <button
-              onClick={() => onNavigate('Appointment')}
-              className="bg-primary-300 text-gray-900 px-10 py-4 rounded-full font-inter font-medium text-lg hover:bg-primary-400 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              Book Appointment
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                onClick={() => onNavigate('Appointment')}
+                className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-medium text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2"
+              >
+                <span>📅</span>
+                <span>Schedule a Visit</span>
+              </button>
+              <button
+                onClick={() => onNavigate('About')}
+                className="bg-white text-primary-600 border-2 border-primary-300 px-8 py-4 rounded-full font-inter font-medium text-lg hover:bg-primary-50 transition-all duration-300 hover:scale-105 shadow-md flex items-center space-x-2"
+              >
+                <span>👋</span>
+                <span>Meet Our Team</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -27,43 +47,61 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-playfair font-semibold text-gray-900 mb-6">
-              Why Choose HappyTeeth?
+            <h2 className="text-3xl md:text-4xl font-playfair font-semibold text-gray-800 mb-6">
+              Why Kids & Parents Love Us! 💕
             </h2>
-            <p className="text-xl text-gray-700 font-inter font-normal max-w-2xl mx-auto">
-              We provide comprehensive dental care in a comfortable, modern environment designed for your well-being
+            <p className="text-lg md:text-xl text-gray-600 font-inter max-w-3xl mx-auto leading-relaxed">
+              We specialize in making dental visits fun, educational, and completely stress-free for the whole family
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100">
-              <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
-                🦷
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center p-8 bg-gradient-to-br from-primary-50 to-primary-100 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-primary-200">
+              <div className="w-24 h-24 bg-gradient-to-br from-primary-300 to-primary-400 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-md">
+                👨‍⚕️
               </div>
-              <h3 className="text-2xl font-playfair font-medium mb-4 text-gray-900">Expert Care</h3>
-              <p className="text-gray-700 font-inter leading-relaxed">
-                Our experienced dentists provide top-quality care with personalized attention to every detail
+              <h3 className="text-2xl font-playfair font-medium mb-4 text-gray-800">Gentle Pediatric Experts</h3>
+              <p className="text-gray-600 font-inter leading-relaxed">
+                Our specialized pediatric dentists make every visit comfortable and fun, using gentle techniques perfect for little ones
               </p>
             </div>
 
-            <div className="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100">
-              <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
-                🏥
+            <div className="text-center p-8 bg-gradient-to-br from-secondary-50 to-secondary-100 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-secondary-200">
+              <div className="w-24 h-24 bg-gradient-to-br from-secondary-300 to-secondary-400 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-md">
+                🎮
               </div>
-              <h3 className="text-2xl font-playfair font-medium mb-4 text-gray-900">Modern Facility</h3>
-              <p className="text-gray-700 font-inter leading-relaxed">
-                State-of-the-art equipment and a serene environment designed for your comfort and peace of mind
+              <h3 className="text-2xl font-playfair font-medium mb-4 text-gray-800">Fun & Interactive</h3>
+              <p className="text-gray-600 font-inter leading-relaxed">
+                Games, cartoons, and interactive learning make dental care an adventure rather than a chore
               </p>
             </div>
 
-            <div className="text-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100">
-              <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
-                😊
+            <div className="text-center p-8 bg-gradient-to-br from-accent-50 to-accent-100 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-accent-200">
+              <div className="w-24 h-24 bg-gradient-to-br from-accent-300 to-accent-400 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-md">
+                👨‍👩‍👧‍👦
               </div>
-              <h3 className="text-2xl font-playfair font-medium mb-4 text-gray-900">Happy Patients</h3>
-              <p className="text-gray-700 font-inter leading-relaxed">
-                Thousands of satisfied patients trust us with their smiles and continue to recommend our services
+              <h3 className="text-2xl font-playfair font-medium mb-4 text-gray-800">Family-Centered Care</h3>
+              <p className="text-gray-600 font-inter leading-relaxed">
+                We welcome the whole family and help parents feel confident about their children&apos;s oral health journey
               </p>
+            </div>
+          </div>
+
+          <div className="mt-16 bg-gradient-to-r from-warning-100 to-warning-200 rounded-3xl p-8 border border-warning-300">
+            <div className="text-center">
+              <div className="text-5xl mb-4">🎁</div>
+              <h3 className="text-2xl font-playfair font-semibold text-gray-800 mb-4">
+                First Visit Special!
+              </h3>
+              <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+                New patients receive a complimentary dental exam, fun goodie bag, and a special certificate for being brave!
+              </p>
+              <button
+                onClick={() => onNavigate('Appointment')}
+                className="bg-gradient-to-r from-warning-400 to-warning-500 text-white px-8 py-3 rounded-full font-inter font-medium hover:from-warning-500 hover:to-warning-600 transition-all duration-300 hover:scale-105 shadow-md"
+              >
+                Claim Your Special! 🎉
+              </button>
             </div>
           </div>
         </div>
