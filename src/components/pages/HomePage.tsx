@@ -5,18 +5,18 @@ interface HomePageProps {
 export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <div className="min-h-screen">
-      <section className="bg-gradient-to-br from-primary-muted via-white to-primary-light py-24">
+      <section className="bg-primary-muted py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-playfair font-semibold mb-8 text-text-primary leading-tight">
-              Welcome to <span className="text-primary">HappyTeeth</span>
+              Welcome to <span className="text-primary-text">HappyTeeth</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-12 text-text-secondary font-inter font-light max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl mb-12 text-text-secondary font-inter font-normal max-w-3xl mx-auto">
               Your smile is our priority – experience premium dental care in a serene, comfortable environment
             </p>
             <button
               onClick={() => onNavigate('Appointment')}
-              className="bg-primary text-white px-10 py-4 rounded-full font-inter font-medium text-lg hover:bg-primary-dark transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-primary text-text-on-primary px-10 py-4 rounded-full font-inter font-medium text-lg hover:bg-primary-dark transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Book Appointment
             </button>

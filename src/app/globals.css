@@ -1,25 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fefefe;
-  --foreground: #2c2c2c;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
   --primary: #ffb6c3;
   --primary-light: #ffc9d4;
-  --primary-dark: #ff9bb1;
-  --primary-muted: #fff0f2;
+  --primary-dark: #e5a1af;
+  --primary-muted: #fff5f7;
+  --primary-text: #8b2635;
   --secondary: #f8fafc;
   --accent: #ff8fa3;
   --muted: #64748b;
   --muted-light: #94a3b8;
-  --border: #f1f5f9;
+  --border: #e2e8f0;
   --card: #ffffff;
-  --card-shadow: rgba(0, 0, 0, 0.04);
+  --card-shadow: rgba(0, 0, 0, 0.06);
   --success: #22c55e;
   --warning: #f59e0b;
   --error: #ef4444;
-  --text-primary: #1e293b;
-  --text-secondary: #475569;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
   --text-muted: #64748b;
+  --text-on-primary: #ffffff;
 }
 
 @theme inline {
@@ -29,6 +31,7 @@
   --color-primary-light: var(--primary-light);
   --color-primary-dark: var(--primary-dark);
   --color-primary-muted: var(--primary-muted);
+  --color-primary-text: var(--primary-text);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
   --color-muted: var(--muted);
@@ -42,6 +45,7 @@
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
+  --color-text-on-primary: var(--text-on-primary);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
   --font-mono: var(--font-geist-mono);
