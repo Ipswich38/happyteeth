@@ -41,7 +41,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+    <div className="min-h-screen bg-white">
       <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
       <main>{renderPage()}</main>
       <Footer onNavigate={setCurrentPage} />

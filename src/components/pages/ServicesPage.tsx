@@ -72,7 +72,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
   ];
 
   return (
-    <div className="min-h-screen py-16 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+    <div className="min-h-screen py-16 bg-gradient-to-br from-white via-primary-50 to-primary-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
@@ -102,7 +102,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
           ))}
         </div>
 
-        <div className="mt-20 bg-gradient-to-r from-secondary-100 to-accent-100 rounded-3xl p-8 border border-secondary-200 text-center">
+        <div className="mt-20 bg-gradient-to-r from-primary-100 to-primary-200 rounded-3xl p-8 border border-primary-300 text-center">
           <div className="text-5xl mb-6">🌟</div>
           <h2 className="text-3xl font-playfair font-semibold text-gray-800 mb-6">Ready to Schedule Your Visit?</h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
