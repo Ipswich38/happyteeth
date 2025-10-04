@@ -51,12 +51,13 @@ export function ContactPage() {
               </div>
 
               <div className="flex items-start">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
                   📞
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <p className="text-gray-600">(555) 123-4567</p>
+                  <h3 className="font-semibold text-gray-900">Phone Numbers</h3>
+                  <p className="text-gray-600">0948-686-7966</p>
+                  <p className="text-gray-600">0970-107-2952</p>
                 </div>
               </div>
 
@@ -71,25 +72,29 @@ export function ContactPage() {
               </div>
 
               <div className="flex items-start">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
                   🕒
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Office Hours</h3>
+                  <h3 className="font-semibold text-gray-900">Clinic Hours</h3>
                   <div className="text-gray-600">
-                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                    <p>Saturday: 9:00 AM - 4:00 PM</p>
-                    <p>Sunday: Closed</p>
+                    <p>Daily: 9:00 AM - 5:00 PM</p>
+                    <p>Open 7 days a week!</p>
+                    <p>Call ahead to schedule</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 p-6 bg-blue-50 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Emergency Care</h3>
+            <div className="mt-8 p-6 bg-primary-50 rounded-3xl border border-primary-200">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3 flex items-center space-x-2">
+                <span>🚨</span>
+                <span>Emergency Care</span>
+              </h3>
               <p className="text-gray-600">
-                For dental emergencies outside of office hours, please call our emergency line at
-                <span className="font-semibold text-blue-600"> (555) 123-HELP</span>
+                For dental emergencies, please call us at
+                <span className="font-semibold text-primary-600"> 0948-686-7966</span> or
+                <span className="font-semibold text-primary-600"> 0970-107-2952</span>
               </p>
             </div>
           </div>

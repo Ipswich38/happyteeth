@@ -59,37 +59,37 @@ export function Footer({ onNavigate }: FooterProps) {
               <span>Contact Us</span>
             </h4>
             <div className="space-y-3 text-gray-300 font-inter">
-              <p className="flex items-center space-x-2">
-                <span>🏢</span>
-                <span>123 Happy Street</span>
-              </p>
-              <p className="flex items-center space-x-2">
-                <span>🏙️</span>
-                <span>Smileville, ST 12345</span>
-              </p>
               <p className="text-primary-300 font-medium flex items-center space-x-2">
                 <span>📱</span>
-                <span>(555) HAPPY-TEETH</span>
+                <span>0948-686-7966</span>
+              </p>
+              <p className="text-primary-300 font-medium flex items-center space-x-2">
+                <span>📞</span>
+                <span>0970-107-2952</span>
+              </p>
+              <p className="flex items-center space-x-2">
+                <span>💬</span>
+                <span>Call or text for appointments!</span>
               </p>
             </div>
           </div>
           <div>
             <h4 className="text-lg font-inter font-medium mb-6 text-white flex items-center space-x-2">
               <span>⏰</span>
-              <span>Kid-Friendly Hours</span>
+              <span>Clinic Hours</span>
             </h4>
             <div className="space-y-3 text-gray-300 font-inter">
               <p className="flex items-center space-x-2">
                 <span>📅</span>
-                <span>Mon-Fri: 8am-6pm</span>
+                <span>Daily: 9:00 AM – 5:00 PM</span>
               </p>
               <p className="flex items-center space-x-2">
-                <span>🌤️</span>
-                <span>Sat: 9am-4pm</span>
+                <span>🌟</span>
+                <span>Open 7 days a week!</span>
               </p>
               <p className="flex items-center space-x-2">
-                <span>🌅</span>
-                <span>Sun: Family Time!</span>
+                <span>📲</span>
+                <span>Call ahead to schedule</span>
               </p>
             </div>
           </div>

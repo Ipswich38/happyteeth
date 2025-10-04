@@ -5,24 +5,59 @@ interface ServicesPageProps {
 export function ServicesPage({ onNavigate }: ServicesPageProps) {
   const services = [
     {
-      title: 'General Dentistry',
-      description: 'Comprehensive dental care including cleanings, fillings, and preventive treatments.',
+      title: 'Consultation',
+      description: 'Comprehensive dental examination and personalized treatment planning.',
+      icon: '👨‍⚕️'
+    },
+    {
+      title: 'Oral Prophylaxis',
+      description: 'Professional teeth cleaning and preventive care for optimal oral health.',
       icon: '🦷'
     },
     {
-      title: 'Cosmetic Dentistry',
-      description: 'Enhance your smile with veneers, teeth whitening, and aesthetic treatments.',
-      icon: '✨'
+      title: 'Fillings',
+      description: 'Tooth-colored and amalgam restorations to treat cavities and decay.',
+      icon: '🔧'
     },
     {
-      title: 'Orthodontics',
-      description: 'Straighten your teeth with traditional braces or modern Invisalign treatments.',
+      title: 'Dentures',
+      description: 'Complete and partial dentures to restore your smile and function.',
       icon: '😊'
     },
     {
-      title: 'Oral Surgery',
-      description: 'Expert surgical procedures including tooth extractions and implant placement.',
-      icon: '🏥'
+      title: 'Crown & Bridge',
+      description: 'Durable crowns and bridges to restore damaged or missing teeth.',
+      icon: '👑'
+    },
+    {
+      title: 'TMJ Disorder Treatment',
+      description: 'Specialized care for jaw joint disorders and related pain relief.',
+      icon: '💆‍♀️'
+    },
+    {
+      title: 'Wisdom Tooth Surgery',
+      description: 'Safe and comfortable extraction of problematic wisdom teeth.',
+      icon: '🦷'
+    },
+    {
+      title: 'Root Canal Treatment',
+      description: 'Advanced endodontic therapy to save infected or damaged teeth.',
+      icon: '🩺'
+    },
+    {
+      title: 'Teeth Whitening',
+      description: 'Professional whitening treatments for a brighter, more confident smile.',
+      icon: '✨'
+    },
+    {
+      title: 'Braces',
+      description: 'Orthodontic treatment to straighten teeth and improve your bite.',
+      icon: '🦷'
+    },
+    {
+      title: 'Veneers',
+      description: 'Porcelain veneers to enhance the appearance of your front teeth.',
+      icon: '💎'
     },
     {
       title: 'Pediatric Dentistry',
@@ -30,49 +65,63 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
       icon: '👶'
     },
     {
-      title: 'Emergency Care',
-      description: 'Urgent dental care when you need it most, available for dental emergencies.',
-      icon: '🚨'
+      title: 'Periapical & Panoramic X-ray',
+      description: 'Advanced dental imaging for accurate diagnosis and treatment planning.',
+      icon: '📸'
     }
   ];
 
   return (
-    <div className="min-h-screen py-16">
+    <div className="min-h-screen py-16 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We offer a comprehensive range of dental services to meet all your oral health needs
+        <div className="text-center mb-16">
+          <div className="flex justify-center mb-6">
+            <span className="text-5xl">🦷✨</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-playfair font-semibold text-gray-800 mb-6">Our Comprehensive Services</h1>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            We offer a complete range of dental services to keep your family&apos;s smiles healthy and bright!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-              <p className="text-gray-600 mb-4">{service.description}</p>
+            <div key={index} className="bg-white p-6 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-primary-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                {service.icon}
+              </div>
+              <h3 className="text-lg font-playfair font-medium text-gray-800 mb-3 text-center">{service.title}</h3>
+              <p className="text-gray-600 text-sm font-inter leading-relaxed text-center mb-4">{service.description}</p>
               <button
                 onClick={() => onNavigate('Appointment')}
-                className="text-blue-600 hover:text-blue-800 font-medium"
+                className="w-full bg-gradient-to-r from-primary-300 to-primary-400 text-gray-800 py-2 px-4 rounded-full font-inter font-medium text-sm hover:from-primary-400 hover:to-primary-500 transition-all duration-300 hover:scale-105"
               >
-                Learn More →
+                Book Now 📅
               </button>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Schedule?</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Contact us today to book your appointment and start your journey to better oral health
+        <div className="mt-20 bg-gradient-to-r from-secondary-100 to-accent-100 rounded-3xl p-8 border border-secondary-200 text-center">
+          <div className="text-5xl mb-6">🌟</div>
+          <h2 className="text-3xl font-playfair font-semibold text-gray-800 mb-6">Ready to Schedule Your Visit?</h2>
+          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+            Contact us today to book your appointment and experience our gentle, comprehensive dental care!
           </p>
-          <button
-            onClick={() => onNavigate('Appointment')}
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-          >
-            Book Appointment
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => onNavigate('Appointment')}
+              className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-medium text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+              📅 Book Appointment
+            </button>
+            <button
+              onClick={() => onNavigate('Contact')}
+              className="bg-white text-primary-600 border-2 border-primary-300 px-8 py-4 rounded-full font-inter font-medium text-lg hover:bg-primary-50 transition-all duration-300 hover:scale-105"
+            >
+              📞 Call Us
+            </button>
+          </div>
         </div>
       </div>
     </div>
