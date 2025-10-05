@@ -130,7 +130,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Address</h4>
-                    <p className="text-gray-600">123 Dental Street<br />City, State 12345</p>
+                    <p className="text-gray-600">2nd Floor, EB Town Center<br />Brgy. Graceville, San Jose del Monte<br />Philippines</p>
                   </div>
                 </div>
 
@@ -139,9 +139,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     📞
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Phone Numbers</h4>
-                    <p className="text-gray-600">0948-686-7966</p>
-                    <p className="text-gray-600">0970-107-2952</p>
+                    <h4 className="font-semibold text-gray-900">Phone Number</h4>
+                    <p className="text-gray-600">09512168437</p>
                   </div>
                 </div>
 
@@ -151,7 +150,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Email</h4>
-                    <p className="text-gray-600">info@happyteeth.com</p>
+                    <p className="text-gray-600">drcanaresprice@gmail.com</p>
                   </div>
                 </div>
 
@@ -177,8 +176,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </h4>
                 <p className="text-gray-600">
                   For dental emergencies, please call us at
-                  <span className="font-semibold text-primary-600"> 0948-686-7966</span> or
-                  <span className="font-semibold text-primary-600"> 0970-107-2952</span>
+                  <span className="font-semibold text-primary-600"> 09512168437</span>
                 </p>
               </div>
             </div>

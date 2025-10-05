@@ -72,8 +72,7 @@ export function Footer({ onNavigate }: FooterProps) {
           <div className="sm:col-span-1">
             <h4 className="text-sm font-inter font-medium mb-3 text-gray-800">Contact Us</h4>
             <div className="space-y-1 text-gray-600 font-inter">
-              <p className="text-xs text-primary-600 font-medium">0948-686-7966</p>
-              <p className="text-xs text-primary-600 font-medium">0970-107-2952</p>
+              <p className="text-xs text-primary-600 font-medium">09512168437</p>
               <p className="text-xs">Call or text for appointments!</p>
             </div>
           </div>
