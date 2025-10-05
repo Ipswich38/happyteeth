@@ -43,13 +43,13 @@ export function TeamPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-white p-8 rounded-lg shadow-md">
-              <div className="w-32 h-32 bg-blue-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+              <div className="w-32 h-32 bg-cyan-100 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-4xl">👨‍⚕️</span>
               </div>
 
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-blue-600 font-semibold mb-3">{member.title}</p>
+                <p className="text-cyan-600 font-semibold mb-3">{member.title}</p>
 
                 <div className="text-left space-y-2">
                   <p className="text-gray-600">
@@ -72,7 +72,7 @@ export function TeamPage() {
           ))}
         </div>
 
-        <div className="mt-16 bg-blue-50 p-8 rounded-lg text-center">
+        <div className="mt-16 bg-cyan-50 p-8 rounded-lg text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Our Team?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>

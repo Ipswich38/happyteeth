@@ -15,49 +15,29 @@ export function HomePage({ onNavigate }: HomePageProps) {
         >
           <source src="/happyteethbackground.mp4" type="video/mp4" />
         </video>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-screen py-20">
-            {/* Content Side */}
-            <div className="lg:order-1 bg-white/90 backdrop-blur-sm rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xl">
-              <div className="flex space-x-2 mb-6">
-                <span className="text-3xl sm:text-4xl animate-bounce" style={{animationDelay: '0s'}}>🌟</span>
-                <span className="text-3xl sm:text-4xl animate-bounce" style={{animationDelay: '0.2s'}}>🦷</span>
-                <span className="text-3xl sm:text-4xl animate-bounce" style={{animationDelay: '0.4s'}}>✨</span>
-              </div>
-
+        <div className="relative z-10 w-full">
+          <div className="flex justify-start items-end min-h-screen px-4 sm:px-6 lg:px-8 pb-20">
+            {/* Content positioned bottom-left */}
+            <div className="max-w-md lg:max-w-lg bg-white/95 backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-xl">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-semibold mb-4 text-gray-800 leading-tight">
                 Welcome to <span className="text-primary-500">HappyTeeth</span>
               </h1>
 
               <h2 className="text-xl sm:text-2xl font-inter font-light mb-6 text-primary-600">
-                Where Little Smiles Shine Bright! ✨
+                Where Smiles Shine Bright!
               </h2>
 
               <p className="text-base sm:text-lg mb-8 text-gray-600 font-inter leading-relaxed">
-                Making dental visits fun and stress-free for children and families. Our gentle, caring approach helps kids develop healthy habits for life!
+                Making dental visits comfortable and stress-free for everyone. Our gentle, caring approach helps develop healthy habits for life!
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={() => onNavigate('Appointment')}
-                  className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-medium text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
-                >
-                  <span>📅</span>
-                  <span>Schedule a Visit</span>
-                </button>
-                <button
-                  onClick={() => onNavigate('About')}
-                  className="bg-white text-primary-600 border-2 border-primary-300 px-8 py-4 rounded-full font-inter font-medium text-lg hover:bg-primary-50 transition-all duration-300 hover:scale-105 shadow-md flex items-center justify-center space-x-2"
-                >
-                  <span>👋</span>
-                  <span>Meet Our Team</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Video Space */}
-            <div className="lg:order-2 hidden lg:block">
-              {/* This space allows the video to show through */}
+              <button
+                onClick={() => onNavigate('Appointment')}
+                className="w-full bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-medium text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+              >
+                <span>📅</span>
+                <span>Schedule a Visit</span>
+              </button>
             </div>
           </div>
         </div>

@@ -60,7 +60,7 @@ export function BlogPage() {
           {categories.map((category) => (
             <button
               key={category}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors"
             >
               {category}
             </button>
@@ -70,19 +70,19 @@ export function BlogPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
             <article key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-br from-cyan-100 to-cyan-200 flex items-center justify-center">
                 <div className="text-4xl">📝</div>
               </div>
 
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+                  <span className="inline-block px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded-full">
                     {post.category}
                   </span>
                   <span className="text-gray-500 text-sm">{post.readTime}</span>
                 </div>
 
-                <h2 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 cursor-pointer">
+                <h2 className="text-xl font-bold text-gray-900 mb-3 hover:text-cyan-600 cursor-pointer">
                   {post.title}
                 </h2>
 
@@ -92,7 +92,7 @@ export function BlogPage() {
 
                 <div className="flex items-center justify-between">
                   <span className="text-gray-500 text-sm">{post.date}</span>
-                  <button className="text-blue-600 hover:text-blue-800 font-medium">
+                  <button className="text-cyan-600 hover:text-cyan-700 font-medium">
                     Read More →
                   </button>
                 </div>
@@ -110,9 +110,9 @@ export function BlogPage() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
             />
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <button className="bg-cyan-500 text-white px-6 py-2 rounded-lg hover:bg-cyan-600 transition-colors">
               Subscribe
             </button>
           </div>

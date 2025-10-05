@@ -28,7 +28,7 @@ export function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-blue-50 p-8 rounded-lg">
+          <div className="bg-cyan-50 p-8 rounded-lg">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
             <p className="text-gray-600 mb-6">
               To provide high-quality, compassionate dental care that helps our

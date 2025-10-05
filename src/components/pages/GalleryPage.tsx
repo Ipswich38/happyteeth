@@ -27,7 +27,7 @@ export function GalleryPage() {
           {categories.map((category) => (
             <button
               key={category}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors"
             >
               {category}
             </button>
@@ -37,7 +37,7 @@ export function GalleryPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+              <div className="h-64 bg-gradient-to-br from-cyan-100 to-cyan-200 flex items-center justify-center">
                 <div className="text-center text-gray-600">
                   <div className="text-4xl mb-2">📸</div>
                   <p className="text-sm">{image.title}</p>
@@ -45,7 +45,7 @@ export function GalleryPage() {
               </div>
               <div className="p-4">
                 <h3 className="font-semibold text-gray-900 mb-1">{image.title}</h3>
-                <span className="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+                <span className="inline-block px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded-full">
                   {image.category}
                 </span>
               </div>

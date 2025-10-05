@@ -35,7 +35,7 @@ export function Chatbot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-4 right-4 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50"
+          className="fixed bottom-4 right-4 bg-cyan-500 text-white p-4 rounded-full shadow-lg hover:bg-cyan-600 transition-colors z-50"
         >
           💬
         </button>
@@ -43,7 +43,7 @@ export function Chatbot() {
 
       {isOpen && (
         <div className="fixed bottom-4 right-4 w-80 h-96 bg-white border border-gray-300 rounded-lg shadow-xl z-50 flex flex-col">
-          <div className="bg-blue-600 text-white p-4 rounded-t-lg flex justify-between items-center">
+          <div className="bg-cyan-500 text-white p-4 rounded-t-lg flex justify-between items-center">
             <h3 className="font-semibold">Chat with us</h3>
             <button
               onClick={() => setIsOpen(false)}
@@ -63,7 +63,7 @@ export function Chatbot() {
                   className={`inline-block p-2 rounded-lg max-w-xs ${
                     message.isBot
                       ? 'bg-gray-100 text-gray-800'
-                      : 'bg-blue-600 text-white'
+                      : 'bg-cyan-500 text-white'
                   }`}
                 >
                   {message.text}
@@ -84,7 +84,7 @@ export function Chatbot() {
               />
               <button
                 onClick={handleSendMessage}
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 transition-colors"
               >
                 Send
               </button>

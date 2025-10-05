@@ -42,7 +42,7 @@ export function Toaster() {
       case 'warning':
         return 'bg-yellow-500 text-white';
       default:
-        return 'bg-blue-500 text-white';
+        return 'bg-cyan-500 text-white';
     }
   };
 

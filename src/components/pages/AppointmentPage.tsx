@@ -82,7 +82,7 @@ export function AppointmentPage() {
                   required
                   value={formData.firstName}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
 
@@ -97,7 +97,7 @@ export function AppointmentPage() {
                   required
                   value={formData.lastName}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
             </div>
@@ -114,7 +114,7 @@ export function AppointmentPage() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
 
@@ -129,7 +129,7 @@ export function AppointmentPage() {
                   required
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
             </div>
@@ -147,7 +147,7 @@ export function AppointmentPage() {
                   value={formData.date}
                   onChange={handleChange}
                   min={new Date().toISOString().split('T')[0]}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
 
@@ -161,7 +161,7 @@ export function AppointmentPage() {
                   required
                   value={formData.time}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 >
                   <option value="">Select a time</option>
                   {timeSlots.map((time) => (
@@ -197,7 +197,7 @@ export function AppointmentPage() {
                 name="isNewPatient"
                 checked={formData.isNewPatient}
                 onChange={handleChange}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-4 w-4 text-cyan-600 focus:ring-cyan-500 border-gray-300 rounded"
               />
               <label htmlFor="isNewPatient" className="ml-2 block text-sm text-gray-700">
                 I am a new patient
@@ -219,7 +219,7 @@ export function AppointmentPage() {
               ></textarea>
             </div>
 
-            <div className="bg-blue-50 p-4 rounded-lg">
+            <div className="bg-cyan-50 p-4 rounded-lg">
               <h3 className="font-semibold text-gray-900 mb-2">What to Expect</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• We&apos;ll contact you within 24 hours to confirm your appointment</li>
@@ -231,7 +231,7 @@ export function AppointmentPage() {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              className="w-full bg-cyan-500 text-white py-3 rounded-lg font-semibold hover:bg-cyan-600 transition-colors"
             >
               Request Appointment
             </button>
@@ -245,7 +245,7 @@ export function AppointmentPage() {
           </p>
           <a
             href="tel:5551234567"
-            className="text-2xl font-bold text-blue-600 hover:text-blue-800"
+            className="text-2xl font-bold text-cyan-600 hover:text-cyan-700"
           >
             (555) 123-4567
           </a>
