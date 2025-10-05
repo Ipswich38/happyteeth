@@ -11,29 +11,25 @@ export function HomePage({ onNavigate }: HomePageProps) {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-75"
         >
           <source src="/happyteethbackground.mp4" type="video/mp4" />
         </video>
         <div className="relative z-10 w-full">
           <div className="flex justify-start items-end min-h-screen px-4 sm:px-6 lg:px-8 pb-20">
             {/* Content positioned bottom-left */}
-            <div className="max-w-md lg:max-w-lg bg-white/95 backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-xl">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-semibold mb-4 text-gray-800 leading-tight">
-                Welcome to <span className="text-primary-500">HappyTeeth</span>
+            <div className="max-w-md lg:max-w-lg">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-semibold mb-4 text-white drop-shadow-lg leading-tight">
+                Welcome to <span className="text-primary-300">HappyTeeth</span>
               </h1>
 
-              <h2 className="text-xl sm:text-2xl font-inter font-light mb-6 text-primary-600">
+              <h2 className="text-2xl sm:text-3xl font-inter font-light mb-8 text-white drop-shadow-md">
                 Where Smiles Shine Bright!
               </h2>
 
-              <p className="text-base sm:text-lg mb-8 text-gray-600 font-inter leading-relaxed">
-                Making dental visits comfortable and stress-free for everyone. Our gentle, caring approach helps develop healthy habits for life!
-              </p>
-
               <button
                 onClick={() => onNavigate('Appointment')}
-                className="w-full bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-medium text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-medium text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
               >
                 <span>📅</span>
                 <span>Schedule a Visit</span>
