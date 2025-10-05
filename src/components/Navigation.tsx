@@ -15,7 +15,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 sm:h-24">
           <div className="flex items-center">
-            <div className="flex items-center space-x-2 sm:space-x-4">
+            <div className="flex items-center">
               <Image
                 src="/happyteethtransparent.png"
                 alt="HappyTeeth Logo"
@@ -23,7 +23,6 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 height={60}
                 className="object-contain sm:w-[80px] sm:h-[80px]"
               />
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-playfair font-semibold text-primary-600 tracking-wide">HappyTeeth</h1>
             </div>
           </div>
 
