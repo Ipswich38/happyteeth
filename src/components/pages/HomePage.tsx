@@ -61,7 +61,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-semibold text-gray-800 mb-4 sm:mb-6">
@@ -73,8 +73,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-primary-200">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-200 to-primary-300 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-md">
+            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-primary-200 hover:border-primary-300">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                 👨‍⚕️
               </div>
               <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Expert Dental Care</h3>
@@ -83,8 +83,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </p>
             </div>
 
-            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-primary-200">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-200 to-primary-300 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-md">
+            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-secondary-300 hover:border-secondary-400">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-secondary-300 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                 🏥
               </div>
               <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Modern & Comfortable</h3>
@@ -93,8 +93,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </p>
             </div>
 
-            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-primary-200 sm:col-span-2 lg:col-span-1">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-200 to-primary-300 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-md">
+            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-accent-400 hover:border-accent-500 sm:col-span-2 lg:col-span-1">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-accent-400 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                 👨‍👩‍👧‍👦
               </div>
               <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Comprehensive Services</h3>
@@ -108,7 +108,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Contact Section */}
-      <section id="contact-section" className="py-16 sm:py-20 bg-gray-50">
+      <section id="contact-section" className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-primary-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-playfair font-semibold text-gray-800 mb-6">
@@ -125,7 +125,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="w-8 h-8 bg-cyan-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
                     📍
                   </div>
                   <div>
@@ -146,7 +146,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-8 h-8 bg-cyan-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="w-8 h-8 bg-secondary-200 rounded-full flex items-center justify-center mr-4 mt-1">
                     ✉️
                   </div>
                   <div>
@@ -170,7 +170,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-primary-50 rounded-3xl border border-primary-200">
+              <div className="mt-8 p-6 bg-gradient-to-br from-primary-50 to-primary-100 rounded-3xl border-2 border-primary-300 shadow-sm">
                 <h4 className="text-xl font-semibold text-gray-900 mb-3 flex items-center space-x-2">
                   <span>🚨</span>
                   <span>Emergency Care</span>
@@ -183,7 +183,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <div className="bg-white p-8 rounded-3xl shadow-lg border-2 border-secondary-200 hover:shadow-xl transition-shadow duration-300">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -198,7 +198,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
                   />
                 </div>
 
@@ -213,7 +213,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
                   />
                 </div>
 
@@ -227,7 +227,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
                   />
                 </div>
 
@@ -242,13 +242,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-cyan-500 text-white py-3 rounded-lg font-semibold hover:bg-cyan-600 transition-colors"
+                  className="w-full bg-primary-400 text-white py-3 rounded-lg font-semibold hover:bg-primary-500 transition-colors"
                 >
                   Send Message
                 </button>

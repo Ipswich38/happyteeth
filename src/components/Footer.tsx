@@ -21,7 +21,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <h3 className="text-lg font-playfair font-semibold text-primary-600">HappyTeeth</h3>
             </div>
             <p className="text-sm text-gray-600 font-inter leading-relaxed">
-              Creating happy, healthy smiles for children and families in a fun, caring environment! 🌟
+              Creating happy, healthy smiles for patients of all ages in a comfortable, caring environment! 🌟
             </p>
           </div>
           <div className="sm:col-span-1">
@@ -88,7 +88,7 @@ export function Footer({ onNavigate }: FooterProps) {
         </div>
         <div className="border-t border-primary-200/50 mt-6 sm:mt-8 pt-4 text-center">
           <p className="text-xs text-gray-500 font-inter leading-relaxed">
-            © 2025 HappyTeeth Pediatric Dentistry • Making smiles shine bright! ✨<br />
+            © 2025 HappyTeeth Dental Care • Making smiles shine bright! ✨<br />
             <span className="text-primary-500">Website design and created by Kreativloops</span>
           </p>
         </div>
