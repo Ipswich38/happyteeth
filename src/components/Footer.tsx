@@ -88,7 +88,8 @@ export function Footer({ onNavigate }: FooterProps) {
         </div>
         <div className="border-t border-primary-100 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
           <p className="text-sm sm:text-base text-gray-500 font-inter px-4">
-            © 2024 HappyTeeth Pediatric Dentistry • Making smiles shine bright! ✨
+            © 2025 HappyTeeth Pediatric Dentistry • Making smiles shine bright! ✨<br />
+            Website design and created by <span className="text-primary-600 font-medium">Kreativloops</span>
           </p>
         </div>
       </div>
