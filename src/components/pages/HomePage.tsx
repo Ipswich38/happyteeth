@@ -13,7 +13,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-20 sm:opacity-30"
         >
-          <source src="/happyteethbackround.mp4" type="video/mp4" />
+          <source src="/happyteethbackground.mp4" type="video/mp4" />
         </video>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
