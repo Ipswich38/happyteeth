@@ -65,10 +65,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-semibold text-gray-800 mb-4 sm:mb-6">
-              Why Kids & Parents Love Us! 💕
+              Why Our Patients Love Us! 💕
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 font-inter max-w-3xl mx-auto leading-relaxed px-4">
-              We specialize in making dental visits fun, educational, and completely stress-free for the whole family
+              We provide comprehensive dental care for patients of all ages, making every visit comfortable and stress-free
             </p>
           </div>
 
@@ -77,19 +77,19 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-200 to-primary-300 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-md">
                 👨‍⚕️
               </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Gentle Pediatric Experts</h3>
+              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Expert Dental Care</h3>
               <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
-                Our specialized pediatric dentists make every visit comfortable and fun, using gentle techniques perfect for little ones
+                Our experienced dental professionals provide gentle, comprehensive care for patients of all ages, from children to seniors
               </p>
             </div>
 
             <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-primary-200">
               <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-200 to-primary-300 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-md">
-                🎮
+                🏥
               </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Fun & Interactive</h3>
+              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Modern & Comfortable</h3>
               <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
-                Games, cartoons, and interactive learning make dental care an adventure rather than a chore
+                State-of-the-art equipment and a relaxing environment ensure your comfort throughout every procedure
               </p>
             </div>
 
@@ -97,9 +97,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-200 to-primary-300 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-md">
                 👨‍👩‍👧‍👦
               </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Family-Centered Care</h3>
+              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Comprehensive Services</h3>
               <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
-                We welcome the whole family and help parents feel confident about their children&apos;s oral health journey
+                From routine cleanings to advanced procedures, we offer complete dental care including pediatric, cosmetic, and restorative services
               </p>
             </div>
           </div>
