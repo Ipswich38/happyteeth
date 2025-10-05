@@ -104,23 +104,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </div>
           </div>
 
-          <div className="mt-12 sm:mt-16 bg-gradient-to-r from-primary-100 to-primary-200 rounded-3xl p-6 sm:p-8 border border-primary-300 mx-4 sm:mx-0">
-            <div className="text-center">
-              <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">🎁</div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-semibold text-gray-800 mb-3 sm:mb-4">
-                First Visit Special!
-              </h3>
-              <p className="text-base sm:text-lg text-gray-700 mb-5 sm:mb-6 max-w-2xl mx-auto px-2">
-                New patients receive a complimentary dental exam, fun goodie bag, and a special certificate for being brave!
-              </p>
-              <button
-                onClick={() => onNavigate('Appointment')}
-                className="w-full sm:w-auto bg-gradient-to-r from-primary-400 to-primary-500 text-white px-6 sm:px-8 py-3 rounded-full font-inter font-medium hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-md"
-              >
-                Claim Your Special! 🎉
-              </button>
-            </div>
-          </div>
         </div>
       </section>
 
