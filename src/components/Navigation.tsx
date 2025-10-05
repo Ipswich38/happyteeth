@@ -8,7 +8,7 @@ interface NavigationProps {
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const menuItems = ['Home', 'About', 'Services', 'Team', 'Gallery', 'Blog', 'Contact', 'Appointment'];
+  const menuItems = ['Home', 'About', 'Services', 'Team', 'Gallery', 'Contact', 'Appointment'];
 
   return (
     <nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-primary-100 sticky top-0 z-50">
@@ -31,7 +31,20 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             {menuItems.map((item) => (
               <button
                 key={item}
-                onClick={() => onNavigate(item)}
+                onClick={() => {
+                  if (item === 'Contact') {
+                    if (currentPage === 'Home') {
+                      document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      onNavigate('Home');
+                      setTimeout(() => {
+                        document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }
+                  } else {
+                    onNavigate(item);
+                  }
+                }}
                 className={`px-3 xl:px-4 py-2 xl:py-3 text-sm font-inter font-medium rounded-full transition-all duration-300 hover:scale-105 ${
                   currentPage === item
                     ? 'text-white bg-primary-400 shadow-md'
@@ -68,7 +81,18 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               <button
                 key={item}
                 onClick={() => {
-                  onNavigate(item);
+                  if (item === 'Contact') {
+                    if (currentPage === 'Home') {
+                      document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      onNavigate('Home');
+                      setTimeout(() => {
+                        document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }
+                  } else {
+                    onNavigate(item);
+                  }
                   setIsMobileMenuOpen(false);
                 }}
                 className={`w-full text-left px-4 py-3 text-base font-inter font-medium rounded-lg transition-all duration-200 ${
