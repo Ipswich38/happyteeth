@@ -1,4 +1,11 @@
 export function GalleryPage() {
+  const featuredVideo = {
+    title: 'Airflow Dental Cleaning',
+    description: 'Experience our advanced Airflow dental cleaning technology that provides gentle, effective, and comfortable teeth cleaning for a brighter, healthier smile.',
+    category: 'Technology',
+    videoUrl: '/airflow-dental-cleaning.mp4' // Placeholder - replace with actual video file
+  };
+
   const galleryImages = [
     { title: 'Modern Reception Area', category: 'Facility' },
     { title: 'Treatment Room 1', category: 'Facility' },
@@ -21,6 +28,35 @@ export function GalleryPage() {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Take a look at our modern facility, advanced technology, and the beautiful smiles we&apos;ve helped create
           </p>
+        </div>
+
+        {/* Featured Video Section */}
+        <div className="mb-16 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-8 border-2 border-primary-200 shadow-lg">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-playfair font-bold text-gray-900 mb-4">Featured Video</h2>
+            <p className="text-lg text-gray-600">Discover our advanced dental technology</p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="aspect-video bg-gradient-to-br from-cyan-100 to-cyan-200 flex items-center justify-center">
+                <div className="text-center text-gray-600">
+                  <div className="text-6xl mb-4">🎬</div>
+                  <h3 className="text-2xl font-semibold mb-2">{featuredVideo.title}</h3>
+                  <p className="text-sm opacity-75">Video placeholder - replace with actual video file</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-playfair font-bold text-gray-900">{featuredVideo.title}</h3>
+                  <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-sm rounded-full font-medium">
+                    {featuredVideo.category}
+                  </span>
+                </div>
+                <p className="text-gray-600 leading-relaxed">{featuredVideo.description}</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
