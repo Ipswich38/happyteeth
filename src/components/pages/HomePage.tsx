@@ -112,25 +112,23 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/Gallery/HappyTeethFacade.png')",
+            backgroundImage: "url('/Gallery/HTwhitebg.png')",
           }}
-        >
-          <div className="absolute inset-0 bg-black/30"></div>
-        </div>
+        ></div>
         <div className="relative z-10 w-full">
           <div className="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8">
             {/* Content centered */}
             <div className="max-w-4xl text-center">
-              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-white/20 shadow-2xl">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold mb-6 text-white drop-shadow-lg leading-tight">
+              <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-2xl">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold mb-6 text-gray-900 leading-tight">
                   Your Trusted Family Dental Clinic
                 </h1>
 
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-light mb-8 text-primary-200 drop-shadow-md">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-light mb-8 text-primary-600">
                   Personalized Care That Leaves You Smiling with Confidence
                 </h2>
 
-                <p className="text-lg sm:text-xl font-inter mb-10 text-white/95 drop-shadow-sm leading-relaxed max-w-3xl mx-auto">
+                <p className="text-lg sm:text-xl font-inter mb-10 text-gray-700 leading-relaxed max-w-3xl mx-auto">
                   We treat every patient as family, delivering comprehensive dental services with advanced technology in a warm, welcoming environment. From routine care to specialized treatments, we make exceptional dental health accessible and comfortable for you and your loved ones.
                 </p>
 
@@ -147,7 +145,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     onClick={() => {
                       document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-full font-inter font-semibold text-lg hover:bg-white/30 transition-all duration-300 hover:scale-105"
+                    className="bg-primary-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:bg-primary-600 transition-all duration-300 hover:scale-105 shadow-lg"
                   >
                     🦷 Explore Our Services
                   </button>
