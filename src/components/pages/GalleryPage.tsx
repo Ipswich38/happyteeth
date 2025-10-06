@@ -45,6 +45,48 @@ export function GalleryPage() {
       imageUrl: '/Gallery/dental implant.jpg',
       description: 'Small titanium posts surgically placed into the jawbone to act as artificial tooth roots. Looks, feels, and functions like natural teeth. Helps preserve jawbone and facial structure. No slipping or clicking like dentures. A long-term investment in your oral health.'
     },
+    {
+      title: 'Happy Dental Team',
+      category: 'Team',
+      imageUrl: '/herosection/1.jpg',
+      description: 'Our cheerful and professional dental team ready to provide you with the best dental care experience'
+    },
+    {
+      title: 'Dental Team Excellence',
+      category: 'Team',
+      imageUrl: '/herosection/2.jpg',
+      description: 'Our experienced dental professionals committed to delivering exceptional patient care'
+    },
+    {
+      title: 'Clinical Excellence',
+      category: 'Team',
+      imageUrl: '/herosection/3.jpg',
+      description: 'Our skilled dental specialists working together to ensure optimal patient outcomes'
+    },
+    {
+      title: 'Professional Dental Care',
+      category: 'Team',
+      imageUrl: '/herosection/4.jpg',
+      description: 'Our dedicated team of dental professionals providing comprehensive oral healthcare services'
+    },
+    {
+      title: 'Caring Dental Staff',
+      category: 'Team',
+      imageUrl: '/herosection/5.jpg',
+      description: 'Our compassionate dental team ensuring every patient feels comfortable and well-cared for'
+    },
+    {
+      title: 'Expert Dental Team',
+      category: 'Team',
+      imageUrl: '/herosection/6.jpg',
+      description: 'Our qualified dental specialists bringing years of experience and expertise to your care'
+    },
+    {
+      title: 'Dental Team Unity',
+      category: 'Team',
+      imageUrl: '/herosection/7.jpg',
+      description: 'Our collaborative dental team working together to provide the highest quality dental treatments'
+    },
     { title: 'Advanced Equipment', category: 'Technology', description: 'State-of-the-art dental equipment for precise treatments' },
     { title: 'Comfortable Waiting Area', category: 'Facility', description: 'Relaxing environment while you wait for your appointment' },
     { title: 'Smile Transformation', category: 'Results', description: 'Beautiful smile makeovers and transformations' },
@@ -53,7 +95,7 @@ export function GalleryPage() {
     { title: 'Sterilization Center', category: 'Safety', description: 'Strict sterilization protocols for patient safety' }
   ];
 
-  const categories = ['All', 'Facility', 'Technology', 'Results', 'Safety', 'Events'];
+  const categories = ['All', 'Facility', 'Technology', 'Results', 'Team', 'Safety', 'Events'];
 
   return (
     <div className="min-h-screen py-16">
