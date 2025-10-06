@@ -233,7 +233,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Major Services Banner */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-white to-primary-50">
+      <section id="services-section" className="py-16 sm:py-20 bg-gradient-to-br from-white to-primary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-4">Our Major Services</h2>
@@ -265,12 +265,26 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
 
           <div className="text-center mt-12">
-            <button
-              onClick={() => onNavigate('Services')}
-              className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              View All Services
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={() => {
+                  document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-cyan-500 hover:to-cyan-600 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+              >
+                <span>📅</span>
+                <span>Book Appointment</span>
+              </button>
+              <button
+                onClick={() => {
+                  document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+              >
+                <span>📞</span>
+                <span>Contact Us</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>

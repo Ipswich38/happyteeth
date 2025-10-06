@@ -6,7 +6,6 @@ import { Footer } from './Footer';
 import { Chatbot } from './Chatbot';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
-import { ServicesPage } from './pages/ServicesPage';
 import { TeamPage } from './pages/TeamPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { Toaster } from './ui/sonner';
@@ -20,8 +19,6 @@ export default function App() {
         return <HomePage onNavigate={setCurrentPage} />;
       case 'About':
         return <AboutPage />;
-      case 'Services':
-        return <ServicesPage onNavigate={setCurrentPage} />;
       case 'Team':
         return <TeamPage />;
       case 'Gallery':

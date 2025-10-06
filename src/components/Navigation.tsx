@@ -53,6 +53,15 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                         document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' });
                       }, 100);
                     }
+                  } else if (item === 'Services') {
+                    if (currentPage === 'Home') {
+                      document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      onNavigate('Home');
+                      setTimeout(() => {
+                        document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }
                   } else {
                     onNavigate(item);
                   }
@@ -122,6 +131,15 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       onNavigate('Home');
                       setTimeout(() => {
                         document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }
+                  } else if (item === 'Services') {
+                    if (currentPage === 'Home') {
+                      document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      onNavigate('Home');
+                      setTimeout(() => {
+                        document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
                       }, 100);
                     }
                   } else {
