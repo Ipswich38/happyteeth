@@ -85,12 +85,12 @@ export function AboutPage() {
           <div className="bg-gradient-to-br from-secondary-50 to-accent-50 p-8 rounded-3xl border-2 border-secondary-200 shadow-sm">
             <h3 className="text-2xl font-playfair font-bold text-gray-900 mb-6">Our Mission</h3>
             <p className="text-gray-600 font-inter leading-relaxed mb-8">
-              To deliver comprehensive, personalized dental care for patients of all ages through a team of specialized professionals, ensuring every visit is comfortable, stress-free, and results in healthier, brighter smiles.
+              To be your trusted, all-in-one family dental clinic, delivering personalized, quality care that leaves you smiling with confidence. We treat every patient as family, taking time to understand your unique needs, lifestyle, and budget to create tailored dental solutions. Through comprehensive services, advanced technology, and a welcoming environment, we make exceptional dental care accessible and comfortable for you and your loved ones.
             </p>
 
             <h3 className="text-2xl font-playfair font-bold text-gray-900 mb-6">Our Vision</h3>
             <p className="text-gray-600 font-inter leading-relaxed">
-              To be the leading dental practice that transforms lives through exceptional oral healthcare, where advanced treatments meet compassionate care, and where every patient feels valued and confident about their smile.
+              To be the premier family dental destination in San Jose del Monte, Bulacan, where every patient experiences the comfort and care of being treated like family. We envision a community where exceptional dental health is accessible to all, supported by comprehensive services, cutting-edge technology, and genuine relationships that last a lifetime.
             </p>
           </div>
 
