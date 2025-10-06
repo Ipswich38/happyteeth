@@ -4,13 +4,13 @@ export function GalleryPage() {
       title: 'Airflow Dental Cleaning',
       description: 'Experience our advanced Airflow dental cleaning technology that provides gentle, effective, and comfortable teeth cleaning for a brighter, healthier smile.',
       category: 'Technology',
-      videoUrl: '/gallery/airflow-dental-cleaning.mp4'
+      videoUrl: '/Gallery/airflow-dental-cleaning.mp4'
     },
     {
       title: 'Happy Teeth Dentists at National Association of Dental Traders, Inc., Philippines',
       description: 'Our team representing HappyTeeth at the National Association of Dental Traders, Inc. event, showcasing our commitment to professional excellence and industry leadership.',
       category: 'Events',
-      videoUrl: '/gallery/happy-teeth-nadti-2025.mp4'
+      videoUrl: '/Gallery/happy-teeth-nadti-2025.mp4'
     }
   ];
 
