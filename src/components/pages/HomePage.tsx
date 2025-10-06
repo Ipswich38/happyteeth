@@ -198,7 +198,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     }}
                     className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg"
                   >
-                    🦷 Explore Our Services
+                    Explore Our Services
                   </button>
                 </div>
               </div>
@@ -292,16 +292,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Floating Appointment Form Section */}
       <section id="appointment-section" className="relative -mt-16 z-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-gradient-to-br from-primary-50/90 to-white/95 backdrop-blur-md rounded-3xl shadow-2xl border-2 border-primary-200/70 p-6 sm:p-8 lg:p-10 hover:shadow-3xl transition-all duration-500">
+          <div className="bg-gradient-to-br from-pink-500/80 to-pink-600/90 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-pink-300/50 p-6 sm:p-8 lg:p-10 hover:shadow-3xl transition-all duration-500">
             <div className="mb-6 text-center">
-              <h2 className="text-2xl lg:text-3xl font-playfair font-bold text-gray-900 mb-2">Book Your Appointment</h2>
-              <p className="text-gray-600">Schedule your visit with our dental experts</p>
+              <h2 className="text-2xl lg:text-3xl font-playfair font-bold text-white mb-2">Book Your Appointment</h2>
+              <p className="text-white/90">Schedule your visit with our dental experts</p>
             </div>
 
             <form onSubmit={handleAppointmentSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="appointment-name" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="appointment-name" className="block text-sm font-medium text-white">
                     Full Name *
                   </label>
                   <input
@@ -317,7 +317,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="appointment-cellphone" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="appointment-cellphone" className="block text-sm font-medium text-white">
                     Cellphone Number *
                   </label>
                   <input
@@ -333,7 +333,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="appointment-service" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="appointment-service" className="block text-sm font-medium text-white">
                     Service *
                   </label>
                   <select
@@ -354,7 +354,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="appointment-date" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="appointment-date" className="block text-sm font-medium text-white">
                     Preferred Date *
                   </label>
                   <input
@@ -375,7 +375,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   type="submit"
                   className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-cyan-500 hover:to-cyan-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mx-auto"
                 >
-                  <span>🦷</span>
                   <span>Request Appointment</span>
                 </button>
               </div>
@@ -424,7 +423,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 }}
                 className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-cyan-500 hover:to-cyan-600 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
               >
-                <span>📅</span>
                 <span>Book Appointment</span>
               </button>
               <button
@@ -433,7 +431,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 }}
                 className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
               >
-                <span>📞</span>
                 <span>Contact Us</span>
               </button>
             </div>
@@ -689,7 +686,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 onClick={closeConfirmation}
                 className="w-full bg-gradient-to-r from-primary-400 to-primary-500 text-white py-3 px-6 rounded-full font-inter font-semibold hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg"
               >
-                Got it! 👍
+                Got it!
               </button>
             </div>
           </div>

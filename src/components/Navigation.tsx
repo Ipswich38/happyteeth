@@ -11,7 +11,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const menuItems = ['Home', 'About', 'Services', 'Team', 'Gallery', 'Contact', 'Appointment'];
 
   return (
-    <nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-primary-100 sticky top-0 z-50">
+    <nav className="bg-white/20 backdrop-blur-xl shadow-lg border-b border-white/30 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 sm:h-24">
           <div className="flex items-center">
@@ -110,7 +110,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
 
         {/* Mobile Menu */}
         <div className={`lg:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-          <div className="px-4 py-4 space-y-2 bg-white border-t border-primary-100">
+          <div className="px-4 py-4 space-y-2 bg-white/30 backdrop-blur-xl border-t border-white/30">
             {menuItems.map((item) => (
               <button
                 key={item}
