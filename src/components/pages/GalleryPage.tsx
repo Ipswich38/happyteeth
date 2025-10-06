@@ -86,16 +86,9 @@ export function GalleryPage() {
       category: 'Team',
       imageUrl: '/herosection/7.jpg',
       description: 'Our collaborative dental team working together to provide the highest quality dental treatments'
-    },
-    { title: 'Advanced Equipment', category: 'Technology', description: 'State-of-the-art dental equipment for precise treatments' },
-    { title: 'Comfortable Waiting Area', category: 'Facility', description: 'Relaxing environment while you wait for your appointment' },
-    { title: 'Smile Transformation', category: 'Results', description: 'Beautiful smile makeovers and transformations' },
-    { title: 'Teeth Whitening Results', category: 'Results', description: 'Professional teeth whitening for brighter smiles' },
-    { title: 'Orthodontic Success', category: 'Results', description: 'Successful orthodontic treatments and straight smiles' },
-    { title: 'Sterilization Center', category: 'Safety', description: 'Strict sterilization protocols for patient safety' }
+    }
   ];
 
-  const categories = ['All', 'Facility', 'Technology', 'Results', 'Team', 'Safety', 'Events'];
 
   return (
     <div className="min-h-screen py-16">
@@ -143,15 +136,12 @@ export function GalleryPage() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className="px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors"
-            >
-              {category}
-            </button>
-          ))}
+        {/* Photo Gallery Section */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-playfair font-bold text-gray-900 mb-4">Photo Gallery</h2>
+            <p className="text-lg text-gray-600">Explore our modern facility, advanced technology, and professional team</p>
+          </div>
         </div>
 
         {/* Gallery Collage Layout */}
