@@ -73,8 +73,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
           muted
           loop
           playsInline
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover opacity-75"
         >
+          <source src="/happyteethbackground_compressed.webm" type="video/webm" />
+          <source src="/happyteethbackground_compressed.mp4" type="video/mp4" />
           <source src="/happyteethbackground.mp4" type="video/mp4" />
         </video>
         <div className="relative z-10 w-full">
