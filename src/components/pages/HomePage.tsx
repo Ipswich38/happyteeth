@@ -91,13 +91,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 Where Smiles Shine Bright!
               </h2>
 
-              <button
-                onClick={() => document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-medium text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
-              >
-                <span>📅</span>
-                <span>Schedule a Visit</span>
-              </button>
             </div>
           </div>
         </div>
@@ -106,7 +99,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Floating Appointment Form Section */}
       <section id="appointment-section" className="relative -mt-16 z-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl border border-primary-200/50 p-6 sm:p-8 lg:p-10 hover:shadow-3xl transition-all duration-500">
+          <div className="bg-gradient-to-br from-primary-50/90 to-white/95 backdrop-blur-md rounded-3xl shadow-2xl border-2 border-primary-200/70 p-6 sm:p-8 lg:p-10 hover:shadow-3xl transition-all duration-500">
 
             <form onSubmit={handleAppointmentSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -183,7 +176,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <div className="text-center pt-4">
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mx-auto"
+                  className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-cyan-500 hover:to-cyan-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mx-auto"
                 >
                   <span>🦷</span>
                   <span>Request Appointment</span>

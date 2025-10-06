@@ -55,7 +55,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   }
                 }}
                 className={`px-3 xl:px-4 py-2 xl:py-3 text-sm font-inter font-medium rounded-full transition-all duration-300 hover:scale-105 ${
-                  currentPage === item
+                  item === 'Appointment'
+                    ? 'text-white bg-gradient-to-r from-cyan-400 to-cyan-500 shadow-md hover:from-cyan-500 hover:to-cyan-600'
+                    : currentPage === item
                     ? 'text-white bg-primary-400 shadow-md'
                     : 'text-gray-600 hover:text-primary-600 hover:bg-primary-50'
                 }`}
@@ -114,7 +116,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   setIsMobileMenuOpen(false);
                 }}
                 className={`w-full text-left px-4 py-3 text-base font-inter font-medium rounded-lg transition-all duration-200 ${
-                  currentPage === item
+                  item === 'Appointment'
+                    ? 'text-white bg-gradient-to-r from-cyan-400 to-cyan-500 shadow-md hover:from-cyan-500 hover:to-cyan-600'
+                    : currentPage === item
                     ? 'text-white bg-primary-400 shadow-sm'
                     : 'text-gray-600 hover:text-primary-600 hover:bg-primary-50'
                 }`}
