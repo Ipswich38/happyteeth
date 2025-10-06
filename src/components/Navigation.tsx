@@ -68,6 +68,17 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 {item}
               </button>
             ))}
+
+            {/* Facebook Icon */}
+            <a
+              href="https://www.facebook.com/canaresdentalclinic/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg transition-all duration-300 hover:scale-105 shadow-md"
+              aria-label="Visit our Facebook page"
+            >
+              f
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -129,6 +140,20 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 {item}
               </button>
             ))}
+
+            {/* Facebook Link in Mobile Menu */}
+            <a
+              href="https://www.facebook.com/canaresdentalclinic/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center px-4 py-3 text-base font-inter font-medium rounded-lg transition-all duration-200 text-gray-600 hover:text-pink-600 hover:bg-pink-50"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                f
+              </div>
+              Follow us on Facebook
+            </a>
           </div>
         </div>
       </div>

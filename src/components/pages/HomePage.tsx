@@ -266,7 +266,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Phone Number</h4>
-                    <p className="text-gray-600">09486867966</p>
+                    <a
+                      href="tel:+639486867966"
+                      className="text-primary-600 hover:text-primary-700 transition-colors cursor-pointer font-medium"
+                    >
+                      09486867966
+                    </a>
                   </div>
                 </div>
 
@@ -277,6 +282,23 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   <div>
                     <h4 className="font-semibold text-gray-900">Email</h4>
                     <p className="text-gray-600">drcanaresprice@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                    <span className="text-white font-bold text-sm">f</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Facebook</h4>
+                    <a
+                      href="https://www.facebook.com/canaresdentalclinic/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-pink-600 hover:text-pink-700 transition-colors cursor-pointer"
+                    >
+                      @canaresdentalclinic
+                    </a>
                   </div>
                 </div>
 

@@ -71,9 +71,29 @@ export function Footer({ onNavigate }: FooterProps) {
           </div>
           <div className="sm:col-span-1">
             <h4 className="text-sm font-inter font-medium mb-3 text-gray-800">Contact Us</h4>
-            <div className="space-y-1 text-gray-600 font-inter">
-              <p className="text-xs text-primary-600 font-medium">09486867966</p>
-              <p className="text-xs">Call or text for appointments!</p>
+            <div className="space-y-2 text-gray-600 font-inter">
+              <div>
+                <a
+                  href="tel:+639486867966"
+                  className="text-xs text-primary-600 font-medium hover:text-primary-700 transition-colors cursor-pointer"
+                >
+                  09486867966
+                </a>
+                <p className="text-xs">Call or text for appointments!</p>
+              </div>
+              <div className="flex items-center">
+                <div className="w-5 h-5 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full flex items-center justify-center mr-2">
+                  <span className="text-white font-bold text-xs">f</span>
+                </div>
+                <a
+                  href="https://www.facebook.com/canaresdentalclinic/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-pink-600 hover:text-pink-700 transition-colors"
+                >
+                  Follow us on Facebook
+                </a>
+              </div>
             </div>
           </div>
           <div className="sm:col-span-2 lg:col-span-1">
