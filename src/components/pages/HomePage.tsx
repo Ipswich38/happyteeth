@@ -109,17 +109,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <div className="min-h-screen">
       <section className="relative overflow-hidden min-h-screen flex items-center">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover opacity-75"
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/Gallery/HappyTeethFacade.png')",
+          }}
         >
-          <source src="/happyteethbackground_fixed.webm" type="video/webm" />
-          <source src="/happyteethbackground_fixed.mp4" type="video/mp4" />
-        </video>
+          <div className="absolute inset-0 bg-black/30"></div>
+        </div>
         <div className="relative z-10 w-full">
           <div className="flex justify-start items-end min-h-screen px-4 sm:px-6 lg:px-8 pb-20">
             {/* Content positioned bottom-left */}
