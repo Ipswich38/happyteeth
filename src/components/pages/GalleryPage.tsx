@@ -94,32 +94,75 @@ export function GalleryPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gradient-to-br from-cyan-100 to-cyan-200 flex items-center justify-center">
-                {image.imageUrl ? (
-                  <img
-                    src={image.imageUrl}
-                    alt={image.title}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="text-center text-gray-600">
-                    <div className="text-4xl mb-2">📸</div>
-                    <p className="text-sm">{image.title}</p>
+            <div key={index} className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow ${image.title === 'Digital X-Ray Machine' ? 'md:col-span-2 lg:col-span-2' : ''}`}>
+              {image.title === 'Digital X-Ray Machine' ? (
+                // Special layout for Digital X-Ray Machine
+                <div className="flex flex-col md:flex-row">
+                  <div className="md:w-1/2 p-4 flex items-center justify-center bg-gradient-to-br from-cyan-50 to-cyan-100">
+                    <img
+                      src={image.imageUrl}
+                      alt={image.title}
+                      className="max-w-full max-h-64 object-contain rounded-lg"
+                    />
                   </div>
-                )}
-              </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-gray-900 mb-2">{image.title}</h3>
-                {image.description && (
-                  <div className="mb-3">
-                    <p className="text-sm text-gray-600 whitespace-pre-line">{image.description}</p>
+                  <div className="md:w-1/2 p-6 flex flex-col justify-center">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{image.title}</h3>
+                    <div className="mb-4">
+                      <p className="text-gray-700 font-medium mb-2">Our DIGITAL XRAY services:</p>
+                      <ul className="space-y-1">
+                        <li className="flex items-center text-gray-600">
+                          <span className="text-red-500 mr-2">❗️</span>
+                          Panoramic
+                        </li>
+                        <li className="flex items-center text-gray-600">
+                          <span className="text-red-500 mr-2">❗️</span>
+                          Cephalometric
+                        </li>
+                        <li className="flex items-center text-gray-600">
+                          <span className="text-red-500 mr-2">❗️</span>
+                          TMJ
+                        </li>
+                        <li className="flex items-center text-gray-600">
+                          <span className="text-red-500 mr-2">❗️</span>
+                          Periapical
+                        </li>
+                      </ul>
+                    </div>
+                    <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-sm rounded-full w-fit">
+                      {image.category}
+                    </span>
                   </div>
-                )}
-                <span className="inline-block px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded-full">
-                  {image.category}
-                </span>
-              </div>
+                </div>
+              ) : (
+                // Standard layout for other images
+                <>
+                  <div className="h-64 bg-gradient-to-br from-cyan-100 to-cyan-200 flex items-center justify-center">
+                    {image.imageUrl ? (
+                      <img
+                        src={image.imageUrl}
+                        alt={image.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="text-center text-gray-600">
+                        <div className="text-4xl mb-2">📸</div>
+                        <p className="text-sm">{image.title}</p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold text-gray-900 mb-2">{image.title}</h3>
+                    {image.description && (
+                      <div className="mb-3">
+                        <p className="text-sm text-gray-600 whitespace-pre-line">{image.description}</p>
+                      </div>
+                    )}
+                    <span className="inline-block px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded-full">
+                      {image.category}
+                    </span>
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </div>
