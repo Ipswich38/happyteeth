@@ -22,6 +22,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageVisible, setIsImageVisible] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   // Hero section images
   const heroImages = [
@@ -68,6 +69,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   // Image carousel effect with glance/disappearing animation
   useEffect(() => {
+    if (!isPlaying) return;
+
     const interval = setInterval(() => {
       // First fade out current image
       setIsImageVisible(false);
@@ -82,7 +85,32 @@ export function HomePage({ onNavigate }: HomePageProps) {
     }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
-  }, [heroImages.length]);
+  }, [heroImages.length, isPlaying]);
+
+  // Manual navigation functions
+  const goToNextImage = () => {
+    setIsImageVisible(false);
+    setTimeout(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+      );
+      setIsImageVisible(true);
+    }, 300);
+  };
+
+  const goToPrevImage = () => {
+    setIsImageVisible(false);
+    setTimeout(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === 0 ? heroImages.length - 1 : prevIndex - 1
+      );
+      setIsImageVisible(true);
+    }, 300);
+  };
+
+  const togglePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
 
   const services = [
     'General Consultation',
@@ -215,6 +243,44 @@ export function HomePage({ onNavigate }: HomePageProps) {
                         ></div>
                       ))}
                     </div>
+
+                    {/* Navigation Arrow Buttons */}
+                    <button
+                      onClick={goToPrevImage}
+                      className="absolute left-3 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group backdrop-blur-sm"
+                      aria-label="Previous image"
+                    >
+                      <svg className="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+
+                    <button
+                      onClick={goToNextImage}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group backdrop-blur-sm"
+                      aria-label="Next image"
+                    >
+                      <svg className="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+
+                    {/* Play/Pause Button */}
+                    <button
+                      onClick={togglePlayPause}
+                      className="absolute top-4 left-4 w-10 h-10 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group backdrop-blur-sm"
+                      aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
+                    >
+                      {isPlaying ? (
+                        <svg className="w-4 h-4 text-gray-700 group-hover:text-gray-900 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                        </svg>
+                      ) : (
+                        <svg className="w-4 h-4 text-gray-700 group-hover:text-gray-900 transition-colors ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      )}
+                    </button>
                   </div>
                 </div>
               </div>
