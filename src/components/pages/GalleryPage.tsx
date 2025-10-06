@@ -22,8 +22,8 @@ export function GalleryPage() {
       imageUrl: '/Gallery/digitalxray.jpeg',
       description: 'Our DIGITAL XRAY services:\n❗️Panoramic\n❗️Cephalometric\n❗️TMJ\n❗️Periapical'
     },
+    { title: 'Treatment Room', category: 'Facility', imageUrl: '/Gallery/treatmentroom.png' },
     { title: 'Modern Reception Area', category: 'Facility' },
-    { title: 'Treatment Room 1', category: 'Facility' },
     { title: 'Advanced Equipment', category: 'Technology' },
     { title: 'Comfortable Waiting Area', category: 'Facility' },
     { title: 'Smile Transformation', category: 'Results' },
