@@ -63,7 +63,48 @@ export function HomePage({ onNavigate }: HomePageProps) {
     'Teeth Whitening',
     'Orthodontic Consultation',
     'Pediatric Dental Care',
+    'TMJ Treatment',
     'Emergency Dental Care'
+  ];
+
+  // Major high-revenue services based on specialist expertise
+  const majorServices = [
+    {
+      title: 'Cosmetic Dentistry',
+      icon: '✨',
+      specialist: 'DRA. SHIRLEY BAYOG',
+      category: 'Premium'
+    },
+    {
+      title: 'Orthodontics & Braces',
+      icon: '🦷',
+      specialist: 'DRA. FATIMA PORCIUNCULA',
+      category: 'Specialty'
+    },
+    {
+      title: 'TMJ Treatment',
+      icon: '💆‍♀️',
+      specialist: 'DR. JONATHAN PINEDA',
+      category: 'Specialty'
+    },
+    {
+      title: 'Root Canal Treatment',
+      icon: '🩺',
+      specialist: 'DR. JEROME OH',
+      category: 'Advanced'
+    },
+    {
+      title: 'Oral Surgery',
+      icon: '🔨',
+      specialist: 'DR. JEROME OH',
+      category: 'Advanced'
+    },
+    {
+      title: 'Dental Implants',
+      icon: '🦷',
+      specialist: 'Advanced Procedure',
+      category: 'Premium'
+    }
   ];
   return (
     <div className="min-h-screen">
@@ -98,18 +139,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* Floating Appointment Form Section */}
       <section id="appointment-section" className="relative -mt-16 z-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-br from-primary-50/90 to-white/95 backdrop-blur-md rounded-3xl shadow-2xl border-2 border-primary-200/70 hover:shadow-3xl transition-all duration-500">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-gradient-to-br from-primary-50/90 to-white/95 backdrop-blur-md rounded-3xl shadow-2xl border-2 border-primary-200/70 p-6 sm:p-8 lg:p-10 hover:shadow-3xl transition-all duration-500">
+            <div className="mb-6 text-center">
+              <h2 className="text-2xl lg:text-3xl font-playfair font-bold text-gray-900 mb-2">Book Your Appointment</h2>
+              <p className="text-gray-600">Schedule your visit with our dental experts</p>
+            </div>
 
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-0">
-              {/* Appointment Form */}
-              <div className="xl:col-span-2 p-6 sm:p-8 lg:p-10">
-                <div className="mb-6">
-                  <h2 className="text-2xl lg:text-3xl font-playfair font-bold text-gray-900 mb-2">Book Your Appointment</h2>
-                  <p className="text-gray-600">Schedule your visit with our dental experts</p>
-                </div>
-
-                <form onSubmit={handleAppointmentSubmit} className="space-y-6">
+            <form onSubmit={handleAppointmentSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <label htmlFor="appointment-name" className="block text-sm font-medium text-gray-700">
@@ -181,73 +218,59 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
               </div>
 
-                  <div className="text-center pt-4">
-                    <button
-                      type="submit"
-                      className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-cyan-500 hover:to-cyan-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mx-auto"
-                    >
-                      <span>🦷</span>
-                      <span>Request Appointment</span>
-                    </button>
-                  </div>
-                </form>
+              <div className="text-center pt-4">
+                <button
+                  type="submit"
+                  className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-cyan-500 hover:to-cyan-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mx-auto"
+                >
+                  <span>🦷</span>
+                  <span>Request Appointment</span>
+                </button>
               </div>
+            </form>
+          </div>
+        </div>
+      </section>
 
-              {/* Services Banner */}
-              <div className="xl:col-span-1 bg-gradient-to-br from-primary-100 to-secondary-100 xl:rounded-r-3xl p-6 sm:p-8">
-                <div className="h-full flex flex-col">
-                  <div className="mb-6">
-                    <h3 className="text-xl font-playfair font-bold text-gray-900 mb-2">Our Services</h3>
-                    <p className="text-sm text-gray-600">Choose from our comprehensive dental care options</p>
+      {/* Major Services Banner */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-white to-primary-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-4">Our Major Services</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Comprehensive dental care with specialized expertise in high-quality treatments
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 lg:gap-6">
+            {majorServices.map((service, index) => (
+              <div
+                key={index}
+                className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-primary-100 hover:border-primary-300"
+              >
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl shadow-md group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
                   </div>
-
-                  <div className="grid grid-cols-1 gap-3 flex-1">
-                    {services.map((service, index) => (
-                      <div
-                        key={service}
-                        onClick={() => {
-                          setAppointmentForm({
-                            ...appointmentForm,
-                            service: service
-                          });
-                        }}
-                        className={`group bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 cursor-pointer border border-white/50 ${
-                          appointmentForm.service === service ? 'bg-primary-100/80 border-primary-300' : ''
-                        }`}
-                      >
-                        <div className="flex items-center space-x-3">
-                          <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 ${
-                            appointmentForm.service === service
-                              ? 'bg-gradient-to-r from-primary-500 to-secondary-500'
-                              : 'bg-gradient-to-r from-primary-400 to-secondary-400'
-                          }`}>
-                            {appointmentForm.service === service ? '✓' : index + 1}
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className={`font-semibold text-sm transition-colors truncate ${
-                              appointmentForm.service === service
-                                ? 'text-primary-700'
-                                : 'text-gray-900 group-hover:text-primary-600'
-                            }`}>
-                              {service}
-                            </h4>
-                            <p className="text-xs text-gray-500 mt-1">
-                              {appointmentForm.service === service ? 'Selected' : 'Click to select'}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-white/50">
-                    <p className="text-xs text-gray-500 text-center">
-                      Need a different service? Contact us directly!
-                    </p>
+                  <h3 className="font-playfair font-semibold text-gray-900 mb-2 text-sm lg:text-base group-hover:text-primary-600 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs text-gray-500 mb-3">{service.specialist}</p>
+                  <div className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs rounded-full font-medium">
+                    {service.category}
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <button
+              onClick={() => onNavigate('Services')}
+              className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+              View All Services
+            </button>
           </div>
         </div>
       </section>
