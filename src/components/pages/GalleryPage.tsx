@@ -16,6 +16,12 @@ export function GalleryPage() {
 
   const galleryImages = [
     { title: 'Root Canal Treatment New Technology', category: 'Technology', imageUrl: '/Gallery/newtechnologyrootcanalgadget.png' },
+    {
+      title: 'Digital X-Ray Machine',
+      category: 'Technology',
+      imageUrl: '/Gallery/digitalxray.jpeg',
+      description: 'Our DIGITAL XRAY services:\n❗️Panoramic\n❗️Cephalometric\n❗️TMJ\n❗️Periapical'
+    },
     { title: 'Modern Reception Area', category: 'Facility' },
     { title: 'Treatment Room 1', category: 'Facility' },
     { title: 'Advanced Equipment', category: 'Technology' },
@@ -104,7 +110,12 @@ export function GalleryPage() {
                 )}
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-gray-900 mb-1">{image.title}</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">{image.title}</h3>
+                {image.description && (
+                  <div className="mb-3">
+                    <p className="text-sm text-gray-600 whitespace-pre-line">{image.description}</p>
+                  </div>
+                )}
                 <span className="inline-block px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded-full">
                   {image.category}
                 </span>
