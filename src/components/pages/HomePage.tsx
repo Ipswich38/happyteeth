@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -20,6 +20,19 @@ export function HomePage({ onNavigate }: HomePageProps) {
   });
 
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isImageVisible, setIsImageVisible] = useState(true);
+
+  // Hero section images
+  const heroImages = [
+    '/herosection/1.jpg',
+    '/herosection/2.jpg',
+    '/herosection/3.jpg',
+    '/herosection/4.jpg',
+    '/herosection/5.jpg',
+    '/herosection/6.jpg',
+    '/herosection/7.jpg'
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,6 +65,24 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const closeConfirmation = () => {
     setShowConfirmation(false);
   };
+
+  // Image carousel effect with glance/disappearing animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // First fade out current image
+      setIsImageVisible(false);
+
+      // After fade out completes, change image and fade in
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+        );
+        setIsImageVisible(true);
+      }, 500); // Wait for fade out to complete
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   const services = [
     'General Consultation',
@@ -144,13 +175,46 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
               </div>
 
-              {/* Right Image Placeholder */}
+              {/* Right Image Carousel */}
               <div className="flex justify-center lg:justify-end">
-                <div className="w-full max-w-md lg:max-w-lg aspect-square bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl border-2 border-primary-200 shadow-lg flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <div className="text-6xl mb-4">🖼️</div>
-                    <p className="text-lg font-medium">Image Placeholder</p>
-                    <p className="text-sm opacity-75">We will add images later</p>
+                <div className="w-full max-w-md lg:max-w-lg aspect-square rounded-3xl border-2 border-primary-200 shadow-lg overflow-hidden relative bg-white">
+                  {/* Main Image with Glance Effect */}
+                  <div className="relative w-full h-full">
+                    <img
+                      src={heroImages[currentImageIndex]}
+                      alt={`Happy Teeth Dental Clinic ${currentImageIndex + 1}`}
+                      className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out ${
+                        isImageVisible
+                          ? 'opacity-100 scale-100'
+                          : 'opacity-0 scale-110'
+                      }`}
+                    />
+
+                    {/* Elegant Overlay with Glance Effect */}
+                    <div className={`absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent transition-opacity duration-500 ${
+                      isImageVisible ? 'opacity-60' : 'opacity-20'
+                    }`}></div>
+
+                    {/* Subtle Logo Watermark */}
+                    <div className="absolute bottom-4 right-4 opacity-70">
+                      <div className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-md">
+                        <img src="/happyteethtransparent.png" alt="Happy Teeth" className="w-6 h-6 object-contain" />
+                      </div>
+                    </div>
+
+                    {/* Image Counter Dots */}
+                    <div className="absolute bottom-4 left-4 flex space-x-2">
+                      {heroImages.map((_, index) => (
+                        <div
+                          key={index}
+                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            index === currentImageIndex
+                              ? 'bg-white shadow-md scale-125'
+                              : 'bg-white/50'
+                          }`}
+                        ></div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
