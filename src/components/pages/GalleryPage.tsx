@@ -15,22 +15,36 @@ export function GalleryPage() {
   ];
 
   const galleryImages = [
-    { title: 'Root Canal Treatment New Technology', category: 'Technology', imageUrl: '/Gallery/newtechnologyrootcanalgadget.png' },
+    {
+      title: 'Root Canal Treatment New Technology',
+      category: 'Technology',
+      imageUrl: '/Gallery/newtechnologyrootcanalgadget.png',
+      description: 'Advanced root canal technology for precise and comfortable treatment'
+    },
     {
       title: 'Digital X-Ray Machine',
       category: 'Technology',
       imageUrl: '/Gallery/digitalxray.jpeg',
-      description: 'Our DIGITAL XRAY services:\n❗️Panoramic\n❗️Cephalometric\n❗️TMJ\n❗️Periapical'
+      description: 'Comprehensive digital X-ray services: Panoramic, Cephalometric, TMJ, and Periapical imaging'
     },
-    { title: 'Treatment Room', category: 'Facility', imageUrl: '/Gallery/treatmentroom.png' },
-    { title: 'Modern Reception Area', category: 'Facility' },
-    { title: 'Advanced Equipment', category: 'Technology' },
-    { title: 'Comfortable Waiting Area', category: 'Facility' },
-    { title: 'Smile Transformation', category: 'Results' },
-    { title: 'Teeth Whitening Results', category: 'Results' },
-    { title: 'Orthodontic Success', category: 'Results' },
-    { title: 'State-of-the-art X-ray', category: 'Technology' },
-    { title: 'Sterilization Center', category: 'Safety' }
+    {
+      title: 'Treatment Room',
+      category: 'Facility',
+      imageUrl: '/Gallery/treatmentroom.png',
+      description: 'Modern, comfortable treatment rooms equipped with state-of-the-art dental technology'
+    },
+    {
+      title: 'Reception Area',
+      category: 'Facility',
+      imageUrl: '/Gallery/happyteethreception.png',
+      description: 'Welcoming reception area designed for patient comfort and relaxation'
+    },
+    { title: 'Advanced Equipment', category: 'Technology', description: 'State-of-the-art dental equipment for precise treatments' },
+    { title: 'Comfortable Waiting Area', category: 'Facility', description: 'Relaxing environment while you wait for your appointment' },
+    { title: 'Smile Transformation', category: 'Results', description: 'Beautiful smile makeovers and transformations' },
+    { title: 'Teeth Whitening Results', category: 'Results', description: 'Professional teeth whitening for brighter smiles' },
+    { title: 'Orthodontic Success', category: 'Results', description: 'Successful orthodontic treatments and straight smiles' },
+    { title: 'Sterilization Center', category: 'Safety', description: 'Strict sterilization protocols for patient safety' }
   ];
 
   const categories = ['All', 'Facility', 'Technology', 'Results', 'Safety', 'Events'];
@@ -92,77 +106,68 @@ export function GalleryPage() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Gallery Collage Layout */}
+        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
           {galleryImages.map((image, index) => (
-            <div key={index} className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow ${image.title === 'Digital X-Ray Machine' ? 'md:col-span-2 lg:col-span-2' : ''}`}>
-              {image.title === 'Digital X-Ray Machine' ? (
-                // Special layout for Digital X-Ray Machine
-                <div className="flex flex-col md:flex-row">
-                  <div className="md:w-1/2 p-4 flex items-center justify-center bg-gradient-to-br from-cyan-50 to-cyan-100">
-                    <img
-                      src={image.imageUrl}
-                      alt={image.title}
-                      className="max-w-full max-h-64 object-contain rounded-lg"
-                    />
-                  </div>
-                  <div className="md:w-1/2 p-6 flex flex-col justify-center">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{image.title}</h3>
-                    <div className="mb-4">
-                      <p className="text-gray-700 font-medium mb-2">Our DIGITAL XRAY services:</p>
-                      <ul className="space-y-1">
-                        <li className="flex items-center text-gray-600">
-                          <span className="text-red-500 mr-2">❗️</span>
-                          Panoramic
-                        </li>
-                        <li className="flex items-center text-gray-600">
-                          <span className="text-red-500 mr-2">❗️</span>
-                          Cephalometric
-                        </li>
-                        <li className="flex items-center text-gray-600">
-                          <span className="text-red-500 mr-2">❗️</span>
-                          TMJ
-                        </li>
-                        <li className="flex items-center text-gray-600">
-                          <span className="text-red-500 mr-2">❗️</span>
-                          Periapical
-                        </li>
-                      </ul>
+            <div
+              key={index}
+              className={`group break-inside-avoid mb-6 relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
+                index % 4 === 0 ? 'lg:row-span-2' : ''
+              }`}
+            >
+              <div className="relative">
+                {image.imageUrl ? (
+                  <img
+                    src={image.imageUrl}
+                    alt={image.title}
+                    className="w-full h-auto object-cover transition-all duration-500 group-hover:brightness-30 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-64 bg-gradient-to-br from-cyan-100 to-cyan-200 flex items-center justify-center transition-all duration-500 group-hover:brightness-30">
+                    <div className="text-center text-gray-600">
+                      <div className="text-4xl mb-2">📸</div>
+                      <p className="text-sm">{image.title}</p>
                     </div>
-                    <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-sm rounded-full w-fit">
-                      {image.category}
-                    </span>
+                  </div>
+                )}
+
+                {/* Category Badge */}
+                <div className="absolute top-4 right-4 z-20">
+                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full border border-gray-200">
+                    {image.category}
+                  </span>
+                </div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6 z-10">
+                  <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="text-xl font-bold mb-2 font-playfair">{image.title}</h3>
+                    {image.description && (
+                      <p className="text-sm text-gray-200 leading-relaxed opacity-90">
+                        {image.description}
+                      </p>
+                    )}
                   </div>
                 </div>
-              ) : (
-                // Standard layout for other images
-                <>
-                  <div className="h-64 bg-gradient-to-br from-cyan-100 to-cyan-200 flex items-center justify-center">
-                    {image.imageUrl ? (
-                      <img
-                        src={image.imageUrl}
-                        alt={image.title}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="text-center text-gray-600">
-                        <div className="text-4xl mb-2">📸</div>
-                        <p className="text-sm">{image.title}</p>
+
+                {/* Special handling for Digital X-Ray Machine */}
+                {image.title === 'Digital X-Ray Machine' && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6 z-10">
+                    <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <h3 className="text-xl font-bold mb-3 font-playfair">{image.title}</h3>
+                      <div className="space-y-1">
+                        <p className="text-sm text-cyan-200 font-medium">Our DIGITAL XRAY services:</p>
+                        <div className="flex flex-wrap gap-2 text-xs">
+                          <span className="px-2 py-1 bg-red-500/80 rounded-full">Panoramic</span>
+                          <span className="px-2 py-1 bg-red-500/80 rounded-full">Cephalometric</span>
+                          <span className="px-2 py-1 bg-red-500/80 rounded-full">TMJ</span>
+                          <span className="px-2 py-1 bg-red-500/80 rounded-full">Periapical</span>
+                        </div>
                       </div>
-                    )}
+                    </div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-gray-900 mb-2">{image.title}</h3>
-                    {image.description && (
-                      <div className="mb-3">
-                        <p className="text-sm text-gray-600 whitespace-pre-line">{image.description}</p>
-                      </div>
-                    )}
-                    <span className="inline-block px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded-full">
-                      {image.category}
-                    </span>
-                  </div>
-                </>
-              )}
+                )}
+              </div>
             </div>
           ))}
         </div>
