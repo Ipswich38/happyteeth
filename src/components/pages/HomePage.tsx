@@ -412,7 +412,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </h3>
 
               <p className="text-gray-600 font-inter leading-relaxed mb-6">
-                Thank you for choosing HappyTeeth! We've received your appointment request and will send you a confirmation via text message within 24 hours.
+                Thank you for choosing HappyTeeth! We&apos;ve received your appointment request and will send you a confirmation via text message within 24 hours.
               </p>
 
               <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-4 mb-6 border border-primary-200">
