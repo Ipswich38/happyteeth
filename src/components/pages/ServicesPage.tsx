@@ -8,7 +8,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
       title: 'General Dentistry',
       description: 'Comprehensive dental care including examinations, cleanings, fillings, and preventive treatments for the whole family.',
       icon: '🦷',
-      specialist: 'DRA. CAMILA CAÑARES-PRICE & DRA. FEVI STELLA TORRALBA'
+      specialist: 'DRA. CAMILA CAÑARES-PRICE & DRA. FEVI STELLA TORRALBA-PIO'
     },
     {
       title: 'Oral Surgery & Extractions',

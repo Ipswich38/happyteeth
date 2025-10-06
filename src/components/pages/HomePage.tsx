@@ -266,7 +266,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Phone Number</h4>
-                    <p className="text-gray-600">09512168437</p>
+                    <p className="text-gray-600">09486867966</p>
                   </div>
                 </div>
 
@@ -302,7 +302,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </h4>
                 <p className="text-gray-600">
                   For dental emergencies, please call us at
-                  <span className="font-semibold text-primary-600"> 09512168437</span>
+                  <span className="font-semibold text-primary-600"> 09486867966</span>
                 </p>
               </div>
             </div>
