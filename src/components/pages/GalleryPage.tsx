@@ -39,6 +39,12 @@ export function GalleryPage() {
       imageUrl: '/Gallery/happyteethreception.png',
       description: 'Welcoming reception area designed for patient comfort and relaxation'
     },
+    {
+      title: 'Dental Implant',
+      category: 'Results',
+      imageUrl: '/Gallery/dental implant.jpg',
+      description: 'Small titanium posts surgically placed into the jawbone to act as artificial tooth roots. Looks, feels, and functions like natural teeth. Helps preserve jawbone and facial structure. No slipping or clicking like dentures. A long-term investment in your oral health.'
+    },
     { title: 'Advanced Equipment', category: 'Technology', description: 'State-of-the-art dental equipment for precise treatments' },
     { title: 'Comfortable Waiting Area', category: 'Facility', description: 'Relaxing environment while you wait for your appointment' },
     { title: 'Smile Transformation', category: 'Results', description: 'Beautiful smile makeovers and transformations' },
