@@ -16,8 +16,12 @@ export function AboutPage() {
         <div className="mb-20">
           <div className="bg-gradient-to-br from-primary-50 to-secondary-50 p-8 sm:p-12 rounded-3xl border-2 border-primary-200 shadow-lg">
             <div className="flex flex-col lg:flex-row items-center gap-10">
-              <div className="w-40 h-40 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center text-6xl shadow-lg flex-shrink-0">
-                👩‍⚕️
+              <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg flex-shrink-0 border-4 border-primary-200">
+                <img
+                  src="/DraCamilaPrice_founder.jpg"
+                  alt="Dra. Camila Cañares-Price, Founder"
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               <div className="flex-1 text-center lg:text-left">
