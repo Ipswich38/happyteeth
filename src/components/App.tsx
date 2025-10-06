@@ -9,7 +9,6 @@ import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { TeamPage } from './pages/TeamPage';
 import { GalleryPage } from './pages/GalleryPage';
-import { AppointmentPage } from './pages/AppointmentPage';
 import { Toaster } from './ui/sonner';
 
 export default function App() {
@@ -27,8 +26,6 @@ export default function App() {
         return <TeamPage />;
       case 'Gallery':
         return <GalleryPage />;
-      case 'Appointment':
-        return <AppointmentPage />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }

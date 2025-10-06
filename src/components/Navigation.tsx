@@ -41,6 +41,15 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                         document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
                       }, 100);
                     }
+                  } else if (item === 'Appointment') {
+                    if (currentPage === 'Home') {
+                      document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      onNavigate('Home');
+                      setTimeout(() => {
+                        document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }
                   } else {
                     onNavigate(item);
                   }
@@ -88,6 +97,15 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       onNavigate('Home');
                       setTimeout(() => {
                         document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }
+                  } else if (item === 'Appointment') {
+                    if (currentPage === 'Home') {
+                      document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      onNavigate('Home');
+                      setTimeout(() => {
+                        document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' });
                       }, 100);
                     }
                   } else {

@@ -92,7 +92,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </h2>
 
               <button
-                onClick={() => onNavigate('Appointment')}
+                onClick={() => document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-medium text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
               >
                 <span>📅</span>
@@ -104,17 +104,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Floating Appointment Form Section */}
-      <section className="relative -mt-16 z-20 px-4 sm:px-6 lg:px-8">
+      <section id="appointment-section" className="relative -mt-16 z-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl border border-primary-200/50 p-6 sm:p-8 lg:p-10 hover:shadow-3xl transition-all duration-500">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl sm:text-3xl font-playfair font-semibold text-gray-800 mb-3">
-                Book Your Appointment 📅
-              </h3>
-              <p className="text-gray-600 font-inter max-w-2xl mx-auto">
-                Schedule your visit today and take the first step towards a healthier, brighter smile!
-              </p>
-            </div>
 
             <form onSubmit={handleAppointmentSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
