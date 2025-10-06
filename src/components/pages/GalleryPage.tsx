@@ -3,7 +3,7 @@ export function GalleryPage() {
     title: 'Airflow Dental Cleaning',
     description: 'Experience our advanced Airflow dental cleaning technology that provides gentle, effective, and comfortable teeth cleaning for a brighter, healthier smile.',
     category: 'Technology',
-    videoUrl: '/airflow-dental-cleaning.mp4' // Placeholder - replace with actual video file
+    videoUrl: '/gallery/airflow-dental-cleaning.mp4'
   };
 
   const galleryImages = [
@@ -39,12 +39,16 @@ export function GalleryPage() {
 
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-cyan-100 to-cyan-200 flex items-center justify-center">
-                <div className="text-center text-gray-600">
-                  <div className="text-6xl mb-4">🎬</div>
-                  <h3 className="text-2xl font-semibold mb-2">{featuredVideo.title}</h3>
-                  <p className="text-sm opacity-75">Video placeholder - replace with actual video file</p>
-                </div>
+              <div className="aspect-video bg-black">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster="/gallery/airflow-thumbnail.jpg"
+                >
+                  <source src={featuredVideo.videoUrl} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
