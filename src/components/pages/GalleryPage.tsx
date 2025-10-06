@@ -15,6 +15,7 @@ export function GalleryPage() {
   ];
 
   const galleryImages = [
+    { title: 'Root Canal Treatment New Technology', category: 'Technology', imageUrl: '/Gallery/newtechnologyrootcanalgadget.png' },
     { title: 'Modern Reception Area', category: 'Facility' },
     { title: 'Treatment Room 1', category: 'Facility' },
     { title: 'Advanced Equipment', category: 'Technology' },
@@ -89,10 +90,18 @@ export function GalleryPage() {
           {galleryImages.map((image, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-64 bg-gradient-to-br from-cyan-100 to-cyan-200 flex items-center justify-center">
-                <div className="text-center text-gray-600">
-                  <div className="text-4xl mb-2">📸</div>
-                  <p className="text-sm">{image.title}</p>
-                </div>
+                {image.imageUrl ? (
+                  <img
+                    src={image.imageUrl}
+                    alt={image.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="text-center text-gray-600">
+                    <div className="text-4xl mb-2">📸</div>
+                    <p className="text-sm">{image.title}</p>
+                  </div>
+                )}
               </div>
               <div className="p-4">
                 <h3 className="font-semibold text-gray-900 mb-1">{image.title}</h3>
