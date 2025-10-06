@@ -1,12 +1,6 @@
 export function TeamPage() {
   const doctors = [
     {
-      name: 'DRA. CAMILA CAÑARES-PRICE',
-      title: 'General Dentist, Owner',
-      description: 'As the heart and leader of Happy Teeth, Dra Mai is dedicated to providing exceptional dental care to every patient. With years of experience in general dentistry, she is passionate about helping patients achieve healthy, beautiful smiles through personalized treatments and gentle care.',
-      icon: '👩‍⚕️'
-    },
-    {
       name: 'DR. JEROME OH',
       title: 'Oral Surgeon, Endodontics Specialist',
       description: 'With specialized training in both surgical and non-surgical procedures, Dr. Oh is dedicated to providing expert care for complex dental needs. He expertly handles root canal treatments and other procedures to preserve and restore natural teeth. He also ensures every procedure is performed with precision and patient comfort in mind.',
