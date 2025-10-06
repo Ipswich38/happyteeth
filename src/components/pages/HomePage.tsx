@@ -116,39 +116,42 @@ export function HomePage({ onNavigate }: HomePageProps) {
           }}
         ></div>
         <div className="relative z-10 w-full">
-          <div className="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8">
-            {/* Content centered */}
-            <div className="max-w-4xl text-center">
-              <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-2xl">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold mb-6 text-gray-900 leading-tight">
-                  Your Trusted Family Dental Clinic
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-16">
+              {/* Left Content */}
+              <div className="space-y-8">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-playfair font-bold text-gray-900 leading-tight">
+                  Welcome to <span className="text-primary-500">Happy Teeth</span>
                 </h1>
 
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-light mb-8 text-primary-600">
-                  Personalized Care That Leaves You Smiling with Confidence
+                <h2 className="text-2xl sm:text-3xl font-inter font-light text-gray-700">
+                  Where Smiles Shine Bright!
                 </h2>
 
-                <p className="text-lg sm:text-xl font-inter mb-10 text-gray-700 leading-relaxed max-w-3xl mx-auto">
-                  We treat every patient as family, delivering comprehensive dental services with advanced technology in a warm, welcoming environment. From routine care to specialized treatments, we make exceptional dental health accessible and comfortable for you and your loved ones.
+                <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
+                  Experience comprehensive dental care in a warm, welcoming environment with our team of specialists.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button
-                    onClick={() => {
-                      document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-cyan-500 hover:to-cyan-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                  >
-                    📅 Book Your Visit Today
-                  </button>
+                <div className="pt-4">
                   <button
                     onClick={() => {
                       document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="bg-primary-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:bg-primary-600 transition-all duration-300 hover:scale-105 shadow-lg"
+                    className="bg-gradient-to-r from-primary-400 to-primary-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg"
                   >
                     🦷 Explore Our Services
                   </button>
+                </div>
+              </div>
+
+              {/* Right Image Placeholder */}
+              <div className="flex justify-center lg:justify-end">
+                <div className="w-full max-w-md lg:max-w-lg aspect-square bg-gradient-to-br from-primary-100 to-secondary-100 rounded-3xl border-2 border-primary-200 shadow-lg flex items-center justify-center">
+                  <div className="text-center text-gray-500">
+                    <div className="text-6xl mb-4">🖼️</div>
+                    <p className="text-lg font-medium">Image Placeholder</p>
+                    <p className="text-sm opacity-75">We will add images later</p>
+                  </div>
                 </div>
               </div>
             </div>
