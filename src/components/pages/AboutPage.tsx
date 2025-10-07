@@ -51,11 +51,11 @@ export function AboutPage() {
           <div className="bg-gradient-to-br from-primary-50 to-secondary-50 p-8 sm:p-12 rounded-3xl border-2 border-primary-200 shadow-lg mb-12">
             <div className="max-w-4xl mx-auto space-y-6">
               <p className="text-lg text-gray-700 font-inter leading-relaxed">
-                <strong>Are you unhappy with your smile—or disappointed with past dental treatments?</strong> You're not alone. Many people feel unsure or frustrated with their results.
+                <strong>Are you unhappy with your smile—or disappointed with past dental treatments?</strong> You&apos;re not alone. Many people feel unsure or frustrated with their results.
               </p>
 
               <p className="text-lg text-gray-700 font-inter leading-relaxed">
-                At Happy Teeth, we believe you deserve better. Here, you're not just a patient—<strong>you're family</strong>. We take time to understand your needs, lifestyle, and budget to create a personalized dental care plan just for you.
+                At Happy Teeth, we believe you deserve better. Here, you&apos;re not just a patient—<strong>you&apos;re family</strong>. We take time to understand your needs, lifestyle, and budget to create a personalized dental care plan just for you.
               </p>
 
               <p className="text-lg text-gray-700 font-inter leading-relaxed">
