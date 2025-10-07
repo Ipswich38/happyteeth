@@ -45,33 +45,70 @@ export function AboutPage() {
         {/* What We Do Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-playfair font-bold text-gray-900 mb-6">What Makes Us Different</h2>
+            <h2 className="text-3xl font-playfair font-bold text-gray-900 mb-4">What Makes Us Different</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-inter">
+              You&apos;re not just a patient—you&apos;re family. We deliver personalized care that leaves you smiling with confidence.
+            </p>
           </div>
 
-          <div className="bg-gradient-to-br from-primary-50 to-secondary-50 p-8 sm:p-12 rounded-3xl border-2 border-primary-200 shadow-lg mb-12">
-            <div className="max-w-4xl mx-auto space-y-6">
-              <p className="text-lg text-gray-700 font-inter leading-relaxed">
-                <strong>Are you unhappy with your smile—or disappointed with past dental treatments?</strong> You&apos;re not alone. Many people feel unsure or frustrated with their results.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-primary-200 hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
+                👨‍👩‍👧‍👦
+              </div>
+              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Family-First Approach</h3>
+              <p className="text-gray-600 font-inter text-center leading-relaxed">
+                Personalized care plans tailored to your needs, lifestyle, and budget—treating every patient like family.
               </p>
+            </div>
 
-              <p className="text-lg text-gray-700 font-inter leading-relaxed">
-                At Happy Teeth, we believe you deserve better. Here, you&apos;re not just a patient—<strong>you&apos;re family</strong>. We take time to understand your needs, lifestyle, and budget to create a personalized dental care plan just for you.
+            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-secondary-300 hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-secondary-300 to-secondary-500 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
+                🏥
+              </div>
+              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Complete Dental Care</h3>
+              <p className="text-gray-600 font-inter text-center leading-relaxed">
+                All services under one roof—from general dentistry to specialized treatments including implants, orthodontics, and oral surgery.
               </p>
+            </div>
 
-              <p className="text-lg text-gray-700 font-inter leading-relaxed">
-                From routine exams to advanced treatments, our clinic offers a full range of services including <strong>General Dentistry, Prosthodontics, Root Canal & TMJ Therapy, Oral Surgery, Cosmetic and Orthodontic care, Pediatric Dentistry, and Implants</strong>.
+            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-accent-400 hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent-400 to-accent-500 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
+                💳
+              </div>
+              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Health Card Friendly</h3>
+              <p className="text-gray-600 font-inter text-center leading-relaxed">
+                Accept Maxicare, Medicard, and PhilCare—making quality dental care accessible for your family.
               </p>
+            </div>
 
-              <p className="text-lg text-gray-700 font-inter leading-relaxed">
-                Our mission is simple: to be your trusted, all-in-one family dental clinic in San Jose del Monte, Bulacan—delivering quality care that leaves you smiling with confidence.
+            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-primary-300 hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary-300 to-primary-500 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
+                💻
+              </div>
+              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Latest Technology</h3>
+              <p className="text-gray-600 font-inter text-center leading-relaxed">
+                Advanced digital technology in a clean, calm environment with experienced dentists and skilled assistants.
               </p>
+            </div>
 
-              <p className="text-lg text-gray-700 font-inter leading-relaxed">
-                Our experienced dentists use the latest digital technology in a clean, calm, and welcoming environment, supported by our friendly and skilled dental assistants.
+            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-secondary-400 hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-secondary-400 to-secondary-600 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
+                📍
+              </div>
+              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Local Trust</h3>
+              <p className="text-gray-600 font-inter text-center leading-relaxed">
+                Your trusted family dental clinic in San Jose del Monte, Bulacan—serving the community with quality care.
               </p>
+            </div>
 
-              <p className="text-lg text-gray-700 font-inter leading-relaxed">
-                We also accept major health cards like <strong>Maxicare, Medicard, and PhilCare</strong>—making great dental care even more accessible for you and your loved ones.
+            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-accent-500 hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
+                😊
+              </div>
+              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Comfort Focused</h3>
+              <p className="text-gray-600 font-inter text-center leading-relaxed">
+                Welcoming environment designed to help patients feel comfortable and confident about their dental care.
               </p>
             </div>
           </div>
