@@ -146,7 +146,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       title: 'Oral Surgery',
-      icon: '🔨'
+      icon: '🔨',
+      image: '/Gallery/oralsurgery.jpg'
     },
     {
       title: 'Dental Implants',
