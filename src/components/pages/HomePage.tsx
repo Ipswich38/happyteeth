@@ -142,7 +142,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       title: 'Root Canal Treatment',
-      icon: '🩺'
+      icon: '🩺',
+      image: '/Gallery/newtechnologyrootcanalgadget.png'
     },
     {
       title: 'Oral Surgery',
