@@ -38,7 +38,8 @@ export function TeamPage() {
       name: 'DR. JONATHAN PINEDA',
       title: 'TMJ Specialist',
       description: 'If you experience jaw pain, clicking sounds, or discomfort while chewing, Dr. Jonathan is here to help! As a TMJ Specialist, he focuses on diagnosing and treating temporomandibular joint (TMJ) disorders, helping patients find relief from pain and restore proper jaw function. He provides personalized treatment plans to improve jaw alignment, reduce discomfort, and enhance overall oral health.',
-      icon: '👨‍⚕️'
+      icon: '👨‍⚕️',
+      image: '/Team/Dr_Jonathan.png'
     },
     {
       name: 'DRA. SHIRLEY BAYOG',
