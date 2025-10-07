@@ -45,40 +45,33 @@ export function AboutPage() {
         {/* What We Do Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-playfair font-bold text-gray-900 mb-4">What Makes Us Different</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-inter">
-              We&apos;ve assembled a team of specialized professionals to provide comprehensive care under one roof.
-            </p>
+            <h2 className="text-3xl font-playfair font-bold text-gray-900 mb-6">What Makes Us Different</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-primary-200 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
-                👨‍⚕️
-              </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Expert Specialists</h3>
-              <p className="text-gray-600 font-inter text-center leading-relaxed">
-                Our team includes specialists in oral surgery, endodontics, orthodontics, pediatric dentistry, TMJ treatment, and cosmetic dentistry.
+          <div className="bg-gradient-to-br from-primary-50 to-secondary-50 p-8 sm:p-12 rounded-3xl border-2 border-primary-200 shadow-lg mb-12">
+            <div className="max-w-4xl mx-auto space-y-6">
+              <p className="text-lg text-gray-700 font-inter leading-relaxed">
+                <strong>Are you unhappy with your smile—or disappointed with past dental treatments?</strong> You're not alone. Many people feel unsure or frustrated with their results.
               </p>
-            </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-secondary-300 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-secondary-300 to-secondary-500 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
-                👨‍👩‍👧‍👦
-              </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">All Ages Welcome</h3>
-              <p className="text-gray-600 font-inter text-center leading-relaxed">
-                From pediatric care that makes children comfortable to comprehensive treatments for adults and seniors - we serve the whole family.
+              <p className="text-lg text-gray-700 font-inter leading-relaxed">
+                At Happy Teeth, we believe you deserve better. Here, you're not just a patient—<strong>you're family</strong>. We take time to understand your needs, lifestyle, and budget to create a personalized dental care plan just for you.
               </p>
-            </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-accent-400 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-accent-400 to-accent-500 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
-                💝
-              </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Comfort-Focused</h3>
-              <p className="text-gray-600 font-inter text-center leading-relaxed">
-                Every visit is designed to be stress-free and comfortable, with a gentle approach that puts even the most anxious patients at ease.
+              <p className="text-lg text-gray-700 font-inter leading-relaxed">
+                From routine exams to advanced treatments, our clinic offers a full range of services including <strong>General Dentistry, Prosthodontics, Root Canal & TMJ Therapy, Oral Surgery, Cosmetic and Orthodontic care, Pediatric Dentistry, and Implants</strong>.
+              </p>
+
+              <p className="text-lg text-gray-700 font-inter leading-relaxed">
+                Our mission is simple: to be your trusted, all-in-one family dental clinic in San Jose del Monte, Bulacan—delivering quality care that leaves you smiling with confidence.
+              </p>
+
+              <p className="text-lg text-gray-700 font-inter leading-relaxed">
+                Our experienced dentists use the latest digital technology in a clean, calm, and welcoming environment, supported by our friendly and skilled dental assistants.
+              </p>
+
+              <p className="text-lg text-gray-700 font-inter leading-relaxed">
+                We also accept major health cards like <strong>Maxicare, Medicard, and PhilCare</strong>—making great dental care even more accessible for you and your loved ones.
               </p>
             </div>
           </div>
