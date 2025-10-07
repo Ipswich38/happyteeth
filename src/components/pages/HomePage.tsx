@@ -130,39 +130,27 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const majorServices = [
     {
       title: 'Cosmetic Dentistry',
-      icon: '✨',
-      specialist: 'DRA. SHIRLEY BAYOG',
-      category: 'Premium'
+      icon: '✨'
     },
     {
       title: 'Orthodontics & Braces',
-      icon: '🦷',
-      specialist: 'DRA. FATIMA PORCIUNCULA',
-      category: 'Specialty'
+      icon: '🦷'
     },
     {
       title: 'TMJ Treatment',
-      icon: '💆‍♀️',
-      specialist: 'DR. JONATHAN PINEDA',
-      category: 'Specialty'
+      icon: '💆‍♀️'
     },
     {
       title: 'Root Canal Treatment',
-      icon: '🩺',
-      specialist: 'DR. JEROME OH',
-      category: 'Advanced'
+      icon: '🩺'
     },
     {
       title: 'Oral Surgery',
-      icon: '🔨',
-      specialist: 'DR. JEROME OH',
-      category: 'Advanced'
+      icon: '🔨'
     },
     {
       title: 'Dental Implants',
-      icon: '🦷',
-      specialist: 'Advanced Procedure',
-      category: 'Premium'
+      icon: '🦷'
     }
   ];
   return (
@@ -397,10 +385,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   <h3 className="font-playfair font-semibold text-gray-900 mb-2 text-sm lg:text-base group-hover:text-primary-600 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-xs text-gray-500 mb-3">{service.specialist}</p>
-                  <div className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs rounded-full font-medium">
-                    {service.category}
-                  </div>
                 </div>
               </div>
             ))}
