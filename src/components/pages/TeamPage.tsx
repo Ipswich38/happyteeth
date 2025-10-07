@@ -32,7 +32,8 @@ export function TeamPage() {
       name: 'DRA. FEVI STELLA TORRALBA-PIO',
       title: 'General Dentist',
       description: 'Dedicated to helping patients achieve and maintain healthy, beautiful smiles. Dr. Pio ensures that each treatment is tailored to meet the unique needs of every patient. She combines her gentle approach with years of experience, providing exceptional care that helps improve both the health and appearance of every patient\'s smile.',
-      icon: '👩‍⚕️'
+      icon: '👩‍⚕️',
+      image: '/Team/DraFevi.png'
     },
     {
       name: 'DR. JONATHAN PINEDA',
