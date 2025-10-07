@@ -93,7 +93,7 @@ export function TeamPage() {
               <div key={index} className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border-2 border-primary-200 hover:shadow-lg transition-all duration-300">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-4">
                   {doctor.image ? (
-                    <div className="w-40 h-40 rounded-2xl overflow-hidden flex-shrink-0" style={{ boxShadow: '0 10px 30px rgba(236, 72, 153, 0.3), 0 4px 15px rgba(236, 72, 153, 0.2)' }}>
+                    <div className="w-40 h-40 rounded-2xl overflow-hidden flex-shrink-0">
                       <img
                         src={doctor.image}
                         alt={doctor.name}
