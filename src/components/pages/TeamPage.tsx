@@ -22,7 +22,7 @@ export function TeamPage() {
       icon: '👩‍⚕️'
     },
     {
-      name: 'DRA. FATIMA PORCIUNCULA-PIO',
+      name: 'DRA. FATIMA PORCIUNCULA',
       title: 'Orthodontics',
       description: 'Specializing in straightening teeth and improving bite alignment, Dra. Fatima is passionate about helping patients achieve their dream smiles. She ensures every patient receives personalized care for a confident, healthy smile.',
       icon: '👩‍⚕️',
