@@ -108,7 +108,15 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="border-t border-primary-200/50 mt-6 sm:mt-8 pt-4 text-center">
           <p className="text-xs text-gray-500 font-inter leading-relaxed">
             © 2025 HappyTeeth Dental Care • Making smiles shine bright! ✨<br />
-            <span className="text-primary-500">Website design and created by Kreativloops</span>
+            <span className="text-primary-500">Website design and created by </span>
+            <a
+              href="https://kreativloopsbycherwinfernandez.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-500 hover:text-primary-600 underline transition-colors"
+            >
+              Kreativloops
+            </a>
           </p>
         </div>
       </div>
