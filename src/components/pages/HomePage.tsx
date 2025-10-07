@@ -231,8 +231,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     </div>
 
 
-                    {/* Slider Controls at Left Side */}
-                    <div className="absolute left-4 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-3 bg-black/30 backdrop-blur-md rounded-full px-2 py-4">
+                    {/* Slider Controls at Bottom */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-4 bg-black/30 backdrop-blur-md rounded-full px-4 py-2">
                       {/* Previous Button */}
                       <button
                         onClick={goToPrevImage}
