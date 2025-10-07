@@ -94,7 +94,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-md text-primary-600 hover:bg-primary-50 transition-colors"
+              className="p-3 min-w-[44px] min-h-[44px] rounded-md text-primary-600 hover:bg-primary-50 transition-colors flex items-center justify-center"
               aria-label="Toggle mobile menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,7 +147,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   }
                   setIsMobileMenuOpen(false);
                 }}
-                className={`w-full text-left px-4 py-3 text-base font-inter font-medium rounded-lg transition-all duration-200 ${
+                className={`w-full text-left px-4 py-4 min-h-[44px] text-base font-inter font-medium rounded-lg transition-all duration-200 flex items-center ${
                   item === 'Appointment'
                     ? 'text-white bg-gradient-to-r from-cyan-400 to-cyan-500 shadow-md hover:from-cyan-500 hover:to-cyan-600'
                     : currentPage === item
@@ -164,7 +164,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               href="https://www.facebook.com/canaresdentalclinic/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center px-4 py-3 text-base font-inter font-medium rounded-lg transition-all duration-200 text-gray-600 hover:text-pink-600 hover:bg-pink-50"
+              className="flex items-center px-4 py-4 min-h-[44px] text-base font-inter font-medium rounded-lg transition-all duration-200 text-gray-600 hover:text-pink-600 hover:bg-pink-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">

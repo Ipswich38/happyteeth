@@ -30,7 +30,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <li>
                 <button
                   onClick={() => onNavigate('Home')}
-                  className="text-xs text-gray-600 hover:text-primary-600 transition-colors font-inter"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors font-inter py-2 min-h-[44px] flex items-center"
                 >
                   Home
                 </button>
@@ -38,7 +38,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <li>
                 <button
                   onClick={() => onNavigate('About')}
-                  className="text-xs text-gray-600 hover:text-primary-600 transition-colors font-inter"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors font-inter py-2 min-h-[44px] flex items-center"
                 >
                   About
                 </button>
@@ -46,7 +46,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <li>
                 <button
                   onClick={() => onNavigate('Services')}
-                  className="text-xs text-gray-600 hover:text-primary-600 transition-colors font-inter"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors font-inter py-2 min-h-[44px] flex items-center"
                 >
                   Services
                 </button>
@@ -54,7 +54,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <li>
                 <button
                   onClick={() => onNavigate('Team')}
-                  className="text-xs text-gray-600 hover:text-primary-600 transition-colors font-inter"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors font-inter py-2 min-h-[44px] flex items-center"
                 >
                   Team
                 </button>
@@ -62,7 +62,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <li>
                 <button
                   onClick={() => onNavigate('Contact')}
-                  className="text-xs text-gray-600 hover:text-primary-600 transition-colors font-inter"
+                  className="text-sm text-gray-600 hover:text-primary-600 transition-colors font-inter py-2 min-h-[44px] flex items-center"
                 >
                   Contact
                 </button>
@@ -75,11 +75,11 @@ export function Footer({ onNavigate }: FooterProps) {
               <div>
                 <a
                   href="tel:+639486867966"
-                  className="text-xs text-primary-600 font-medium hover:text-primary-700 transition-colors cursor-pointer"
+                  className="text-sm text-primary-600 font-medium hover:text-primary-700 transition-colors cursor-pointer py-2 min-h-[44px] flex items-center"
                 >
                   09486867966
                 </a>
-                <p className="text-xs">Call or text for appointments!</p>
+                <p className="text-sm">Call or text for appointments!</p>
               </div>
               <div className="flex items-center">
                 <div className="w-5 h-5 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full flex items-center justify-center mr-2">
@@ -89,7 +89,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   href="https://www.facebook.com/canaresdentalclinic/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-pink-600 hover:text-pink-700 transition-colors"
+                  className="text-sm text-pink-600 hover:text-pink-700 transition-colors py-2 min-h-[44px] flex items-center"
                 >
                   Follow us on Facebook
                 </a>
@@ -99,9 +99,9 @@ export function Footer({ onNavigate }: FooterProps) {
           <div className="sm:col-span-2 lg:col-span-1">
             <h4 className="text-sm font-inter font-medium mb-3 text-gray-800">Clinic Hours</h4>
             <div className="space-y-1 text-gray-600 font-inter">
-              <p className="text-xs">Daily: 9:00 AM – 5:00 PM</p>
-              <p className="text-xs">Open 7 days a week!</p>
-              <p className="text-xs">Call ahead to schedule</p>
+              <p className="text-sm">Daily: 9:00 AM – 5:00 PM</p>
+              <p className="text-sm">Open 7 days a week!</p>
+              <p className="text-sm">Call ahead to schedule</p>
             </div>
           </div>
         </div>

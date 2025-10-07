@@ -236,7 +236,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       {/* Previous Button */}
                       <button
                         onClick={goToPrevImage}
-                        className="w-8 h-8 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group"
+                        className="w-11 h-11 min-w-[44px] min-h-[44px] bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group"
                         aria-label="Previous image"
                       >
                         <svg className="w-4 h-4 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -247,7 +247,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       {/* Play/Pause Button */}
                       <button
                         onClick={togglePlayPause}
-                        className="w-8 h-8 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group"
+                        className="w-11 h-11 min-w-[44px] min-h-[44px] bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group"
                         aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
                       >
                         {isPlaying ? (
@@ -264,7 +264,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       {/* Next Button */}
                       <button
                         onClick={goToNextImage}
-                        className="w-8 h-8 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group"
+                        className="w-11 h-11 min-w-[44px] min-h-[44px] bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group"
                         aria-label="Next image"
                       >
                         <svg className="w-4 h-4 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -302,7 +302,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     required
                     value={appointmentForm.name}
                     onChange={handleAppointmentChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80"
+                    className="w-full px-4 py-4 min-h-[44px] border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80 text-base"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -318,7 +318,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     required
                     value={appointmentForm.cellphone}
                     onChange={handleAppointmentChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80"
+                    className="w-full px-4 py-4 min-h-[44px] border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80 text-base"
                     placeholder="09XXXXXXXXX"
                   />
                 </div>
@@ -333,7 +333,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     required
                     value={appointmentForm.service}
                     onChange={handleAppointmentChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80"
+                    className="w-full px-4 py-4 min-h-[44px] border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80 text-base"
                   >
                     <option value="">Select a service</option>
                     {services.map((service) => (
@@ -356,7 +356,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     value={appointmentForm.date}
                     onChange={handleAppointmentChange}
                     min={new Date().toISOString().split('T')[0]}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80"
+                    className="w-full px-4 py-4 min-h-[44px] border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80 text-base"
                   />
                 </div>
               </div>
@@ -586,7 +586,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
+                    className="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 text-base"
                   />
                 </div>
 
@@ -601,7 +601,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
+                    className="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 text-base"
                   />
                 </div>
 
@@ -615,7 +615,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
+                    className="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 text-base"
                   />
                 </div>
 
@@ -630,13 +630,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
+                    className="w-full px-4 py-3 min-h-[44px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 text-base"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-primary-400 text-white py-3 rounded-lg font-semibold hover:bg-primary-500 transition-colors"
+                  className="w-full bg-primary-400 text-white py-4 min-h-[44px] rounded-lg font-semibold hover:bg-primary-500 transition-colors text-base"
                 >
                   Send Message
                 </button>
