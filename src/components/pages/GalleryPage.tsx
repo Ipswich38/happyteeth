@@ -169,12 +169,6 @@ export function GalleryPage() {
                   </div>
                 )}
 
-                {/* Category Badge */}
-                <div className="absolute top-4 right-4 z-20">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full border border-gray-200">
-                    {image.category}
-                  </span>
-                </div>
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6 z-10">
