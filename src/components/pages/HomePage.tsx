@@ -130,7 +130,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const majorServices = [
     {
       title: 'Cosmetic Dentistry',
-      icon: '✨'
+      icon: '✨',
+      image: '/Gallery/cosmeticdentistry.jpg'
     },
     {
       title: 'Orthodontics & Braces',
@@ -139,7 +140,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       title: 'TMJ Treatment',
-      icon: '💆‍♀️'
+      icon: '💆‍♀️',
+      image: '/Gallery/TMJ.jpg'
     },
     {
       title: 'Root Canal Treatment',
