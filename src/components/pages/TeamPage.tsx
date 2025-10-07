@@ -1,10 +1,19 @@
+interface TeamMember {
+  name: string;
+  title: string;
+  description: string;
+  icon: string;
+  image?: string;
+}
+
 export function TeamPage() {
-  const doctors = [
+  const doctors: TeamMember[] = [
     {
       name: 'DR. JEROME OH',
       title: 'Oral Surgeon, Endodontics Specialist',
       description: 'With specialized training in both surgical and non-surgical procedures, Dr. Oh is dedicated to providing expert care for complex dental needs. He expertly handles root canal treatments and other procedures to preserve and restore natural teeth. He also ensures every procedure is performed with precision and patient comfort in mind.',
-      icon: '👨‍⚕️'
+      icon: '👨‍⚕️',
+      image: '/gallery/team/Dr_JeromeOh.png'
     },
     {
       name: 'DRA. CLENCY',
@@ -82,9 +91,19 @@ export function TeamPage() {
             {doctors.map((doctor, index) => (
               <div key={index} className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border-2 border-primary-200 hover:shadow-lg transition-all duration-300">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center text-3xl shadow-lg">
-                    {doctor.icon}
-                  </div>
+                  {doctor.image ? (
+                    <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg border-2 border-primary-200 flex-shrink-0">
+                      <img
+                        src={doctor.image}
+                        alt={doctor.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center text-3xl shadow-lg">
+                      {doctor.icon}
+                    </div>
+                  )}
 
                   <div className="flex-1">
                     <h3 className="text-xl sm:text-2xl font-playfair font-semibold text-gray-800 mb-2">{doctor.name}</h3>
