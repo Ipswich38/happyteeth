@@ -19,7 +19,8 @@ export function TeamPage() {
       name: 'DRA. CLENCY',
       title: 'Pediatric Dentist',
       description: 'Specializing in children\'s dental care, Dra. Clency is dedicated to creating a fun, friendly, and stress-free experience for our youngest patients. With a gentle touch and a warm approach, she helps kids feel comfortable while teaching them the importance of good oral health. Because every child deserves a bright and healthy smile!',
-      icon: '👩‍⚕️'
+      icon: '👩‍⚕️',
+      image: '/Team/DraClency.png'
     },
     {
       name: 'DRA. FATIMA PORCIUNCULA',
