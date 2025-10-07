@@ -126,8 +126,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
     'Emergency Dental Care'
   ];
 
-  // Major high-revenue services based on specialist expertise
+  // Comprehensive services based on patient needs and specialist expertise
   const majorServices = [
+    {
+      title: 'General Consultation',
+      icon: '👩‍⚕️'
+    },
+    {
+      title: 'Dental Cleaning',
+      icon: '🪥'
+    },
     {
       title: 'Teeth Whitening',
       icon: '✨',
@@ -162,6 +170,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
       title: 'Digital X-ray',
       icon: '📷',
       image: '/Gallery/dentalxray.jpg'
+    },
+    {
+      title: 'Pediatric Dentistry',
+      icon: '👶'
     }
   ];
   return (
@@ -383,7 +395,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
             {majorServices.map((service, index) => (
               <div
                 key={index}
