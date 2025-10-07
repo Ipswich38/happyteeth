@@ -173,7 +173,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       title: 'Pediatric Dentistry',
-      icon: '👶'
+      icon: '👶',
+      image: '/Gallery/pediatric.png'
     }
   ];
   return (
