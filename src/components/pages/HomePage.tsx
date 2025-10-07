@@ -134,7 +134,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       title: 'Orthodontics & Braces',
-      icon: '🦷'
+      icon: '🦷',
+      image: '/Gallery/braces.jpg'
     },
     {
       title: 'TMJ Treatment',
