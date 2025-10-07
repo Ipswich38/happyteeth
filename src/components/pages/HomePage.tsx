@@ -130,11 +130,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const majorServices = [
     {
       title: 'General Consultation',
-      icon: '👩‍⚕️'
+      icon: '👩‍⚕️',
+      image: '/Gallery/GeneralConsulation.png'
     },
     {
       title: 'Dental Cleaning',
-      icon: '🪥'
+      icon: '🪥',
+      image: '/Gallery/teethcleaning.jpg'
     },
     {
       title: 'Teeth Whitening',
