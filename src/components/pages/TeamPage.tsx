@@ -13,7 +13,7 @@ export function TeamPage() {
       title: 'Oral Surgeon, Endodontics Specialist',
       description: 'With specialized training in both surgical and non-surgical procedures, Dr. Oh is dedicated to providing expert care for complex dental needs. He expertly handles root canal treatments and other procedures to preserve and restore natural teeth. He also ensures every procedure is performed with precision and patient comfort in mind.',
       icon: '👨‍⚕️',
-      image: '/gallery/team/Dr_JeromeOh.png'
+      image: '/Team/Dr_JeromeOh.png'
     },
     {
       name: 'DRA. CLENCY',
@@ -22,10 +22,11 @@ export function TeamPage() {
       icon: '👩‍⚕️'
     },
     {
-      name: 'DRA. FATIMA PORCIUNCULA',
+      name: 'DRA. FATIMA PORCIUNCULA-PIO',
       title: 'Orthodontics',
       description: 'Specializing in straightening teeth and improving bite alignment, Dra. Fatima is passionate about helping patients achieve their dream smiles. She ensures every patient receives personalized care for a confident, healthy smile.',
-      icon: '👩‍⚕️'
+      icon: '👩‍⚕️',
+      image: '/Team/Dra_Fatima.png'
     },
     {
       name: 'DRA. FEVI STELLA TORRALBA-PIO',
@@ -92,11 +93,11 @@ export function TeamPage() {
               <div key={index} className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border-2 border-primary-200 hover:shadow-lg transition-all duration-300">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                   {doctor.image ? (
-                    <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg border-2 border-primary-200 flex-shrink-0">
+                    <div className="w-32 h-32 rounded-2xl overflow-hidden shadow-xl border-4 border-primary-300 flex-shrink-0 bg-white p-1">
                       <img
                         src={doctor.image}
                         alt={doctor.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover rounded-xl"
                       />
                     </div>
                   ) : (
