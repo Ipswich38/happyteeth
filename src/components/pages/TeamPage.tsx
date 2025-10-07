@@ -52,7 +52,8 @@ export function TeamPage() {
       name: 'DRA. SHIRLEY BAYOG',
       title: 'Cosmetic Dentistry',
       description: 'Dreaming of a brighter, more confident smile? Dr. Shirley, our Cosmetic/Aesthetic Dentist, specializes in creating natural, beautiful smiles through teeth whitening, veneers, crowns, and full smile makeovers. With her artistry and advanced techniques, she helps patients leave the clinic not just with better teeth—but with greater confidence.',
-      icon: '👩‍⚕️'
+      icon: '👩‍⚕️',
+      image: '/Team/Dra_Shirley.png'
     }
   ];
 
