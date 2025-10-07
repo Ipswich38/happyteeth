@@ -244,43 +244,47 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       ))}
                     </div>
 
-                    {/* Navigation Arrow Buttons */}
-                    <button
-                      onClick={goToPrevImage}
-                      className="absolute left-3 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group backdrop-blur-sm"
-                      aria-label="Previous image"
-                    >
-                      <svg className="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-
-                    <button
-                      onClick={goToNextImage}
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group backdrop-blur-sm"
-                      aria-label="Next image"
-                    >
-                      <svg className="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-
-                    {/* Play/Pause Button */}
-                    <button
-                      onClick={togglePlayPause}
-                      className="absolute top-4 left-4 w-10 h-10 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group backdrop-blur-sm"
-                      aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
-                    >
-                      {isPlaying ? (
-                        <svg className="w-4 h-4 text-gray-700 group-hover:text-gray-900 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                    {/* Slider Controls at Bottom */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-4 bg-black/30 backdrop-blur-md rounded-full px-4 py-2">
+                      {/* Previous Button */}
+                      <button
+                        onClick={goToPrevImage}
+                        className="w-8 h-8 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group"
+                        aria-label="Previous image"
+                      >
+                        <svg className="w-4 h-4 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
-                      ) : (
-                        <svg className="w-4 h-4 text-gray-700 group-hover:text-gray-900 transition-colors ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
+                      </button>
+
+                      {/* Play/Pause Button */}
+                      <button
+                        onClick={togglePlayPause}
+                        className="w-8 h-8 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group"
+                        aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
+                      >
+                        {isPlaying ? (
+                          <svg className="w-3 h-3 text-gray-700 group-hover:text-gray-900 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                          </svg>
+                        ) : (
+                          <svg className="w-3 h-3 text-gray-700 group-hover:text-gray-900 transition-colors ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        )}
+                      </button>
+
+                      {/* Next Button */}
+                      <button
+                        onClick={goToNextImage}
+                        className="w-8 h-8 bg-white/80 hover:bg-white/95 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group"
+                        aria-label="Next image"
+                      >
+                        <svg className="w-4 h-4 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
-                      )}
-                    </button>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
