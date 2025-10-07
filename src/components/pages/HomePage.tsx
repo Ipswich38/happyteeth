@@ -230,22 +230,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       </div>
                     </div>
 
-                    {/* Image Counter Dots */}
-                    <div className="absolute bottom-4 left-4 flex space-x-2">
-                      {heroImages.map((_, index) => (
-                        <div
-                          key={index}
-                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                            index === currentImageIndex
-                              ? 'bg-white shadow-md scale-125'
-                              : 'bg-white/50'
-                          }`}
-                        ></div>
-                      ))}
-                    </div>
 
-                    {/* Slider Controls at Bottom */}
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-4 bg-black/30 backdrop-blur-md rounded-full px-4 py-2">
+                    {/* Slider Controls at Left Side */}
+                    <div className="absolute left-4 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-3 bg-black/30 backdrop-blur-md rounded-full px-2 py-4">
                       {/* Previous Button */}
                       <button
                         onClick={goToPrevImage}
