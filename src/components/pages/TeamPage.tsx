@@ -64,25 +64,29 @@ export function TeamPage() {
       name: 'MS. JEZEL ROCHE',
       title: 'Front-Desk Staff',
       description: 'The first smile you see when you walk into our clinic belongs to Jezel! With a warm and welcoming approach, she is here to assist with appointments, answer your questions, and make sure you feel at home the moment you arrive. Whether it\'s scheduling your visit or providing helpful information, she is dedicated to making your experience smooth and stress-free.',
-      icon: '💼'
+      icon: '💼',
+      image: '/Team/support/10.png'
     },
     {
       name: 'MS. MHAY BLANQUEZA',
       title: 'Dental Assistant, Treatment Coordinator',
       description: 'From preparing instruments to comforting patients, Mhay ensures every visit is smooth and stress-free. Whether assisting with procedures or providing helpful oral care tips, she is always ready to support both our dentists and patients with a gentle touch and a warm smile. Her dedication helps create a comfortable and reassuring experience for everyone who walks through our doors.',
-      icon: '🦷'
+      icon: '🦷',
+      image: '/Team/support/11.png'
     },
     {
       name: 'MS. EDNA TATIMO',
       title: 'Lead Dental Assistant',
       description: 'Always ready to assist our dentists, Edz plays a key role in making sure every procedure runs smoothly. With her caring and attentive approach, she ensures that patients feel comfortable before, during, and after treatments. Her dedication and gentle touch help create a positive and stress-free dental experience for everyone.',
-      icon: '🩺'
+      icon: '🩺',
+      image: '/Team/support/9.png'
     },
     {
       name: 'MICH BLASCO',
       title: 'Admin, Editor',
       description: 'From managing schedules and coordinating patient care to handling paperwork and keeping our Facebook page updated, she ensures everything runs smoothly. With professionalism and attention to detail, Mich helps create a stress-free experience for both our team and our valued patients.',
-      icon: '📋'
+      icon: '📋',
+      image: '/Team/support/12.png'
     }
   ];
 
@@ -134,10 +138,20 @@ export function TeamPage() {
           <div className="space-y-8">
             {supportTeam.map((member, index) => (
               <div key={index} className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border-2 border-secondary-300 hover:shadow-lg transition-all duration-300">
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-secondary-300 to-secondary-500 rounded-full flex items-center justify-center text-3xl shadow-lg">
-                    {member.icon}
-                  </div>
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-4">
+                  {member.image ? (
+                    <div className="w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-20 h-20 bg-gradient-to-br from-secondary-300 to-secondary-500 rounded-full flex items-center justify-center text-3xl shadow-lg">
+                      {member.icon}
+                    </div>
+                  )}
 
                   <div className="flex-1">
                     <h3 className="text-xl sm:text-2xl font-playfair font-semibold text-gray-800 mb-2">{member.name}</h3>
