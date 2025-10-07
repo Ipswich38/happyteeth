@@ -140,7 +140,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       title: 'TMJ Treatment',
-      icon: '💆‍♀️'
+      icon: '💆‍♀️',
+      image: '/Gallery/TMJnew.jpg'
     },
     {
       title: 'Root Canal Treatment',
