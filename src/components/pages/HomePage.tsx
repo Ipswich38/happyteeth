@@ -129,7 +129,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   // Major high-revenue services based on specialist expertise
   const majorServices = [
     {
-      title: 'Cosmetic Dentistry',
+      title: 'Teeth Whitening',
       icon: '✨',
       image: '/Gallery/cosmeticdentistry.jpg'
     },
@@ -156,6 +156,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
       title: 'Dental Implants',
       icon: '🦷',
       image: '/Gallery/dental implant.jpg'
+    },
+    {
+      title: 'Digital X-ray',
+      icon: '📷',
+      image: '/Gallery/dentalxray.jpg'
     }
   ];
   return (
@@ -371,7 +376,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section id="services-section" className="py-16 sm:py-20 bg-gradient-to-br from-white to-primary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-4">Our Major Services</h2>
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-4">Our Services</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Comprehensive dental care with specialized expertise in high-quality treatments
             </p>
