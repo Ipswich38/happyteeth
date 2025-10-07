@@ -42,6 +42,13 @@ export function TeamPage() {
       image: '/Team/Dr_Jonathan.png'
     },
     {
+      name: 'DR. FELIPE SUPILANA',
+      title: 'Dental Implant Specialist',
+      description: 'Looking to restore your smile with dental implants? Dr. Felipe brings specialized expertise with certifications in the Straumann and Bicon Dental Implant Systems. With advanced training in implant dentistry, he provides patients with cutting-edge treatment options and personalized care to restore missing teeth with precision and lasting results.',
+      icon: '👨‍⚕️',
+      image: '/Team/Dr_Felipe.png'
+    },
+    {
       name: 'DRA. SHIRLEY BAYOG',
       title: 'Cosmetic Dentistry',
       description: 'Dreaming of a brighter, more confident smile? Dr. Shirley, our Cosmetic/Aesthetic Dentist, specializes in creating natural, beautiful smiles through teeth whitening, veneers, crowns, and full smile makeovers. With her artistry and advanced techniques, she helps patients leave the clinic not just with better teeth—but with greater confidence.',
