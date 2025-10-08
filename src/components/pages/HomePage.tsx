@@ -448,48 +448,39 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       <section className="py-16 sm:py-20 bg-gradient-to-br from-primary-50 to-secondary-50 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-semibold text-gray-800 mb-4 sm:mb-6">
-              Why Our Patients Love Us! 💕
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 font-inter max-w-3xl mx-auto leading-relaxed px-4">
-              We provide comprehensive dental care for patients of all ages, making every visit comfortable and stress-free
-            </p>
-          </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-semibold text-gray-800 mb-8 sm:mb-12">
+            What Makes Us Different
+          </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-primary-200 hover:border-primary-300">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                👨‍⚕️
-              </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Expert Dental Care</h3>
-              <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
-                Our experienced dental professionals provide gentle, comprehensive care for patients of all ages, from children to seniors
+          <div className="space-y-8 sm:space-y-12">
+            <div className="group">
+              <h3 className="text-xl sm:text-2xl font-playfair font-medium text-primary-600 mb-2 group-hover:text-primary-700 transition-colors">
+                👨‍⚕️ Expert Care for Every Age
+              </h3>
+              <p className="text-base sm:text-lg text-gray-600 font-inter max-w-2xl mx-auto">
+                From toddlers to grandparents, our gentle approach makes dental visits comfortable and stress-free
               </p>
             </div>
 
-            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-secondary-300 hover:border-secondary-400">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-secondary-300 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                🏥
-              </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Modern & Comfortable</h3>
-              <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
-                State-of-the-art equipment and a relaxing environment ensure your comfort throughout every procedure
+            <div className="group">
+              <h3 className="text-xl sm:text-2xl font-playfair font-medium text-secondary-600 mb-2 group-hover:text-secondary-700 transition-colors">
+                🏥 Modern Technology, Relaxing Environment
+              </h3>
+              <p className="text-base sm:text-lg text-gray-600 font-inter max-w-2xl mx-auto">
+                State-of-the-art equipment meets spa-like comfort for the ultimate dental experience
               </p>
             </div>
 
-            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-accent-400 hover:border-accent-500 sm:col-span-2 lg:col-span-1">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-accent-400 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                👨‍👩‍👧‍👦
-              </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Comprehensive Services</h3>
-              <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
-                From routine cleanings to advanced procedures, we offer complete dental care including pediatric, cosmetic, and restorative services
+            <div className="group">
+              <h3 className="text-xl sm:text-2xl font-playfair font-medium text-accent-600 mb-2 group-hover:text-accent-700 transition-colors">
+                👨‍👩‍👧‍👦 Complete Family Dental Care
+              </h3>
+              <p className="text-base sm:text-lg text-gray-600 font-inter max-w-2xl mx-auto">
+                One practice for all your family's needs - from preventive care to advanced specialty treatments
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
