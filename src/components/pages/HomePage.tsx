@@ -477,7 +477,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 👨‍👩‍👧‍👦 Complete Family Dental Care
               </h3>
               <p className="text-base sm:text-lg text-gray-600 font-inter max-w-2xl mx-auto">
-                One practice for all your family's needs - from preventive care to advanced specialty treatments
+                One practice for all your family&apos;s needs - from preventive care to advanced specialty treatments
               </p>
             </div>
           </div>
