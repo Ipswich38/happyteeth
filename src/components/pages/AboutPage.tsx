@@ -111,63 +111,81 @@ export function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-primary-200 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
-                👨‍👩‍👧‍👦
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="text-center group hover:-translate-y-2 transition-all duration-500">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-rose-100 via-pink-50 to-red-100 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 rotate-3 group-hover:rotate-6">
+                  <span className="transform group-hover:scale-110 transition-transform duration-300">👨‍👩‍👧‍👦</span>
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Family-First Approach</h3>
-              <p className="text-gray-600 font-inter text-center leading-relaxed">
+              <h3 className="text-xl font-playfair font-bold text-gray-800 mb-4 group-hover:text-rose-700 transition-colors duration-300">Family-First Approach</h3>
+              <p className="text-gray-600 font-inter leading-relaxed">
                 Personalized care plans tailored to your needs, lifestyle, and budget—treating every patient like family.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-secondary-300 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-secondary-300 to-secondary-500 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
-                🏥
+            <div className="text-center group hover:-translate-y-2 transition-all duration-500">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-100 via-indigo-50 to-purple-100 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 -rotate-3 group-hover:-rotate-6">
+                  <span className="transform group-hover:scale-110 transition-transform duration-300">🏥</span>
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Complete Dental Care</h3>
-              <p className="text-gray-600 font-inter text-center leading-relaxed">
+              <h3 className="text-xl font-playfair font-bold text-gray-800 mb-4 group-hover:text-blue-700 transition-colors duration-300">Complete Dental Care</h3>
+              <p className="text-gray-600 font-inter leading-relaxed">
                 All services under one roof—from general dentistry to specialized treatments including implants, orthodontics, and oral surgery.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-accent-400 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-accent-400 to-accent-500 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
-                💳
+            <div className="text-center group hover:-translate-y-2 transition-all duration-500">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-emerald-100 via-teal-50 to-cyan-100 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 rotate-2 group-hover:rotate-4">
+                  <span className="transform group-hover:scale-110 transition-transform duration-300">💳</span>
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Health Card Friendly</h3>
-              <p className="text-gray-600 font-inter text-center leading-relaxed">
+              <h3 className="text-xl font-playfair font-bold text-gray-800 mb-4 group-hover:text-emerald-700 transition-colors duration-300">Health Card Friendly</h3>
+              <p className="text-gray-600 font-inter leading-relaxed">
                 Accept Maxicare, Medicard, and PhilCare—making quality dental care accessible for your family.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-primary-300 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-300 to-primary-500 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
-                💻
+            <div className="text-center group hover:-translate-y-2 transition-all duration-500">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-violet-100 via-purple-50 to-fuchsia-100 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 -rotate-2 group-hover:-rotate-4">
+                  <span className="transform group-hover:scale-110 transition-transform duration-300">💻</span>
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-violet-400 to-purple-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Latest Technology</h3>
-              <p className="text-gray-600 font-inter text-center leading-relaxed">
+              <h3 className="text-xl font-playfair font-bold text-gray-800 mb-4 group-hover:text-violet-700 transition-colors duration-300">Latest Technology</h3>
+              <p className="text-gray-600 font-inter leading-relaxed">
                 Advanced digital technology in a clean, calm environment with experienced dentists and skilled assistants.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-secondary-400 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-secondary-400 to-secondary-600 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
-                📍
+            <div className="text-center group hover:-translate-y-2 transition-all duration-500">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-amber-100 via-yellow-50 to-orange-100 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 rotate-1 group-hover:rotate-3">
+                  <span className="transform group-hover:scale-110 transition-transform duration-300">📍</span>
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Local Trust</h3>
-              <p className="text-gray-600 font-inter text-center leading-relaxed">
+              <h3 className="text-xl font-playfair font-bold text-gray-800 mb-4 group-hover:text-amber-700 transition-colors duration-300">Local Trust</h3>
+              <p className="text-gray-600 font-inter leading-relaxed">
                 Your trusted family dental clinic in San Jose del Monte, Bulacan—serving the community with quality care.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-sm border-2 border-accent-500 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
-                😊
+            <div className="text-center group hover:-translate-y-2 transition-all duration-500">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-lime-100 via-green-50 to-emerald-100 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 -rotate-1 group-hover:-rotate-3">
+                  <span className="transform group-hover:scale-110 transition-transform duration-300">😊</span>
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-lime-400 to-green-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-3 text-center">Comfort Focused</h3>
-              <p className="text-gray-600 font-inter text-center leading-relaxed">
+              <h3 className="text-xl font-playfair font-bold text-gray-800 mb-4 group-hover:text-lime-700 transition-colors duration-300">Comfort Focused</h3>
+              <p className="text-gray-600 font-inter leading-relaxed">
                 Welcoming environment designed to help patients feel comfortable and confident about their dental care.
               </p>
             </div>

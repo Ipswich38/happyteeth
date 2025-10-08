@@ -402,21 +402,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
             {majorServices.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white hover:bg-primary-500 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-primary-100 hover:border-primary-500 cursor-pointer"
+                className="group bg-gradient-to-br from-gray-50 to-gray-100 hover:from-primary-500 hover:to-primary-600 rounded-3xl p-6 hover:shadow-xl transition-all duration-500 hover:-translate-y-3 cursor-pointer"
               >
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-primary-400 group-hover:bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-3xl shadow-md group-hover:scale-110 transition-all duration-300 overflow-hidden">
+                  <div className="w-18 h-18 bg-white group-hover:bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 overflow-hidden backdrop-blur-sm">
                     {service.image ? (
                       <img
                         src={service.image}
                         alt={service.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover rounded-xl"
                       />
                     ) : (
                       service.icon
                     )}
                   </div>
-                  <h3 className="font-playfair font-semibold text-gray-900 group-hover:text-white mb-2 text-sm lg:text-base transition-colors duration-300">
+                  <h3 className="font-playfair font-semibold text-gray-800 group-hover:text-white mb-2 text-sm lg:text-base transition-colors duration-500">
                     {service.title}
                   </h3>
                 </div>
@@ -458,32 +458,44 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-primary-200 hover:border-primary-300">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                👨‍⚕️
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+            <div className="text-center group">
+              <div className="relative">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-br from-blue-100 via-cyan-50 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl sm:text-5xl shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-200/30 to-cyan-200/30 rounded-full animate-pulse"></div>
+                  <span className="relative z-10">👨‍⚕️</span>
+                </div>
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Expert Dental Care</h3>
+              <h3 className="text-xl sm:text-2xl font-playfair font-bold mb-4 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">Expert Dental Care</h3>
               <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
                 Our experienced dental professionals provide gentle, comprehensive care for patients of all ages, from children to seniors
               </p>
             </div>
 
-            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-secondary-300 hover:border-secondary-400">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-secondary-300 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                🏥
+            <div className="text-center group">
+              <div className="relative">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl sm:text-5xl shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/30 to-green-200/30 rounded-full animate-pulse"></div>
+                  <span className="relative z-10">🏥</span>
+                </div>
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Modern & Comfortable</h3>
+              <h3 className="text-xl sm:text-2xl font-playfair font-bold mb-4 text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">Modern & Comfortable</h3>
               <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
                 State-of-the-art equipment and a relaxing environment ensure your comfort throughout every procedure
               </p>
             </div>
 
-            <div className="text-center p-6 sm:p-8 bg-white rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-accent-400 hover:border-accent-500 sm:col-span-2 lg:col-span-1">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-accent-400 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-3xl sm:text-4xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                👨‍👩‍👧‍👦
+            <div className="text-center group sm:col-span-2 lg:col-span-1">
+              <div className="relative">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-br from-purple-100 via-pink-50 to-rose-100 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl sm:text-5xl shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-200/30 to-pink-200/30 rounded-full animate-pulse"></div>
+                  <span className="relative z-10">👨‍👩‍👧‍👦</span>
+                </div>
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-medium mb-3 sm:mb-4 text-gray-800">Comprehensive Services</h3>
+              <h3 className="text-xl sm:text-2xl font-playfair font-bold mb-4 text-gray-800 group-hover:text-purple-700 transition-colors duration-300">Comprehensive Services</h3>
               <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
                 From routine cleanings to advanced procedures, we offer complete dental care including pediatric, cosmetic, and restorative services
               </p>
