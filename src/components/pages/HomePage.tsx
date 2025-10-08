@@ -479,7 +479,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
                 <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{background: 'linear-gradient(to right, #41C595, #53B3B6)'}}></div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-bold mb-4 text-gray-800 transition-colors duration-300" style={{'--hover-color': '#41C595'}} onMouseEnter={(e) => e.currentTarget.style.color = '#41C595'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Expert Dental Care</h3>
+              <h3 className="text-xl sm:text-2xl font-playfair font-bold mb-4 text-gray-800 transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#41C595'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Expert Dental Care</h3>
               <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
                 Our experienced dental professionals provide gentle, comprehensive care for patients of all ages, from children to seniors
               </p>
