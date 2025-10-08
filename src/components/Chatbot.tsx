@@ -35,7 +35,7 @@ export function Chatbot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-4 right-4 bg-cyan-500 text-white p-4 rounded-full shadow-lg hover:bg-cyan-600 transition-colors z-50"
+          className="fixed bottom-4 right-4 text-white p-4 rounded-full shadow-lg transition-colors z-50" style={{backgroundColor: '#9ADFDB'}} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#53B3B6'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#9ADFDB'}
         >
           💬
         </button>
@@ -43,7 +43,7 @@ export function Chatbot() {
 
       {isOpen && (
         <div className="fixed bottom-4 right-4 w-80 h-96 bg-white border border-gray-300 rounded-lg shadow-xl z-50 flex flex-col">
-          <div className="bg-cyan-500 text-white p-4 rounded-t-lg flex justify-between items-center">
+          <div className="text-white p-4 rounded-t-lg flex justify-between items-center" style={{backgroundColor: '#9ADFDB'}}>
             <h3 className="font-semibold">Chat with us</h3>
             <button
               onClick={() => setIsOpen(false)}
@@ -63,8 +63,9 @@ export function Chatbot() {
                   className={`inline-block p-2 rounded-lg max-w-xs ${
                     message.isBot
                       ? 'bg-gray-100 text-gray-800'
-                      : 'bg-cyan-500 text-white'
+                      : 'text-white'
                   }`}
+                  style={!message.isBot ? {backgroundColor: '#9ADFDB'} : {}}
                 >
                   {message.text}
                 </div>
@@ -80,7 +81,7 @@ export function Chatbot() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                 placeholder="Type your message..."
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2" onFocus={(e) => e.currentTarget.style.outline = '2px solid #9ADFDB'} onBlur={(e) => e.currentTarget.style.outline = ''}
               />
               <button
                 onClick={handleSendMessage}
