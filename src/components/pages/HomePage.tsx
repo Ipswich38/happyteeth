@@ -398,30 +398,42 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
-            {majorServices.map((service, index) => (
-              <div
-                key={index}
-                className="group bg-gradient-to-br from-gray-50 to-gray-100 hover:from-primary-500 hover:to-primary-600 rounded-3xl p-6 hover:shadow-xl transition-all duration-500 hover:-translate-y-3 cursor-pointer"
-              >
-                <div className="text-center">
-                  <div className="w-18 h-18 bg-white group-hover:bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 overflow-hidden backdrop-blur-sm">
-                    {service.image ? (
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover rounded-xl"
-                      />
-                    ) : (
-                      service.icon
-                    )}
+          <div className="relative max-w-7xl mx-auto">
+            {/* Services Grid - 2 rows x 5 columns on desktop */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
+              {majorServices.map((service, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-2xl lg:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer hover:-translate-y-2 aspect-square"
+                >
+                  {/* Background Image */}
+                  {service.image ? (
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center text-4xl lg:text-3xl">
+                      {service.icon}
+                    </div>
+                  )}
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                  {/* Service Title Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-3 lg:p-2">
+                    <h3 className="text-white font-bold text-base lg:text-sm font-playfair drop-shadow-lg group-hover:text-primary-300 transition-colors duration-300 leading-tight">
+                      {service.title}
+                    </h3>
                   </div>
-                  <h3 className="font-playfair font-semibold text-gray-800 group-hover:text-white mb-2 text-sm lg:text-base transition-colors duration-500">
-                    {service.title}
-                  </h3>
+
+                  {/* Hover Enhancement */}
+                  <div className="absolute inset-0 ring-0 group-hover:ring-4 group-hover:ring-primary-400/30 rounded-2xl lg:rounded-xl transition-all duration-300"></div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           <div className="text-center mt-12">
@@ -461,13 +473,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
             <div className="text-center group">
               <div className="relative">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-br from-blue-100 via-cyan-50 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl sm:text-5xl shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-200/30 to-cyan-200/30 rounded-full animate-pulse"></div>
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl sm:text-5xl shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-500 relative overflow-hidden" style={{background: 'linear-gradient(to bottom right, #9ADFDB, #41C595)'}}>
+                  <div className="absolute inset-0 rounded-full animate-pulse" style={{background: 'linear-gradient(to bottom right, rgba(154, 223, 219, 0.3), rgba(65, 197, 149, 0.3))'}}></div>
                   <span className="relative z-10">👨‍⚕️</span>
                 </div>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
+                <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{background: 'linear-gradient(to right, #41C595, #53B3B6)'}}></div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-bold mb-4 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">Expert Dental Care</h3>
+              <h3 className="text-xl sm:text-2xl font-playfair font-bold mb-4 text-gray-800 transition-colors duration-300" style={{'--hover-color': '#41C595'}} onMouseEnter={(e) => e.currentTarget.style.color = '#41C595'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Expert Dental Care</h3>
               <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
                 Our experienced dental professionals provide gentle, comprehensive care for patients of all ages, from children to seniors
               </p>
@@ -475,13 +487,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
             <div className="text-center group">
               <div className="relative">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-br from-emerald-100 via-green-50 to-lime-100 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl sm:text-5xl shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/30 to-green-200/30 rounded-full animate-pulse"></div>
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl sm:text-5xl shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-500 relative overflow-hidden" style={{background: 'linear-gradient(to bottom right, #F1AFC4, #FF77A3)'}}>
+                  <div className="absolute inset-0 rounded-full animate-pulse" style={{background: 'linear-gradient(to bottom right, rgba(241, 175, 196, 0.3), rgba(255, 119, 163, 0.3))'}}></div>
                   <span className="relative z-10">🏥</span>
                 </div>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
+                <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{background: 'linear-gradient(to right, #FF77A3, #ECC1CA)'}}></div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-bold mb-4 text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">Modern & Comfortable</h3>
+              <h3 className="text-xl sm:text-2xl font-playfair font-bold mb-4 text-gray-800 transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#FF77A3'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Modern & Comfortable</h3>
               <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
                 State-of-the-art equipment and a relaxing environment ensure your comfort throughout every procedure
               </p>
@@ -489,13 +501,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
             <div className="text-center group sm:col-span-2 lg:col-span-1">
               <div className="relative">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-br from-purple-100 via-pink-50 to-rose-100 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl sm:text-5xl shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-500 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-200/30 to-pink-200/30 rounded-full animate-pulse"></div>
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl sm:text-5xl shadow-2xl group-hover:shadow-3xl group-hover:scale-110 transition-all duration-500 relative overflow-hidden" style={{background: 'linear-gradient(to bottom right, #ECC1CA, #F1AFC4)'}}>
+                  <div className="absolute inset-0 rounded-full animate-pulse" style={{background: 'linear-gradient(to bottom right, rgba(236, 193, 202, 0.3), rgba(241, 175, 196, 0.3))'}}></div>
                   <span className="relative z-10">👨‍👩‍👧‍👦</span>
                 </div>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
+                <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce" style={{background: 'linear-gradient(to right, #ECC1CA, #FF77A3)'}}></div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-playfair font-bold mb-4 text-gray-800 group-hover:text-purple-700 transition-colors duration-300">Comprehensive Services</h3>
+              <h3 className="text-xl sm:text-2xl font-playfair font-bold mb-4 text-gray-800 transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#ECC1CA'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Comprehensive Services</h3>
               <p className="text-sm sm:text-base text-gray-600 font-inter leading-relaxed">
                 From routine cleanings to advanced procedures, we offer complete dental care including pediatric, cosmetic, and restorative services
               </p>
@@ -589,7 +601,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="mt-8 p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300" style={{background: 'linear-gradient(to bottom right, rgba(241, 175, 196, 0.2), rgba(255, 119, 163, 0.2))'}}>
                 <h4 className="text-xl font-semibold text-gray-900 mb-3 flex items-center space-x-2">
                   <span>🚨</span>
                   <span>Emergency Care</span>
@@ -601,7 +613,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-white to-blue-50/30 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+            <div className="p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1" style={{background: 'linear-gradient(to bottom right, white, rgba(154, 223, 219, 0.15))'}}>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
