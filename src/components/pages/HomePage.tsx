@@ -402,10 +402,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
             {majorServices.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-primary-100 hover:border-primary-300"
+                className="group bg-white hover:bg-primary-500 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-2 border-primary-100 hover:border-primary-500 cursor-pointer"
               >
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl shadow-md group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-primary-400 group-hover:bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-3xl shadow-md group-hover:scale-110 transition-all duration-300 overflow-hidden">
                     {service.image ? (
                       <img
                         src={service.image}
@@ -416,7 +416,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       service.icon
                     )}
                   </div>
-                  <h3 className="font-playfair font-semibold text-gray-900 mb-2 text-sm lg:text-base group-hover:text-primary-600 transition-colors">
+                  <h3 className="font-playfair font-semibold text-gray-900 group-hover:text-white mb-2 text-sm lg:text-base transition-colors duration-300">
                     {service.title}
                   </h3>
                 </div>
