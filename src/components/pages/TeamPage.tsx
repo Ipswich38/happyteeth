@@ -105,26 +105,27 @@ export function TeamPage() {
           <h2 className="text-3xl font-playfair font-semibold text-gray-800 mb-8 text-center">Our Doctors</h2>
           <div className="space-y-8">
             {doctors.map((doctor, index) => (
-              <div key={index} className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border-2 border-primary-200 hover:shadow-lg transition-all duration-300">
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-4">
+              <div key={index} className="group bg-gradient-to-br from-slate-50 to-blue-50/50 hover:from-blue-100 hover:to-indigo-100 p-6 sm:p-8 rounded-3xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8">
                   {doctor.image ? (
-                    <div className="w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0">
+                    <div className="relative w-48 h-48 rounded-3xl overflow-hidden flex-shrink-0 shadow-xl group-hover:shadow-2xl group-hover:scale-105 transition-all duration-500">
                       <img
                         src={doctor.image}
                         alt={doctor.name}
                         className="w-full h-full object-cover"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
                   ) : (
-                    <div className="w-20 h-20 bg-gradient-to-br from-primary-200 to-primary-400 rounded-full flex items-center justify-center text-3xl shadow-lg">
+                    <div className="w-20 h-20 bg-gradient-to-br from-blue-200 to-indigo-400 rounded-full flex items-center justify-center text-3xl shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
                       {doctor.icon}
                     </div>
                   )}
 
                   <div className="flex-1">
-                    <h3 className="text-xl sm:text-2xl font-playfair font-semibold text-gray-800 mb-2">{doctor.name}</h3>
-                    <p className="text-primary-600 font-inter font-medium mb-3">{doctor.title}</p>
-                    <p className="text-gray-600 font-inter leading-relaxed">{doctor.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-playfair font-bold text-gray-800 group-hover:text-blue-800 mb-2 transition-colors duration-300">{doctor.name}</h3>
+                    <p className="text-blue-600 group-hover:text-indigo-700 font-inter font-semibold mb-4 transition-colors duration-300">{doctor.title}</p>
+                    <p className="text-gray-600 group-hover:text-gray-700 font-inter leading-relaxed transition-colors duration-300">{doctor.description}</p>
                   </div>
                 </div>
               </div>
@@ -137,26 +138,27 @@ export function TeamPage() {
           <h2 className="text-3xl font-playfair font-semibold text-gray-800 mb-8 text-center">Our Support Team</h2>
           <div className="space-y-8">
             {supportTeam.map((member, index) => (
-              <div key={index} className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border-2 border-secondary-300 hover:shadow-lg transition-all duration-300">
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-4">
+              <div key={index} className="group bg-gradient-to-br from-emerald-50 to-green-50/50 hover:from-emerald-100 hover:to-teal-100 p-6 sm:p-8 rounded-3xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8">
                   {member.image ? (
-                    <div className="w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0">
+                    <div className="relative w-48 h-48 rounded-3xl overflow-hidden flex-shrink-0 shadow-xl group-hover:shadow-2xl group-hover:scale-105 transition-all duration-500">
                       <img
                         src={member.image}
                         alt={member.name}
                         className="w-full h-full object-cover"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
                   ) : (
-                    <div className="w-20 h-20 bg-gradient-to-br from-secondary-300 to-secondary-500 rounded-full flex items-center justify-center text-3xl shadow-lg">
+                    <div className="w-20 h-20 bg-gradient-to-br from-emerald-200 to-teal-400 rounded-full flex items-center justify-center text-3xl shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
                       {member.icon}
                     </div>
                   )}
 
                   <div className="flex-1">
-                    <h3 className="text-xl sm:text-2xl font-playfair font-semibold text-gray-800 mb-2">{member.name}</h3>
-                    <p className="text-secondary-600 font-inter font-medium mb-3">{member.title}</p>
-                    <p className="text-gray-600 font-inter leading-relaxed">{member.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-playfair font-bold text-gray-800 group-hover:text-emerald-800 mb-2 transition-colors duration-300">{member.name}</h3>
+                    <p className="text-emerald-600 group-hover:text-teal-700 font-inter font-semibold mb-4 transition-colors duration-300">{member.title}</p>
+                    <p className="text-gray-600 group-hover:text-gray-700 font-inter leading-relaxed transition-colors duration-300">{member.description}</p>
                   </div>
                 </div>
               </div>
@@ -165,29 +167,40 @@ export function TeamPage() {
         </div>
 
         {/* Why Our Team Section */}
-        <div className="bg-gradient-to-br from-primary-50 to-secondary-50 p-8 rounded-3xl text-center border-2 border-primary-200">
-          <h2 className="text-3xl font-playfair font-bold text-gray-900 mb-6">Why Our Team?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-                🎯
+        <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 p-8 rounded-3xl text-center shadow-xl">
+          <h2 className="text-3xl font-playfair font-bold text-gray-900 mb-8">Why Our Team?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="group text-center hover:-translate-y-2 transition-all duration-500">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-100 via-violet-50 to-indigo-100 rounded-2xl flex items-center justify-center mx-auto text-3xl shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 rotate-3 group-hover:rotate-6">
+                  <span className="transform group-hover:scale-110 transition-transform duration-300">🎯</span>
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-purple-400 to-violet-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-900 mb-2">Specialized Expertise</h3>
-              <p className="text-gray-600 font-inter">Each doctor brings specialized training and years of experience in their field</p>
+              <h3 className="text-xl font-playfair font-bold text-gray-900 group-hover:text-purple-800 mb-3 transition-colors duration-300">Specialized Expertise</h3>
+              <p className="text-gray-600 group-hover:text-gray-700 font-inter transition-colors duration-300">Each doctor brings specialized training and years of experience in their field</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <div className="w-16 h-16 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-                💝
+
+            <div className="group text-center hover:-translate-y-2 transition-all duration-500">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-pink-100 via-rose-50 to-red-100 rounded-2xl flex items-center justify-center mx-auto text-3xl shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 -rotate-2 group-hover:-rotate-4">
+                  <span className="transform group-hover:scale-110 transition-transform duration-300">💝</span>
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-900 mb-2">Patient-Centered Care</h3>
-              <p className="text-gray-600 font-inter">Your comfort and satisfaction is our top priority in every treatment</p>
+              <h3 className="text-xl font-playfair font-bold text-gray-900 group-hover:text-pink-800 mb-3 transition-colors duration-300">Patient-Centered Care</h3>
+              <p className="text-gray-600 group-hover:text-gray-700 font-inter transition-colors duration-300">Your comfort and satisfaction is our top priority in every treatment</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <div className="w-16 h-16 bg-gradient-to-br from-accent-400 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-                ⭐
+
+            <div className="group text-center hover:-translate-y-2 transition-all duration-500">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-amber-100 via-yellow-50 to-orange-100 rounded-2xl flex items-center justify-center mx-auto text-3xl shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 rotate-1 group-hover:rotate-3">
+                  <span className="transform group-hover:scale-110 transition-transform duration-300">⭐</span>
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-playfair font-semibold text-gray-900 mb-2">Comprehensive Services</h3>
-              <p className="text-gray-600 font-inter">From general dentistry to specialized procedures, we cover all your dental needs</p>
+              <h3 className="text-xl font-playfair font-bold text-gray-900 group-hover:text-amber-800 mb-3 transition-colors duration-300">Comprehensive Services</h3>
+              <p className="text-gray-600 group-hover:text-gray-700 font-inter transition-colors duration-300">From general dentistry to specialized procedures, we cover all your dental needs</p>
             </div>
           </div>
         </div>

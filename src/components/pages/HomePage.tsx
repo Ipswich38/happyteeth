@@ -219,7 +219,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
               {/* Right Image Carousel */}
               <div className="flex justify-center lg:justify-end">
-                <div className="w-full max-w-md lg:max-w-lg aspect-square rounded-3xl border-2 border-primary-200 shadow-lg overflow-hidden relative bg-white">
+                <div className="w-full max-w-md lg:max-w-lg aspect-square rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden relative bg-white">
                   {/* Main Image with Glance Effect */}
                   <div className="relative w-full h-full">
                     <img
@@ -589,7 +589,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-gradient-to-br from-primary-50 to-primary-100 rounded-3xl border-2 border-primary-300 shadow-sm">
+              <div className="mt-8 p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
                 <h4 className="text-xl font-semibold text-gray-900 mb-3 flex items-center space-x-2">
                   <span>🚨</span>
                   <span>Emergency Care</span>
@@ -601,7 +601,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-lg border-2 border-secondary-200 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-gradient-to-br from-white to-blue-50/30 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">

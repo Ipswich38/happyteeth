@@ -14,9 +14,9 @@ export function AboutPage() {
 
         {/* Founder Section */}
         <div className="mb-20">
-          <div className="bg-gradient-to-br from-primary-50 to-secondary-50 p-8 sm:p-12 rounded-3xl border-2 border-primary-200 shadow-lg">
+          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 sm:p-12 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500">
             <div className="flex flex-col lg:flex-row items-center gap-10">
-              <div className="w-48 h-64 rounded-xl overflow-hidden shadow-lg flex-shrink-0 border-4 border-primary-200 bg-white p-2">
+              <div className="w-48 h-64 rounded-xl overflow-hidden shadow-2xl flex-shrink-0 bg-white p-2 hover:scale-105 transition-transform duration-300">
                 <img
                   src="/DraCamilaPrice_founder.jpg"
                   alt="Dra. Camila Cañares-Price, Founder"
@@ -44,7 +44,7 @@ export function AboutPage() {
 
         {/* Mission, Vision, Values */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          <div className="bg-gradient-to-br from-secondary-50 to-accent-50 p-8 rounded-3xl border-2 border-secondary-200 shadow-sm">
+          <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
             <h3 className="text-2xl font-playfair font-bold text-gray-900 mb-6">Our Mission</h3>
             <p className="text-gray-600 font-inter leading-relaxed mb-8">
               To be your trusted, all-in-one family dental clinic, delivering personalized, quality care that leaves you smiling with confidence. We treat every patient as family, taking time to understand your unique needs, lifestyle, and budget to create tailored dental solutions. Through comprehensive services, advanced technology, and a welcoming environment, we make exceptional dental care accessible and comfortable for you and your loved ones.
@@ -56,7 +56,7 @@ export function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-primary-50 to-secondary-50 p-8 rounded-3xl border-2 border-primary-200 shadow-sm">
+          <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
             <h3 className="text-2xl font-playfair font-bold text-gray-900 mb-6">Our Core Values</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">

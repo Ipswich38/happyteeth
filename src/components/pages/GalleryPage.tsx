@@ -109,7 +109,7 @@ export function GalleryPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {featuredVideos.map((video, index) => (
-              <div key={index} className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-6 border-2 border-primary-200 shadow-lg">
+              <div key={index} className="group bg-gradient-to-br from-cyan-50 to-blue-50 hover:from-cyan-100 hover:to-indigo-100 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                   <div className="aspect-video bg-black">
                     <video
