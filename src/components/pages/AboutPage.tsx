@@ -42,6 +42,66 @@ export function AboutPage() {
           </div>
         </div>
 
+        {/* Mission, Vision, Values */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          <div className="bg-gradient-to-br from-secondary-50 to-accent-50 p-8 rounded-3xl border-2 border-secondary-200 shadow-sm">
+            <h3 className="text-2xl font-playfair font-bold text-gray-900 mb-6">Our Mission</h3>
+            <p className="text-gray-600 font-inter leading-relaxed mb-8">
+              To be your trusted, all-in-one family dental clinic, delivering personalized, quality care that leaves you smiling with confidence. We treat every patient as family, taking time to understand your unique needs, lifestyle, and budget to create tailored dental solutions. Through comprehensive services, advanced technology, and a welcoming environment, we make exceptional dental care accessible and comfortable for you and your loved ones.
+            </p>
+
+            <h3 className="text-2xl font-playfair font-bold text-gray-900 mb-6">Our Vision</h3>
+            <p className="text-gray-600 font-inter leading-relaxed">
+              To be the premier family dental destination in San Jose del Monte, Bulacan, where every patient experiences the comfort and care of being treated like family. We envision a community where exceptional dental health is accessible to all, supported by comprehensive services, cutting-edge technology, and genuine relationships that last a lifetime.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-primary-50 to-secondary-50 p-8 rounded-3xl border-2 border-primary-200 shadow-sm">
+            <h3 className="text-2xl font-playfair font-bold text-gray-900 mb-6">Our Core Values</h3>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <div className="w-6 h-6 bg-primary-400 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">1</div>
+                <div>
+                  <p className="font-semibold text-gray-800">Patient-Centered Care</p>
+                  <p className="text-sm text-gray-600">Every treatment plan is tailored to individual needs</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-3">
+                <div className="w-6 h-6 bg-secondary-400 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">2</div>
+                <div>
+                  <p className="font-semibold text-gray-800">Professional Excellence</p>
+                  <p className="text-sm text-gray-600">Specialized expertise across all dental disciplines</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-3">
+                <div className="w-6 h-6 bg-accent-400 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">3</div>
+                <div>
+                  <p className="font-semibold text-gray-800">Comfort & Compassion</p>
+                  <p className="text-sm text-gray-600">Creating stress-free, gentle dental experiences</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-3">
+                <div className="w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">4</div>
+                <div>
+                  <p className="font-semibold text-gray-800">Comprehensive Service</p>
+                  <p className="text-sm text-gray-600">From pediatric to cosmetic to surgical care</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-3">
+                <div className="w-6 h-6 bg-secondary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">5</div>
+                <div>
+                  <p className="font-semibold text-gray-800">Community Trust</p>
+                  <p className="text-sm text-gray-600">Building lasting relationships through integrity</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* What We Do Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
@@ -110,66 +170,6 @@ export function AboutPage() {
               <p className="text-gray-600 font-inter text-center leading-relaxed">
                 Welcoming environment designed to help patients feel comfortable and confident about their dental care.
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Mission, Vision, Values */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-gradient-to-br from-secondary-50 to-accent-50 p-8 rounded-3xl border-2 border-secondary-200 shadow-sm">
-            <h3 className="text-2xl font-playfair font-bold text-gray-900 mb-6">Our Mission</h3>
-            <p className="text-gray-600 font-inter leading-relaxed mb-8">
-              To be your trusted, all-in-one family dental clinic, delivering personalized, quality care that leaves you smiling with confidence. We treat every patient as family, taking time to understand your unique needs, lifestyle, and budget to create tailored dental solutions. Through comprehensive services, advanced technology, and a welcoming environment, we make exceptional dental care accessible and comfortable for you and your loved ones.
-            </p>
-
-            <h3 className="text-2xl font-playfair font-bold text-gray-900 mb-6">Our Vision</h3>
-            <p className="text-gray-600 font-inter leading-relaxed">
-              To be the premier family dental destination in San Jose del Monte, Bulacan, where every patient experiences the comfort and care of being treated like family. We envision a community where exceptional dental health is accessible to all, supported by comprehensive services, cutting-edge technology, and genuine relationships that last a lifetime.
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-primary-50 to-secondary-50 p-8 rounded-3xl border-2 border-primary-200 shadow-sm">
-            <h3 className="text-2xl font-playfair font-bold text-gray-900 mb-6">Our Core Values</h3>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-primary-400 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">1</div>
-                <div>
-                  <p className="font-semibold text-gray-800">Patient-Centered Care</p>
-                  <p className="text-sm text-gray-600">Every treatment plan is tailored to individual needs</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-secondary-400 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">2</div>
-                <div>
-                  <p className="font-semibold text-gray-800">Professional Excellence</p>
-                  <p className="text-sm text-gray-600">Specialized expertise across all dental disciplines</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-accent-400 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">3</div>
-                <div>
-                  <p className="font-semibold text-gray-800">Comfort & Compassion</p>
-                  <p className="text-sm text-gray-600">Creating stress-free, gentle dental experiences</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">4</div>
-                <div>
-                  <p className="font-semibold text-gray-800">Comprehensive Service</p>
-                  <p className="text-sm text-gray-600">From pediatric to cosmetic to surgical care</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-secondary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">5</div>
-                <div>
-                  <p className="font-semibold text-gray-800">Community Trust</p>
-                  <p className="text-sm text-gray-600">Building lasting relationships through integrity</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
