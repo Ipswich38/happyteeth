@@ -66,12 +66,29 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                     onNavigate(item);
                   }
                 }}
+                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #9ADFDB, #53B3B6)'} : currentPage === item ? {backgroundColor: '#FF77A3'} : {}}
+                onMouseEnter={(e) => {
+                  if (item === 'Appointment') {
+                    e.currentTarget.style.background = 'linear-gradient(to right, #53B3B6, #41C595)';
+                  } else if (currentPage !== item) {
+                    e.currentTarget.style.color = '#FF77A3';
+                    e.currentTarget.style.backgroundColor = 'rgba(241, 175, 196, 0.1)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (item === 'Appointment') {
+                    e.currentTarget.style.background = 'linear-gradient(to right, #9ADFDB, #53B3B6)';
+                  } else if (currentPage !== item) {
+                    e.currentTarget.style.color = '';
+                    e.currentTarget.style.backgroundColor = '';
+                  }
+                }}
                 className={`px-3 xl:px-4 py-2 xl:py-3 text-sm font-inter font-medium rounded-full transition-all duration-300 hover:scale-105 ${
                   item === 'Appointment'
-                    ? 'text-white bg-gradient-to-r from-cyan-400 to-cyan-500 shadow-md hover:from-cyan-500 hover:to-cyan-600'
+                    ? 'text-white shadow-md'
                     : currentPage === item
-                    ? 'text-white bg-primary-400 shadow-md'
-                    : 'text-gray-600 hover:text-primary-600 hover:bg-primary-50'
+                    ? 'text-white shadow-md'
+                    : 'text-gray-600'
                 }`}
               >
                 {item}
@@ -83,7 +100,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               href="https://www.facebook.com/canaresdentalclinic/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg transition-all duration-300 hover:scale-105 shadow-md"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg transition-all duration-300 hover:scale-105 shadow-md" style={{background: 'linear-gradient(to right, #F1AFC4, #FF77A3)'}} onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #FF77A3, #ECC1CA)'} onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to right, #F1AFC4, #FF77A3)'}
               aria-label="Visit our Facebook page"
             >
               f
@@ -94,7 +111,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-3 min-w-[44px] min-h-[44px] rounded-md text-primary-600 hover:bg-primary-50 transition-colors flex items-center justify-center"
+              className="p-3 min-w-[44px] min-h-[44px] rounded-md transition-colors flex items-center justify-center" style={{color: '#FF77A3'}} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(241, 175, 196, 0.1)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ''}
               aria-label="Toggle mobile menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,12 +164,29 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   }
                   setIsMobileMenuOpen(false);
                 }}
+                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #9ADFDB, #53B3B6)'} : currentPage === item ? {backgroundColor: '#FF77A3'} : {}}
+                onMouseEnter={(e) => {
+                  if (item === 'Appointment') {
+                    e.currentTarget.style.background = 'linear-gradient(to right, #53B3B6, #41C595)';
+                  } else if (currentPage !== item) {
+                    e.currentTarget.style.color = '#FF77A3';
+                    e.currentTarget.style.backgroundColor = 'rgba(241, 175, 196, 0.1)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (item === 'Appointment') {
+                    e.currentTarget.style.background = 'linear-gradient(to right, #9ADFDB, #53B3B6)';
+                  } else if (currentPage !== item) {
+                    e.currentTarget.style.color = '';
+                    e.currentTarget.style.backgroundColor = '';
+                  }
+                }}
                 className={`w-full text-left px-4 py-4 min-h-[44px] text-base font-inter font-medium rounded-lg transition-all duration-200 flex items-center ${
                   item === 'Appointment'
-                    ? 'text-white bg-gradient-to-r from-cyan-400 to-cyan-500 shadow-md hover:from-cyan-500 hover:to-cyan-600'
+                    ? 'text-white shadow-md'
                     : currentPage === item
-                    ? 'text-white bg-primary-400 shadow-sm'
-                    : 'text-gray-600 hover:text-primary-600 hover:bg-primary-50'
+                    ? 'text-white shadow-sm'
+                    : 'text-gray-600'
                 }`}
               >
                 {item}
@@ -164,10 +198,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               href="https://www.facebook.com/canaresdentalclinic/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center px-4 py-4 min-h-[44px] text-base font-inter font-medium rounded-lg transition-all duration-200 text-gray-600 hover:text-pink-600 hover:bg-pink-50"
+              className="flex items-center px-4 py-4 min-h-[44px] text-base font-inter font-medium rounded-lg transition-all duration-200 text-gray-600" onMouseEnter={(e) => {e.currentTarget.style.color = '#F1AFC4'; e.currentTarget.style.backgroundColor = 'rgba(241, 175, 196, 0.1)'}} onMouseLeave={(e) => {e.currentTarget.style.color = ''; e.currentTarget.style.backgroundColor = ''}}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3" style={{background: 'linear-gradient(to right, #F1AFC4, #FF77A3)'}}>
                 f
               </div>
               Follow us on Facebook
