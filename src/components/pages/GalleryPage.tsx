@@ -7,10 +7,10 @@ export function GalleryPage() {
       videoUrl: '/Gallery/airflow-dental-cleaning.mp4'
     },
     {
-      title: 'Happy Teeth Dentists at National Association of Dental Traders, Inc., Philippines',
-      description: 'Our team representing HappyTeeth at the National Association of Dental Traders, Inc. event, showcasing our commitment to professional excellence and industry leadership.',
+      title: 'Happy Teeth at Florida Dental Association Convention 2025',
+      description: 'Our team representing HappyTeeth at the Florida Dental Association Convention, showcasing our commitment to professional excellence and industry leadership.',
       category: 'Events',
-      videoUrl: '/Gallery/happy-teeth-nadti-2025.mp4'
+      videoUrl: '/Gallery/FLORIDA DENTAL ASSOCIATION CONVENTION 2025 (1).mp4'
     }
   ];
 
@@ -76,12 +76,6 @@ export function GalleryPage() {
       description: 'Our compassionate dental team ensuring every patient feels comfortable and well-cared for'
     },
     {
-      title: 'Expert Dental Team',
-      category: 'Team',
-      imageUrl: '/herosection/6.jpg',
-      description: 'Our qualified dental specialists bringing years of experience and expertise to your care'
-    },
-    {
       title: 'Dental Team Unity',
       category: 'Team',
       imageUrl: '/herosection/7.jpg',
@@ -109,7 +103,7 @@ export function GalleryPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {featuredVideos.map((video, index) => (
-              <div key={index} className="group bg-gradient-to-br from-cyan-50 to-blue-50 hover:from-cyan-100 hover:to-indigo-100 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div key={index} className="group rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2" style={{background: 'linear-gradient(to bottom right, rgba(154, 223, 219, 0.2), rgba(83, 179, 182, 0.2))'}} onMouseEnter={(e) => e.currentTarget.style.background = 'linear-gradient(to bottom right, rgba(154, 223, 219, 0.4), rgba(83, 179, 182, 0.4))'} onMouseLeave={(e) => e.currentTarget.style.background = 'linear-gradient(to bottom right, rgba(154, 223, 219, 0.2), rgba(83, 179, 182, 0.2))'}>
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                   <div className="aspect-video bg-black">
                     <video
@@ -124,7 +118,7 @@ export function GalleryPage() {
                   <div className="p-4">
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="text-lg font-playfair font-bold text-gray-900 flex-1 pr-3">{video.title}</h3>
-                      <span className="inline-block px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded-full font-medium flex-shrink-0">
+                      <span className="inline-block px-2 py-1 text-xs rounded-full font-medium flex-shrink-0 text-white" style={{backgroundColor: '#9ADFDB'}}>
                         {video.category}
                       </span>
                     </div>
@@ -161,7 +155,7 @@ export function GalleryPage() {
                     className="w-full h-auto object-cover transition-all duration-500 group-hover:brightness-30 group-hover:scale-105"
                   />
                 ) : (
-                  <div className="w-full h-64 bg-gradient-to-br from-cyan-100 to-cyan-200 flex items-center justify-center transition-all duration-500 group-hover:brightness-30">
+                  <div className="w-full h-64 flex items-center justify-center transition-all duration-500 group-hover:brightness-30" style={{background: 'linear-gradient(to bottom right, #9ADFDB, #53B3B6)'}}>
                     <div className="text-center text-gray-600">
                       <div className="text-4xl mb-2">📸</div>
                       <p className="text-sm">{image.title}</p>
@@ -188,12 +182,12 @@ export function GalleryPage() {
                     <div className="text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                       <h3 className="text-xl font-bold mb-3 font-playfair">{image.title}</h3>
                       <div className="space-y-1">
-                        <p className="text-sm text-cyan-200 font-medium">Our DIGITAL XRAY services:</p>
+                        <p className="text-sm font-medium" style={{color: '#9ADFDB'}}>Our DIGITAL XRAY services:</p>
                         <div className="flex flex-wrap gap-2 text-xs">
-                          <span className="px-2 py-1 bg-red-500/80 rounded-full">Panoramic</span>
-                          <span className="px-2 py-1 bg-red-500/80 rounded-full">Cephalometric</span>
-                          <span className="px-2 py-1 bg-red-500/80 rounded-full">TMJ</span>
-                          <span className="px-2 py-1 bg-red-500/80 rounded-full">Periapical</span>
+                          <span className="px-2 py-1 rounded-full text-white" style={{backgroundColor: '#FF77A3'}}>Panoramic</span>
+                          <span className="px-2 py-1 rounded-full text-white" style={{backgroundColor: '#F1AFC4'}}>Cephalometric</span>
+                          <span className="px-2 py-1 rounded-full text-white" style={{backgroundColor: '#ECC1CA'}}>TMJ</span>
+                          <span className="px-2 py-1 rounded-full text-white" style={{backgroundColor: '#41C595'}}>Periapical</span>
                         </div>
                       </div>
                     </div>
