@@ -502,7 +502,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           <div className="text-center mt-12">
             <p className="text-gray-600 font-inter">
-              Don't see your insurance? <span className="text-primary-600 font-semibold">Contact us</span> to verify coverage
+              Don&apos;t see your insurance? <span className="text-primary-600 font-semibold">Contact us</span> to verify coverage
             </p>
             <button
               onClick={() => {
