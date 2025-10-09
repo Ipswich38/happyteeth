@@ -8,7 +8,7 @@ interface NavigationProps {
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const menuItems = ['Home', 'About', 'Services', 'Team', 'Gallery', 'Contact', 'Appointment'];
+  const menuItems = ['Home', 'About', 'Services', 'HMO', 'Team', 'Gallery', 'Contact', 'Appointment'];
 
   return (
     <nav className="bg-white/20 backdrop-blur-xl shadow-lg border-b border-white/30 sticky top-0 z-50">
@@ -60,6 +60,15 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       onNavigate('Home');
                       setTimeout(() => {
                         document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }
+                  } else if (item === 'HMO') {
+                    if (currentPage === 'Home') {
+                      document.getElementById('hmo-section')?.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      onNavigate('Home');
+                      setTimeout(() => {
+                        document.getElementById('hmo-section')?.scrollIntoView({ behavior: 'smooth' });
                       }, 100);
                     }
                   } else {
@@ -157,6 +166,15 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       onNavigate('Home');
                       setTimeout(() => {
                         document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }
+                  } else if (item === 'HMO') {
+                    if (currentPage === 'Home') {
+                      document.getElementById('hmo-section')?.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      onNavigate('Home');
+                      setTimeout(() => {
+                        document.getElementById('hmo-section')?.scrollIntoView({ behavior: 'smooth' });
                       }, 100);
                     }
                   } else {

@@ -459,6 +459,63 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
+      {/* HMO Partners Section */}
+      <section id="hmo-section" className="py-16 sm:py-20 bg-gradient-to-br from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-900 mb-4">HMO Partners</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              We accept major HMO and insurance plans to make quality dental care accessible for everyone
+            </p>
+          </div>
+
+          <div className="relative max-w-5xl mx-auto">
+            {/* HMO Logos Grid - 2 columns */}
+            <div className="grid grid-cols-2 gap-6 md:gap-8">
+              {/* Left Column - HMO Partners 1, 3, 5, 7, 9, 11, 13 */}
+              <div className="space-y-6">
+                {[1, 3, 5, 7, 9, 11, 13].map((logoNumber) => (
+                  <div key={logoNumber} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+                    <img
+                      src={`/Gallery/HT_HMO/${logoNumber}.png`}
+                      alt={`HMO Partner ${logoNumber}`}
+                      className="w-full h-20 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Right Column - HMO Partners 2, 4, 6, 8, 10, 12 */}
+              <div className="space-y-6">
+                {[2, 4, 6, 8, 10, 12].map((logoNumber) => (
+                  <div key={logoNumber} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+                    <img
+                      src={`/Gallery/HT_HMO/${logoNumber}.png`}
+                      alt={`HMO Partner ${logoNumber}`}
+                      className="w-full h-20 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-600 font-inter">
+              Don't see your insurance? <span className="text-primary-600 font-semibold">Contact us</span> to verify coverage
+            </p>
+            <button
+              onClick={() => {
+                document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="mt-4 bg-gradient-to-r from-primary-400 to-primary-500 text-white px-6 py-3 rounded-full font-inter font-semibold hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+              Verify Coverage
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 sm:py-20 bg-gradient-to-br from-primary-50 to-secondary-50 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
