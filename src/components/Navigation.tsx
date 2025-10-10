@@ -8,6 +8,7 @@ interface NavigationProps {
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('Home');
   const menuItems = ['Home', 'About', 'Services', 'HMO', 'Team', 'Gallery', 'Contact', 'Appointment'];
 
   return (
@@ -36,6 +37,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 key={item}
                 onClick={() => {
                   if (item === 'Contact') {
+                    setActiveSection('Contact');
                     if (currentPage === 'Home') {
                       document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
                     } else {
@@ -45,6 +47,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       }, 100);
                     }
                   } else if (item === 'Appointment') {
+                    setActiveSection('Appointment');
                     if (currentPage === 'Home') {
                       document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' });
                     } else {
@@ -54,6 +57,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       }, 100);
                     }
                   } else if (item === 'Services') {
+                    setActiveSection('Services');
                     if (currentPage === 'Home') {
                       document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
                     } else {
@@ -63,6 +67,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       }, 100);
                     }
                   } else if (item === 'HMO') {
+                    setActiveSection('HMO');
                     if (currentPage === 'Home') {
                       document.getElementById('hmo-section')?.scrollIntoView({ behavior: 'smooth' });
                     } else {
@@ -72,14 +77,15 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       }, 100);
                     }
                   } else {
+                    setActiveSection(item);
                     onNavigate(item);
                   }
                 }}
-                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : (currentPage === item || (currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) ? {backgroundColor: '#FF77A3'} : {}}
+                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : activeSection === item ? {backgroundColor: '#FF77A3'} : {}}
 onMouseEnter={(e) => {
                   if (item === 'Appointment') {
                     e.currentTarget.style.background = 'linear-gradient(to right, #0891b2, #0e7490)';
-                  } else if (currentPage !== item && !(currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) {
+                  } else if (activeSection !== item) {
                     e.currentTarget.style.color = '#FF77A3';
                     e.currentTarget.style.backgroundColor = 'rgba(241, 175, 196, 0.1)';
                   }
@@ -87,7 +93,7 @@ onMouseEnter={(e) => {
 onMouseLeave={(e) => {
                   if (item === 'Appointment') {
                     e.currentTarget.style.background = 'linear-gradient(to right, #06b6d4, #0891b2)';
-                  } else if (currentPage !== item && !(currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) {
+                  } else if (activeSection !== item) {
                     e.currentTarget.style.color = '';
                     e.currentTarget.style.backgroundColor = '';
                   }
@@ -95,7 +101,7 @@ onMouseLeave={(e) => {
                 className={`px-3 xl:px-4 py-2 xl:py-3 text-sm font-inter font-medium rounded-full transition-all duration-300 hover:scale-105 ${
                   item === 'Appointment'
                     ? 'text-white shadow-md'
-                    : currentPage === item || (currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))
+                    : activeSection === item
                     ? 'text-white shadow-md'
                     : 'text-gray-600'
                 }`}
@@ -142,6 +148,7 @@ onMouseLeave={(e) => {
                 key={item}
                 onClick={() => {
                   if (item === 'Contact') {
+                    setActiveSection('Contact');
                     if (currentPage === 'Home') {
                       document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
                     } else {
@@ -151,6 +158,7 @@ onMouseLeave={(e) => {
                       }, 100);
                     }
                   } else if (item === 'Appointment') {
+                    setActiveSection('Appointment');
                     if (currentPage === 'Home') {
                       document.getElementById('appointment-section')?.scrollIntoView({ behavior: 'smooth' });
                     } else {
@@ -160,6 +168,7 @@ onMouseLeave={(e) => {
                       }, 100);
                     }
                   } else if (item === 'Services') {
+                    setActiveSection('Services');
                     if (currentPage === 'Home') {
                       document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
                     } else {
@@ -169,6 +178,7 @@ onMouseLeave={(e) => {
                       }, 100);
                     }
                   } else if (item === 'HMO') {
+                    setActiveSection('HMO');
                     if (currentPage === 'Home') {
                       document.getElementById('hmo-section')?.scrollIntoView({ behavior: 'smooth' });
                     } else {
@@ -178,15 +188,16 @@ onMouseLeave={(e) => {
                       }, 100);
                     }
                   } else {
+                    setActiveSection(item);
                     onNavigate(item);
                   }
                   setIsMobileMenuOpen(false);
                 }}
-                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : (currentPage === item || (currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) ? {backgroundColor: '#FF77A3'} : {}}
+                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : activeSection === item ? {backgroundColor: '#FF77A3'} : {}}
 onMouseEnter={(e) => {
                   if (item === 'Appointment') {
                     e.currentTarget.style.background = 'linear-gradient(to right, #0891b2, #0e7490)';
-                  } else if (currentPage !== item && !(currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) {
+                  } else if (activeSection !== item) {
                     e.currentTarget.style.color = '#FF77A3';
                     e.currentTarget.style.backgroundColor = 'rgba(241, 175, 196, 0.1)';
                   }
@@ -194,7 +205,7 @@ onMouseEnter={(e) => {
 onMouseLeave={(e) => {
                   if (item === 'Appointment') {
                     e.currentTarget.style.background = 'linear-gradient(to right, #06b6d4, #0891b2)';
-                  } else if (currentPage !== item && !(currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) {
+                  } else if (activeSection !== item) {
                     e.currentTarget.style.color = '';
                     e.currentTarget.style.backgroundColor = '';
                   }
@@ -202,7 +213,7 @@ onMouseLeave={(e) => {
                 className={`w-full text-left px-4 py-4 min-h-[44px] text-base font-inter font-medium rounded-lg transition-all duration-200 flex items-center ${
                   item === 'Appointment'
                     ? 'text-white shadow-md'
-                    : currentPage === item || (currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))
+                    : activeSection === item
                     ? 'text-white shadow-sm'
                     : 'text-gray-600'
                 }`}
