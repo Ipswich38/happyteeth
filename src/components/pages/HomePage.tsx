@@ -469,30 +469,30 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </p>
           </div>
 
-          <div className="relative max-w-5xl mx-auto">
-            {/* HMO Logos Grid - 2 columns */}
-            <div className="grid grid-cols-2 gap-6 md:gap-8">
-              {/* Left Column - HMO Partners 1, 3, 5, 7, 9, 11, 13 */}
-              <div className="space-y-6">
-                {[1, 3, 5, 7, 9, 11, 13].map((logoNumber) => (
-                  <div key={logoNumber} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+          <div className="relative max-w-6xl mx-auto">
+            {/* HMO Logos - 2 Rows Carousel Layout */}
+            <div className="space-y-8">
+              {/* First Row - HMO Partners 1-7 */}
+              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                {[1, 2, 3, 4, 5, 6, 7].map((logoNumber) => (
+                  <div key={logoNumber} className="group">
                     <img
                       src={`/Gallery/HT_HMO/${logoNumber}.png`}
                       alt={`HMO Partner ${logoNumber}`}
-                      className="w-full h-20 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="h-16 md:h-20 lg:h-24 w-auto object-contain hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 ))}
               </div>
 
-              {/* Right Column - HMO Partners 2, 4, 6, 8, 10, 12 */}
-              <div className="space-y-6">
-                {[2, 4, 6, 8, 10, 12].map((logoNumber) => (
-                  <div key={logoNumber} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+              {/* Second Row - HMO Partners 8-13 */}
+              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                {[8, 9, 10, 11, 12, 13].map((logoNumber) => (
+                  <div key={logoNumber} className="group">
                     <img
                       src={`/Gallery/HT_HMO/${logoNumber}.png`}
                       alt={`HMO Partner ${logoNumber}`}
-                      className="w-full h-20 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="h-16 md:h-20 lg:h-24 w-auto object-contain hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 ))}
