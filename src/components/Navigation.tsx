@@ -75,10 +75,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                     onNavigate(item);
                   }
                 }}
-                style={item === 'Appointment' ? {backgroundColor: '#53B3B6'} : currentPage === item ? {backgroundColor: '#FF77A3'} : {}}
+                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : currentPage === item ? {backgroundColor: '#FF77A3'} : {}}
                 onMouseEnter={(e) => {
                   if (item === 'Appointment') {
-                    e.currentTarget.style.backgroundColor = '#41C595';
+                    e.currentTarget.style.background = 'linear-gradient(to right, #0891b2, #0e7490)';
                   } else if (currentPage !== item) {
                     e.currentTarget.style.color = '#FF77A3';
                     e.currentTarget.style.backgroundColor = 'rgba(241, 175, 196, 0.1)';
@@ -86,7 +86,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 }}
                 onMouseLeave={(e) => {
                   if (item === 'Appointment') {
-                    e.currentTarget.style.backgroundColor = '#53B3B6';
+                    e.currentTarget.style.background = 'linear-gradient(to right, #06b6d4, #0891b2)';
                   } else if (currentPage !== item) {
                     e.currentTarget.style.color = '';
                     e.currentTarget.style.backgroundColor = '';
@@ -182,10 +182,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   }
                   setIsMobileMenuOpen(false);
                 }}
-                style={item === 'Appointment' ? {backgroundColor: '#53B3B6'} : currentPage === item ? {backgroundColor: '#FF77A3'} : {}}
+                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : currentPage === item ? {backgroundColor: '#FF77A3'} : {}}
                 onMouseEnter={(e) => {
                   if (item === 'Appointment') {
-                    e.currentTarget.style.backgroundColor = '#41C595';
+                    e.currentTarget.style.background = 'linear-gradient(to right, #0891b2, #0e7490)';
                   } else if (currentPage !== item) {
                     e.currentTarget.style.color = '#FF77A3';
                     e.currentTarget.style.backgroundColor = 'rgba(241, 175, 196, 0.1)';
@@ -193,7 +193,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 }}
                 onMouseLeave={(e) => {
                   if (item === 'Appointment') {
-                    e.currentTarget.style.backgroundColor = '#53B3B6';
+                    e.currentTarget.style.background = 'linear-gradient(to right, #06b6d4, #0891b2)';
                   } else if (currentPage !== item) {
                     e.currentTarget.style.color = '';
                     e.currentTarget.style.backgroundColor = '';
