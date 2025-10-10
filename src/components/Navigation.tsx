@@ -81,7 +81,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                     onNavigate(item);
                   }
                 }}
-                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : activeSection === item ? {backgroundColor: '#FF77A3'} : {}}
+                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)', color: 'white'} : activeSection === item ? {backgroundColor: '#FF77A3', color: 'white'} : {}}
 onMouseEnter={(e) => {
                   if (item === 'Appointment') {
                     e.currentTarget.style.background = 'linear-gradient(to right, #0891b2, #0e7490)';
@@ -193,7 +193,7 @@ onMouseLeave={(e) => {
                   }
                   setIsMobileMenuOpen(false);
                 }}
-                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : activeSection === item ? {backgroundColor: '#FF77A3'} : {}}
+                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)', color: 'white'} : activeSection === item ? {backgroundColor: '#FF77A3', color: 'white'} : {}}
 onMouseEnter={(e) => {
                   if (item === 'Appointment') {
                     e.currentTarget.style.background = 'linear-gradient(to right, #0891b2, #0e7490)';
