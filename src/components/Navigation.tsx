@@ -75,11 +75,11 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                     onNavigate(item);
                   }
                 }}
-                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : currentPage === item ? {backgroundColor: '#FF77A3'} : {}}
+                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : (currentPage === item || (currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) ? {backgroundColor: '#FF77A3'} : {}}
                 onMouseEnter={(e) => {
                   if (item === 'Appointment') {
                     e.currentTarget.style.background = 'linear-gradient(to right, #0891b2, #0e7490)';
-                  } else if (currentPage !== item) {
+                  } else if (currentPage !== item && !(currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) {
                     e.currentTarget.style.color = '#FF77A3';
                     e.currentTarget.style.backgroundColor = 'rgba(241, 175, 196, 0.1)';
                   }
@@ -87,7 +87,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 onMouseLeave={(e) => {
                   if (item === 'Appointment') {
                     e.currentTarget.style.background = 'linear-gradient(to right, #06b6d4, #0891b2)';
-                  } else if (currentPage !== item) {
+                  } else if (currentPage !== item && !(currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) {
                     e.currentTarget.style.color = '';
                     e.currentTarget.style.backgroundColor = '';
                   }
@@ -95,7 +95,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 className={`px-3 xl:px-4 py-2 xl:py-3 text-sm font-inter font-medium rounded-full transition-all duration-300 hover:scale-105 ${
                   item === 'Appointment'
                     ? 'text-white shadow-md'
-                    : currentPage === item
+                    : currentPage === item || (currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))
                     ? 'text-white shadow-md'
                     : 'text-gray-600'
                 }`}
@@ -182,11 +182,11 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   }
                   setIsMobileMenuOpen(false);
                 }}
-                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : currentPage === item ? {backgroundColor: '#FF77A3'} : {}}
+                style={item === 'Appointment' ? {background: 'linear-gradient(to right, #06b6d4, #0891b2)'} : (currentPage === item || (currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) ? {backgroundColor: '#FF77A3'} : {}}
                 onMouseEnter={(e) => {
                   if (item === 'Appointment') {
                     e.currentTarget.style.background = 'linear-gradient(to right, #0891b2, #0e7490)';
-                  } else if (currentPage !== item) {
+                  } else if (currentPage !== item && !(currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) {
                     e.currentTarget.style.color = '#FF77A3';
                     e.currentTarget.style.backgroundColor = 'rgba(241, 175, 196, 0.1)';
                   }
@@ -194,7 +194,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 onMouseLeave={(e) => {
                   if (item === 'Appointment') {
                     e.currentTarget.style.background = 'linear-gradient(to right, #06b6d4, #0891b2)';
-                  } else if (currentPage !== item) {
+                  } else if (currentPage !== item && !(currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))) {
                     e.currentTarget.style.color = '';
                     e.currentTarget.style.backgroundColor = '';
                   }
@@ -202,7 +202,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 className={`w-full text-left px-4 py-4 min-h-[44px] text-base font-inter font-medium rounded-lg transition-all duration-200 flex items-center ${
                   item === 'Appointment'
                     ? 'text-white shadow-md'
-                    : currentPage === item
+                    : currentPage === item || (currentPage === 'Home' && ['Services', 'HMO', 'Contact'].includes(item))
                     ? 'text-white shadow-sm'
                     : 'text-gray-600'
                 }`}
