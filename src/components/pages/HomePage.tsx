@@ -20,6 +20,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
   });
 
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showContactConfirmation, setShowContactConfirmation] = useState(false);
+  const [isSubmittingAppointment, setIsSubmittingAppointment] = useState(false);
+  const [isSubmittingContact, setIsSubmittingContact] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageVisible, setIsImageVisible] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -35,11 +38,31 @@ export function HomePage({ onNavigate }: HomePageProps) {
     '/herosection/7.jpg'
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setIsSubmittingContact(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setShowContactConfirmation(true);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        alert('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmittingContact(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -56,15 +79,39 @@ export function HomePage({ onNavigate }: HomePageProps) {
     });
   };
 
-  const handleAppointmentSubmit = (e: React.FormEvent) => {
+  const handleAppointmentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Appointment request:', appointmentForm);
-    setShowConfirmation(true);
-    setAppointmentForm({ name: '', cellphone: '', service: '', date: '' });
+    setIsSubmittingAppointment(true);
+
+    try {
+      const response = await fetch('/api/appointment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(appointmentForm),
+      });
+
+      if (response.ok) {
+        setShowConfirmation(true);
+        setAppointmentForm({ name: '', cellphone: '', service: '', date: '' });
+      } else {
+        alert('Failed to send appointment request. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error sending appointment request:', error);
+      alert('Failed to send appointment request. Please try again.');
+    } finally {
+      setIsSubmittingAppointment(false);
+    }
   };
 
   const closeConfirmation = () => {
     setShowConfirmation(false);
+  };
+
+  const closeContactConfirmation = () => {
+    setShowContactConfirmation(false);
   };
 
   // Image carousel effect with glance/disappearing animation
@@ -378,9 +425,20 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <div className="text-center pt-4">
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-cyan-500 hover:to-cyan-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mx-auto"
+                  disabled={isSubmittingAppointment}
+                  className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-white px-8 py-4 rounded-full font-inter font-semibold text-lg hover:from-cyan-500 hover:to-cyan-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mx-auto disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  <span>Request Appointment</span>
+                  {isSubmittingAppointment ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <span>Request Appointment</span>
+                  )}
                 </button>
               </div>
             </form>
@@ -735,9 +793,20 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
                 <button
                   type="submit"
-                  className="w-full bg-primary-400 text-white py-4 min-h-[44px] rounded-lg font-semibold hover:bg-primary-500 transition-colors text-base"
+                  disabled={isSubmittingContact}
+                  className="w-full bg-primary-400 text-white py-4 min-h-[44px] rounded-lg font-semibold hover:bg-primary-500 transition-colors text-base disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                 >
-                  Send Message
+                  {isSubmittingContact ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
                 </button>
               </form>
             </div>
@@ -745,13 +814,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      {/* Confirmation Popup */}
+      {/* Appointment Confirmation Popup */}
       {showConfirmation && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 transform transition-all duration-300 scale-100 animate-in">
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-accent-400 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl shadow-lg">
-                ✅
+              <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl shadow-lg">
+                🦷
               </div>
 
               <h3 className="text-2xl font-playfair font-semibold text-gray-800 mb-4">
@@ -759,24 +828,62 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </h3>
 
               <p className="text-gray-600 font-inter leading-relaxed mb-6">
-                Thank you for choosing HappyTeeth! We&apos;ve received your appointment request and will send you a confirmation via text message within 24 hours.
+                Thank you for choosing Happy Teeth! Your appointment request has been sent to our dental team. We will contact you soon to confirm your appointment.
               </p>
 
-              <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-4 mb-6 border border-primary-200">
-                <div className="flex items-center justify-center space-x-2 text-primary-600">
-                  <span className="text-lg">📱</span>
-                  <span className="font-medium">SMS confirmation coming soon!</span>
+              <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-4 mb-6 border border-cyan-200">
+                <div className="flex items-center justify-center space-x-2 text-cyan-600">
+                  <span className="text-lg">📞</span>
+                  <span className="font-medium">We&apos;ll call you soon!</span>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">
-                  Please keep your phone handy for our confirmation message.
+                  Please wait for confirmation from one of our Happy Teeth staff.
                 </p>
               </div>
 
               <button
                 onClick={closeConfirmation}
-                className="w-full bg-gradient-to-r from-primary-400 to-primary-500 text-white py-3 px-6 rounded-full font-inter font-semibold hover:from-primary-500 hover:to-primary-600 transition-all duration-300 hover:scale-105 shadow-lg"
+                className="w-full bg-gradient-to-r from-pink-400 to-pink-500 text-white py-3 px-6 rounded-full font-inter font-semibold hover:from-pink-500 hover:to-pink-600 transition-all duration-300 hover:scale-105 shadow-lg"
               >
-                Got it!
+                Perfect!
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Contact Confirmation Popup */}
+      {showContactConfirmation && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 transform transition-all duration-300 scale-100 animate-in">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl shadow-lg">
+                ✅
+              </div>
+
+              <h3 className="text-2xl font-playfair font-semibold text-gray-800 mb-4">
+                Message Sent Successfully!
+              </h3>
+
+              <p className="text-gray-600 font-inter leading-relaxed mb-6">
+                Thank you for contacting Happy Teeth! Your message has been sent to our team. We will get back to you as soon as possible.
+              </p>
+
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-4 mb-6 border border-green-200">
+                <div className="flex items-center justify-center space-x-2 text-green-600">
+                  <span className="text-lg">📧</span>
+                  <span className="font-medium">We&apos;ll respond soon!</span>
+                </div>
+                <p className="text-sm text-gray-600 mt-2">
+                  Please wait for a response from one of our Happy Teeth staff.
+                </p>
+              </div>
+
+              <button
+                onClick={closeContactConfirmation}
+                className="w-full bg-gradient-to-r from-green-400 to-green-500 text-white py-3 px-6 rounded-full font-inter font-semibold hover:from-green-500 hover:to-green-600 transition-all duration-300 hover:scale-105 shadow-lg"
+              >
+                Great!
               </button>
             </div>
           </div>
