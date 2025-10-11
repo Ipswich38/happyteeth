@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const dataDir = path.join(process.cwd(), 'data');
     const filePath = path.join(dataDir, 'submissions.json');
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
       const submissions = JSON.parse(fileContent);
 
       // Find and update the submission
-      const submissionIndex = submissions.findIndex((sub: any) => sub.id === submissionId);
+      const submissionIndex = submissions.findIndex((sub: { id: string }) => sub.id === submissionId);
       if (submissionIndex !== -1) {
         submissions[submissionIndex].read = true;
         fs.writeFileSync(filePath, JSON.stringify(submissions, null, 2));

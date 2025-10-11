@@ -50,7 +50,6 @@ export default function Dashboard() {
         }),
       });
 
-      // Update local state
       setSubmissions(prev =>
         prev.map(sub =>
           sub.id === submissionId ? { ...sub, read: true } : sub
@@ -70,196 +69,164 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading dashboard...</p>
-        </div>
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="w-6 h-6 border-2 border-gray-300 border-t-gray-900 rounded-full animate-spin"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-white shadow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900">
-                  Happy Teeth Dashboard
-                </h1>
-                <p className="mt-1 text-sm text-gray-600">
-                  Manage your contact form submissions and appointment requests
-                </p>
-              </div>
-              <div className="flex items-center space-x-4">
-                {unreadCount > 0 && (
-                  <span className="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                    {unreadCount} unread
-                  </span>
-                )}
-              </div>
+      <div className="border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-6 py-8">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-light text-gray-900">Dashboard</h1>
+              <p className="text-sm text-gray-500 mt-1">Patient inquiries and appointments</p>
             </div>
+            {unreadCount > 0 && (
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+            )}
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Filter Tabs */}
-        <div className="mb-6">
-          <div className="border-b border-gray-200">
-            <nav className="-mb-px flex space-x-8">
-              {[
-                { key: 'all', label: 'All', count: submissions.length },
-                { key: 'contact', label: 'Contact Forms', count: submissions.filter(s => s.type === 'contact').length },
-                { key: 'appointment', label: 'Appointments', count: submissions.filter(s => s.type === 'appointment').length }
-              ].map((tab) => (
-                <button
-                  key={tab.key}
-                  onClick={() => setFilter(tab.key as any)}
-                  className={`whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm ${
-                    filter === tab.key
-                      ? 'border-pink-500 text-pink-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
-                >
-                  {tab.label}
-                  <span className="ml-2 bg-gray-100 text-gray-900 py-0.5 px-2.5 rounded-full text-xs">
-                    {tab.count}
-                  </span>
-                </button>
-              ))}
-            </nav>
-          </div>
+      <div className="max-w-4xl mx-auto px-6 py-8">
+        {/* Filter Pills */}
+        <div className="flex space-x-1 mb-8">
+          {[
+            { key: 'all' as const, label: 'All', count: submissions.length },
+            { key: 'contact' as const, label: 'Contact', count: submissions.filter(s => s.type === 'contact').length },
+            { key: 'appointment' as const, label: 'Appointments', count: submissions.filter(s => s.type === 'appointment').length }
+          ].map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setFilter(tab.key)}
+              className={`px-3 py-1 text-sm rounded-full transition-colors ${
+                filter === tab.key
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
+              {tab.label} {tab.count > 0 && `(${tab.count})`}
+            </button>
+          ))}
         </div>
 
-        {/* Submissions List */}
+        {/* Submissions */}
         {filteredSubmissions.length === 0 ? (
-          <div className="text-center py-12">
-            <div className="text-gray-400 text-6xl mb-4">📋</div>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">No submissions yet</h3>
-            <p className="text-gray-500">
-              {filter === 'all'
-                ? 'When customers submit contact forms or appointment requests, they will appear here.'
-                : `No ${filter} submissions found.`
-              }
-            </p>
+          <div className="text-center py-16">
+            <div className="text-gray-400 text-4xl mb-2">○</div>
+            <p className="text-gray-500 text-sm">No submissions yet</p>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-3">
             {filteredSubmissions.map((submission) => (
               <div
                 key={submission.id}
-                className={`bg-white overflow-hidden shadow rounded-lg border-l-4 ${
-                  submission.type === 'appointment'
-                    ? 'border-l-pink-500'
-                    : 'border-l-blue-500'
-                } ${
-                  !submission.read ? 'bg-blue-50' : ''
+                className={`border border-gray-100 rounded-lg p-6 transition-colors ${
+                  !submission.read ? 'bg-gray-50' : 'bg-white'
                 }`}
               >
-                <div className="px-6 py-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className={`p-2 rounded-full ${
-                        submission.type === 'appointment'
-                          ? 'bg-pink-100 text-pink-600'
-                          : 'bg-blue-100 text-blue-600'
-                      }`}>
-                        {submission.type === 'appointment' ? '🦷' : '📧'}
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-medium text-gray-900">
-                          {submission.name}
-                        </h3>
-                        <p className="text-sm text-gray-500">
-                          {submission.type === 'appointment' ? 'Appointment Request' : 'Contact Form'}
-                          {' • '}
-                          {new Date(submission.timestamp).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric',
-                            hour: '2-digit',
-                            minute: '2-digit'
-                          })}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      {!submission.read && (
-                        <button
-                          onClick={() => markAsRead(submission.id)}
-                          className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full hover:bg-blue-200"
-                        >
-                          Mark as read
-                        </button>
-                      )}
-                      {!submission.read && (
-                        <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
-                      )}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className={`w-2 h-2 rounded-full ${
+                      submission.type === 'appointment' ? 'bg-pink-400' : 'bg-blue-400'
+                    }`}></div>
+                    <div>
+                      <h3 className="font-medium text-gray-900">{submission.name}</h3>
+                      <p className="text-xs text-gray-500">
+                        {new Date(submission.timestamp).toLocaleDateString('en-US', {
+                          month: 'short',
+                          day: 'numeric',
+                          hour: '2-digit',
+                          minute: '2-digit'
+                        })}
+                      </p>
                     </div>
                   </div>
-
-                  <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {submission.type === 'contact' ? (
-                      <>
-                        <div>
-                          <dt className="text-sm font-medium text-gray-500">Email</dt>
-                          <dd className="mt-1 text-sm text-gray-900">{submission.email}</dd>
-                        </div>
-                        <div>
-                          <dt className="text-sm font-medium text-gray-500">Phone</dt>
-                          <dd className="mt-1 text-sm text-gray-900">{submission.phone || 'Not provided'}</dd>
-                        </div>
-                        <div className="sm:col-span-2">
-                          <dt className="text-sm font-medium text-gray-500">Message</dt>
-                          <dd className="mt-1 text-sm text-gray-900 whitespace-pre-wrap">{submission.message}</dd>
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <div>
-                          <dt className="text-sm font-medium text-gray-500">Cellphone</dt>
-                          <dd className="mt-1 text-sm text-gray-900">{submission.cellphone}</dd>
-                        </div>
-                        <div>
-                          <dt className="text-sm font-medium text-gray-500">Service</dt>
-                          <dd className="mt-1 text-sm text-gray-900">{submission.service}</dd>
-                        </div>
-                        <div className="sm:col-span-2">
-                          <dt className="text-sm font-medium text-gray-500">Preferred Date</dt>
-                          <dd className="mt-1 text-sm text-gray-900">
-                            {new Date(submission.date!).toLocaleDateString('en-US', {
-                              weekday: 'long',
-                              year: 'numeric',
-                              month: 'long',
-                              day: 'numeric'
-                            })}
-                          </dd>
-                        </div>
-                      </>
-                    )}
-                  </div>
-
-                  <div className="mt-4 flex items-center space-x-4 text-sm">
-                    <a
-                      href={submission.type === 'contact' ? `mailto:${submission.email}` : `tel:${submission.cellphone}`}
-                      className="text-pink-600 hover:text-pink-500 font-medium"
-                    >
-                      {submission.type === 'contact' ? 'Send Email' : 'Call Patient'}
-                    </a>
-                    {submission.type === 'contact' && submission.phone && (
-                      <a
-                        href={`tel:${submission.phone}`}
-                        className="text-pink-600 hover:text-pink-500 font-medium"
+                  <div className="flex items-center space-x-3">
+                    {!submission.read && (
+                      <button
+                        onClick={() => markAsRead(submission.id)}
+                        className="text-xs text-gray-400 hover:text-gray-600"
                       >
-                        Call Phone
-                      </a>
+                        Mark read
+                      </button>
+                    )}
+                    {!submission.read && (
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
                     )}
                   </div>
                 </div>
+
+                {submission.type === 'contact' ? (
+                  <div className="space-y-3">
+                    <div className="flex space-x-6 text-sm">
+                      <div>
+                        <span className="text-gray-500">Email:</span>
+                        <span className="ml-2 text-gray-900">{submission.email}</span>
+                      </div>
+                      {submission.phone && (
+                        <div>
+                          <span className="text-gray-500">Phone:</span>
+                          <span className="ml-2 text-gray-900">{submission.phone}</span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-sm">
+                      <p className="text-gray-900 whitespace-pre-wrap">{submission.message}</p>
+                    </div>
+                    <div className="flex space-x-4 pt-2">
+                      <a
+                        href={`mailto:${submission.email}`}
+                        className="text-sm text-gray-600 hover:text-gray-900 underline"
+                      >
+                        Email
+                      </a>
+                      {submission.phone && (
+                        <a
+                          href={`tel:${submission.phone}`}
+                          className="text-sm text-gray-600 hover:text-gray-900 underline"
+                        >
+                          Call
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    <div className="flex space-x-6 text-sm">
+                      <div>
+                        <span className="text-gray-500">Phone:</span>
+                        <span className="ml-2 text-gray-900">{submission.cellphone}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-500">Service:</span>
+                        <span className="ml-2 text-gray-900">{submission.service}</span>
+                      </div>
+                    </div>
+                    <div className="text-sm">
+                      <span className="text-gray-500">Preferred date:</span>
+                      <span className="ml-2 text-gray-900">
+                        {new Date(submission.date!).toLocaleDateString('en-US', {
+                          weekday: 'long',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </span>
+                    </div>
+                    <div className="pt-2">
+                      <a
+                        href={`tel:${submission.cellphone}`}
+                        className="text-sm text-gray-600 hover:text-gray-900 underline"
+                      >
+                        Call patient
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
