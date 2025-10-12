@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 
 interface Submission {
@@ -24,11 +24,7 @@ export default function Dashboard() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const router = useRouter();
 
-  useEffect(() => {
-    fetchSubmissions();
-  }, []);
-
-  const fetchSubmissions = async () => {
+  const fetchSubmissions = useCallback(async () => {
     try {
       const response = await fetch('/api/dashboard');
 
@@ -45,7 +41,11 @@ export default function Dashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [router]);
+
+  useEffect(() => {
+    fetchSubmissions();
+  }, [fetchSubmissions]);
 
   const handleLogout = async () => {
     try {
@@ -174,7 +174,7 @@ export default function Dashboard() {
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Today's Submissions</p>
+                <p className="text-sm text-gray-600">Today&apos;s Submissions</p>
                 <p className="text-2xl font-semibold text-gray-900">{todaySubmissions}</p>
               </div>
               <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center">
