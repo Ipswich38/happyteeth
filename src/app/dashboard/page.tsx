@@ -126,16 +126,17 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b border-gray-100">
+      <div className="bg-transparent">
         <div className="max-w-6xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl flex items-center justify-center">
-                <span className="text-white text-xl">🦷</span>
+              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white text-2xl">🦷</span>
               </div>
               <div>
-                <h1 className="text-2xl font-semibold text-gray-900">Welcome to Happy Teeth</h1>
-                <p className="text-sm text-gray-500">Patient appointments & inquiries dashboard</p>
+                <h1 className="text-3xl font-bold text-gray-900">Happy Teeth</h1>
+                <p className="text-lg text-gray-600 font-medium">Your Trusted Family Dental Clinic</p>
+                <p className="text-sm text-gray-500 mt-1">Patient appointments & inquiries dashboard</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
