@@ -84,6 +84,23 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true });
     }
 
+    if (action === 'delete') {
+      const { error } = await supabase
+        .from('submissions')
+        .delete()
+        .eq('id', submissionId);
+
+      if (error) {
+        console.error('Supabase delete error:', error);
+        return NextResponse.json(
+          { error: 'Failed to delete submission' },
+          { status: 500 }
+        );
+      }
+
+      return NextResponse.json({ success: true });
+    }
+
     return NextResponse.json(
       { error: 'Invalid action' },
       { status: 400 }

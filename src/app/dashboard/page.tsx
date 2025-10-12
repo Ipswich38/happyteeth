@@ -21,6 +21,7 @@ export default function Dashboard() {
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<'all' | 'contact' | 'appointment'>('all');
+  const [editingId, setEditingId] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -76,6 +77,31 @@ export default function Dashboard() {
       );
     } catch (error) {
       console.error('Error marking as read:', error);
+    }
+  };
+
+  const deleteSubmission = async (submissionId: string) => {
+    if (!confirm('Are you sure you want to delete this submission?')) {
+      return;
+    }
+
+    try {
+      await fetch('/api/dashboard', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          submissionId,
+          action: 'delete',
+        }),
+      });
+
+      setSubmissions(prev =>
+        prev.filter(sub => sub.id !== submissionId)
+      );
+    } catch (error) {
+      console.error('Error deleting submission:', error);
     }
   };
 
@@ -173,22 +199,48 @@ export default function Dashboard() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-2">
                     {!submission.read && (
                       <button
                         onClick={() => markAsRead(submission.id)}
-                        className="text-xs text-gray-400 hover:text-gray-600"
+                        className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200"
                       >
                         Mark read
                       </button>
                     )}
+                    <button
+                      onClick={() => setEditingId(editingId === submission.id ? null : submission.id)}
+                      className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200"
+                    >
+                      {editingId === submission.id ? 'Cancel' : 'Edit'}
+                    </button>
+                    <button
+                      onClick={() => deleteSubmission(submission.id)}
+                      className="text-xs px-2 py-1 bg-red-100 text-red-700 rounded hover:bg-red-200"
+                    >
+                      Delete
+                    </button>
                     {!submission.read && (
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
                     )}
                   </div>
                 </div>
 
-                {submission.type === 'contact' ? (
+{editingId === submission.id ? (
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <p className="text-sm text-gray-600 mb-3">Note: This is a simplified edit view. For full editing capabilities, please delete and re-create the submission.</p>
+                    <div className="space-y-2 text-sm">
+                      <div><strong>Name:</strong> {submission.name}</div>
+                      <div><strong>Type:</strong> {submission.type}</div>
+                      {submission.email && <div><strong>Email:</strong> {submission.email}</div>}
+                      {submission.phone && <div><strong>Phone:</strong> {submission.phone}</div>}
+                      {submission.cellphone && <div><strong>Cellphone:</strong> {submission.cellphone}</div>}
+                      {submission.service && <div><strong>Service:</strong> {submission.service}</div>}
+                      {submission.date && <div><strong>Date:</strong> {submission.date}</div>}
+                      {submission.message && <div><strong>Message:</strong> <span className="whitespace-pre-wrap">{submission.message}</span></div>}
+                    </div>
+                  </div>
+                ) : submission.type === 'contact' ? (
                   <div className="space-y-3">
                     <div className="flex space-x-6 text-sm">
                       <div>

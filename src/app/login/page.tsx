@@ -85,11 +85,6 @@ export default function Login() {
           </button>
         </form>
 
-        <div className="mt-8 text-center">
-          <p className="text-xs text-gray-400">
-            Default credentials: happyteeth / 272829
-          </p>
-        </div>
       </div>
     </div>
   );
