@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 interface Submission {
   id: string;
@@ -130,8 +131,14 @@ export default function Dashboard() {
         <div className="max-w-6xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white text-2xl">🦷</span>
+              <div className="w-16 h-16 flex items-center justify-center">
+                <Image
+                  src="/happyteethtransparent.png"
+                  alt="Happy Teeth Logo"
+                  width={64}
+                  height={64}
+                  className="object-contain"
+                />
               </div>
               <div>
                 <h1 className="text-3xl font-bold text-gray-900">Happy Teeth</h1>
