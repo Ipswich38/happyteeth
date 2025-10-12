@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import fs from 'fs';
-import path from 'path';
+import { supabase } from '@/lib/supabase';
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -22,10 +21,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Store the submission
+    // Store the submission in Supabase
     const submission = {
       id: Date.now().toString(),
-      type: 'appointment',
+      type: 'appointment' as const,
       name,
       cellphone,
       service,
@@ -34,24 +33,14 @@ export async function POST(request: NextRequest) {
       read: false
     };
 
-    const dataDir = path.join(process.cwd(), 'data');
-    const filePath = path.join(dataDir, 'submissions.json');
+    const { error: dbError } = await supabase
+      .from('submissions')
+      .insert([submission]);
 
-    // Create data directory if it doesn't exist
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
+    if (dbError) {
+      console.error('Database error:', dbError);
+      // Continue with email even if database fails
     }
-
-    // Read existing submissions or create empty array
-    let submissions = [];
-    if (fs.existsSync(filePath)) {
-      const fileContent = fs.readFileSync(filePath, 'utf8');
-      submissions = JSON.parse(fileContent);
-    }
-
-    // Add new submission
-    submissions.unshift(submission); // Add to beginning of array
-    fs.writeFileSync(filePath, JSON.stringify(submissions, null, 2));
 
     const formattedDate = new Date(date).toLocaleDateString('en-US', {
       weekday: 'long',

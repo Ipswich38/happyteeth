@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { supabase } from '@/lib/supabase';
 
 function verifyAuth(request: NextRequest): boolean {
   const sessionCookie = request.cookies.get('dashboard-session');
@@ -33,18 +32,20 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const dataDir = path.join(process.cwd(), 'data');
-    const filePath = path.join(dataDir, 'submissions.json');
+    const { data: submissions, error } = await supabase
+      .from('submissions')
+      .select('*')
+      .order('created_at', { ascending: false });
 
-    // Return empty array if no submissions exist yet
-    if (!fs.existsSync(filePath)) {
-      return NextResponse.json({ submissions: [] });
+    if (error) {
+      console.error('Supabase error:', error);
+      return NextResponse.json(
+        { error: 'Failed to load submissions' },
+        { status: 500 }
+      );
     }
 
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const submissions = JSON.parse(fileContent);
-
-    return NextResponse.json({ submissions });
+    return NextResponse.json({ submissions: submissions || [] });
   } catch (error) {
     console.error('Error reading submissions:', error);
     return NextResponse.json(
@@ -67,31 +68,20 @@ export async function POST(request: NextRequest) {
     const { submissionId, action } = await request.json();
 
     if (action === 'markAsRead') {
-      const dataDir = path.join(process.cwd(), 'data');
-      const filePath = path.join(dataDir, 'submissions.json');
+      const { error } = await supabase
+        .from('submissions')
+        .update({ read: true })
+        .eq('id', submissionId);
 
-      if (!fs.existsSync(filePath)) {
+      if (error) {
+        console.error('Supabase update error:', error);
         return NextResponse.json(
-          { error: 'No submissions found' },
-          { status: 404 }
+          { error: 'Failed to update submission' },
+          { status: 500 }
         );
       }
 
-      const fileContent = fs.readFileSync(filePath, 'utf8');
-      const submissions = JSON.parse(fileContent);
-
-      // Find and update the submission
-      const submissionIndex = submissions.findIndex((sub: { id: string }) => sub.id === submissionId);
-      if (submissionIndex !== -1) {
-        submissions[submissionIndex].read = true;
-        fs.writeFileSync(filePath, JSON.stringify(submissions, null, 2));
-        return NextResponse.json({ success: true });
-      } else {
-        return NextResponse.json(
-          { error: 'Submission not found' },
-          { status: 404 }
-        );
-      }
+      return NextResponse.json({ success: true });
     }
 
     return NextResponse.json(
