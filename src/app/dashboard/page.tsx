@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface Submission {
   id: string;
@@ -20,6 +21,7 @@ export default function Dashboard() {
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<'all' | 'contact' | 'appointment'>('all');
+  const router = useRouter();
 
   useEffect(() => {
     fetchSubmissions();
@@ -28,12 +30,29 @@ export default function Dashboard() {
   const fetchSubmissions = async () => {
     try {
       const response = await fetch('/api/dashboard');
+
+      if (response.status === 401) {
+        router.push('/login');
+        return;
+      }
+
       const data = await response.json();
       setSubmissions(data.submissions || []);
     } catch (error) {
       console.error('Error fetching submissions:', error);
+      router.push('/login');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/auth', { method: 'DELETE' });
+      router.push('/login');
+    } catch (error) {
+      console.error('Logout error:', error);
+      router.push('/login');
     }
   };
 
@@ -85,9 +104,17 @@ export default function Dashboard() {
               <h1 className="text-2xl font-light text-gray-900">Dashboard</h1>
               <p className="text-sm text-gray-500 mt-1">Patient inquiries and appointments</p>
             </div>
-            {unreadCount > 0 && (
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-            )}
+            <div className="flex items-center space-x-4">
+              {unreadCount > 0 && (
+                <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              )}
+              <button
+                onClick={handleLogout}
+                className="text-sm text-gray-500 hover:text-gray-700"
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </div>

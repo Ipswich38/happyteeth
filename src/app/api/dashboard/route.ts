@@ -2,7 +2,36 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-export async function GET() {
+function verifyAuth(request: NextRequest): boolean {
+  const sessionCookie = request.cookies.get('dashboard-session');
+  if (!sessionCookie) return false;
+
+  try {
+    // Decode the session token (simple validation - in production use proper JWT)
+    const decoded = Buffer.from(sessionCookie.value, 'base64').toString();
+    const [username, timestamp] = decoded.split(':');
+
+    // Check if session is valid (within 24 hours)
+    const sessionTime = parseInt(timestamp);
+    const currentTime = Date.now();
+    const twentyFourHours = 24 * 60 * 60 * 1000;
+
+    return username === (process.env.DASHBOARD_USERNAME || 'happyteeth') &&
+           (currentTime - sessionTime) < twentyFourHours;
+  } catch {
+    return false;
+  }
+}
+
+export async function GET(request: NextRequest) {
+  // Check authentication
+  if (!verifyAuth(request)) {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      { status: 401 }
+    );
+  }
+
   try {
     const dataDir = path.join(process.cwd(), 'data');
     const filePath = path.join(dataDir, 'submissions.json');
@@ -26,6 +55,14 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  // Check authentication
+  if (!verifyAuth(request)) {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      { status: 401 }
+    );
+  }
+
   try {
     const { submissionId, action } = await request.json();
 
