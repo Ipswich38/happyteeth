@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Navigation } from './Navigation';
 import { Footer } from './Footer';
 import { Chatbot } from './Chatbot';
@@ -10,6 +10,7 @@ import { TeamPage } from './pages/TeamPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { Toaster } from './ui/sonner';
 import { useAutoUpdate } from '../hooks/useAutoUpdate';
+import { HalloweenEffect } from './HalloweenEffect';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -32,6 +33,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      <HalloweenEffect />
       <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
       <main>{renderPage()}</main>
       <Footer onNavigate={setCurrentPage} />
