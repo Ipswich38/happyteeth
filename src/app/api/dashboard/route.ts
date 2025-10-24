@@ -32,6 +32,13 @@ export async function GET(request: NextRequest) {
   }
 
   try {
+    if (!supabase) {
+      return NextResponse.json({
+        submissions: [],
+        message: 'Database not configured'
+      });
+    }
+
     const { data: submissions, error } = await supabase
       .from('submissions')
       .select('*')
@@ -65,6 +72,13 @@ export async function POST(request: NextRequest) {
   }
 
   try {
+    if (!supabase) {
+      return NextResponse.json(
+        { error: 'Database not configured' },
+        { status: 503 }
+      );
+    }
+
     const { submissionId, action } = await request.json();
 
     if (action === 'markAsRead') {

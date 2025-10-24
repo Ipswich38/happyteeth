@@ -12,25 +12,29 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Store the submission in Supabase
-    const submission = {
-      id: Date.now().toString(),
-      type: 'contact' as const,
-      name,
-      email,
-      phone: phone || null,
-      message,
-      timestamp: new Date().toISOString(),
-      read: false
-    };
+    // Store the submission in Supabase if available
+    if (supabase) {
+      const submission = {
+        id: Date.now().toString(),
+        type: 'contact' as const,
+        name,
+        email,
+        phone: phone || null,
+        message,
+        timestamp: new Date().toISOString(),
+        read: false
+      };
 
-    const { error: dbError } = await supabase
-      .from('submissions')
-      .insert([submission]);
+      const { error: dbError } = await supabase
+        .from('submissions')
+        .insert([submission]);
 
-    if (dbError) {
-      console.error('Database error:', dbError);
-      // Continue with email even if database fails
+      if (dbError) {
+        console.error('Database error:', dbError);
+        // Continue with email even if database fails
+      }
+    } else {
+      console.warn('Supabase not configured - skipping database storage');
     }
 
     // Email functionality disabled for now - data is saved to database
