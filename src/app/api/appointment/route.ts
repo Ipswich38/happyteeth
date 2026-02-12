@@ -3,7 +3,7 @@ import { supabase } from '@/lib/supabase';
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, cellphone, service, date } = await request.json();
+    const { name, cellphone, service, date, time, customTime, finalTime, appointmentDateTime } = await request.json();
 
     if (!name || !cellphone || !service || !date) {
       return NextResponse.json(
@@ -21,6 +21,10 @@ export async function POST(request: NextRequest) {
         cellphone,
         service,
         date,
+        time: finalTime || time || '',
+        customTime: customTime || '',
+        isCustomTime: time === 'custom',
+        appointmentDateTime: appointmentDateTime || date,
         timestamp: new Date().toISOString(),
         read: false
       };
