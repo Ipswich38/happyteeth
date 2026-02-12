@@ -397,7 +397,7 @@ export default function BookAppointment() {
                     </p>
                     <p className="flex items-start">
                       <span className="text-blue-500 mr-2 mt-0.5">2.</span>
-                      <span>We&apos;ll contact you via <strong>phone, SMS, or email</strong> to confirm availability and finalize your appointment.</span>
+                      <span>We&apos;ll <strong>call you directly</strong> to confirm availability and finalize your appointment.</span>
                     </p>
                     <p className="flex items-start">
                       <span className="text-blue-500 mr-2 mt-0.5">3.</span>
@@ -483,8 +483,8 @@ export default function BookAppointment() {
                   <span className="font-semibold text-sm">What Happens Next?</span>
                 </div>
                 <div className="text-xs text-blue-700 leading-relaxed space-y-2">
-                  <p>• Our team will review your request within <strong>24 hours</strong></p>
-                  <p>• We&apos;ll contact you to confirm your preferred date and time</p>
+                  <p>• Your request is now saved in our clinic dashboard system</p>
+                  <p>• Our staff will <strong>call you within 24 hours</strong> to confirm availability</p>
                   <p>• Your appointment is secured once we both agree on the details</p>
                 </div>
               </div>
