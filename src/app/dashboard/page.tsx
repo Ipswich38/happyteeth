@@ -332,12 +332,10 @@ export default function Dashboard() {
                         <span className="text-gray-500">Name:</span>
                         <span className="ml-2 text-gray-900 font-medium">{submission.name}</span>
                       </div>
-                      {submission.email && (
-                        <div>
-                          <span className="text-gray-500">Email:</span>
-                          <span className="ml-2 text-gray-900">{submission.email}</span>
-                        </div>
-                      )}
+                      <div>
+                        <span className="text-gray-500">Email:</span>
+                        <span className="ml-2 text-gray-900">{submission.email}</span>
+                      </div>
                       {submission.phone && (
                         <div>
                           <span className="text-gray-500">Phone:</span>
@@ -435,6 +433,10 @@ export default function Dashboard() {
                             <span>{submission.cellphone}</span>
                           </span>
                           <span className="flex items-center space-x-1 text-gray-600">
+                            <span>📧</span>
+                            <span>{submission.email}</span>
+                          </span>
+                          <span className="flex items-center space-x-1 text-gray-600">
                             <span>🦷</span>
                             <span>{submission.service}</span>
                           </span>
@@ -456,13 +458,20 @@ export default function Dashboard() {
                             </span>
                           )}
                         </div>
-                        <div className="mt-4">
+                        <div className="flex space-x-3 mt-4">
                           <a
                             href={`tel:${submission.cellphone}`}
                             className="flex items-center space-x-1 text-sm text-pink-600 hover:text-pink-700 font-medium"
                           >
                             <span>📞</span>
-                            <span>Call to Confirm Appointment</span>
+                            <span>Call to Confirm</span>
+                          </a>
+                          <a
+                            href={`mailto:${submission.email}`}
+                            className="flex items-center space-x-1 text-sm text-pink-600 hover:text-pink-700 font-medium"
+                          >
+                            <span>📧</span>
+                            <span>Send Email</span>
                           </a>
                         </div>
                       </div>

@@ -6,6 +6,7 @@ import Image from 'next/image';
 export default function BookAppointment() {
   const [appointmentForm, setAppointmentForm] = useState({
     name: '',
+    email: '',
     cellphone: '',
     service: '',
     date: '',
@@ -115,7 +116,7 @@ export default function BookAppointment() {
 
       if (response.ok) {
         setShowConfirmation(true);
-        setAppointmentForm({ name: '', cellphone: '', service: '', date: '', time: '', customTime: '' });
+        setAppointmentForm({ name: '', email: '', cellphone: '', service: '', date: '', time: '', customTime: '' });
         setShowBookingModal(false);
         setShowCustomTime(false);
       } else {
@@ -285,6 +286,22 @@ export default function BookAppointment() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent text-base"
                     placeholder="Enter your full name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="modal-email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="modal-email"
+                    name="email"
+                    required
+                    value={appointmentForm.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent text-base"
+                    placeholder="your.email@example.com"
                   />
                 </div>
 

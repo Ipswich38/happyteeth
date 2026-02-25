@@ -16,7 +16,7 @@ CREATE TABLE public.submissions (
     id TEXT PRIMARY KEY,
     type TEXT NOT NULL CHECK (type IN ('appointment', 'contact')),
     name TEXT NOT NULL,
-    email TEXT,
+    email TEXT NOT NULL,
     phone TEXT,
     cellphone TEXT,
     message TEXT,
@@ -47,12 +47,13 @@ CREATE POLICY "Allow all operations" ON public.submissions
 
 -- Insert a test record to verify everything works
 INSERT INTO public.submissions (
-    id, type, name, cellphone, service, date, time, "customTime",
+    id, type, name, email, cellphone, service, date, time, "customTime",
     "isCustomTime", "appointmentDateTime", timestamp, read
 ) VALUES (
     'test-setup-' || extract(epoch from now()),
     'appointment',
     'Test Setup User',
+    'test@example.com',
     '09123456789',
     'General Consultation',
     '2024-02-01',

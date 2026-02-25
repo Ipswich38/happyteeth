@@ -8,6 +8,9 @@
 ✅ **Form Functionality**: Appointment form now properly submits to the new database
 ✅ **Admin Dashboard**: Updated to display appointment details including time and custom time
 ✅ **Security Fix**: Updated Next.js from 15.5.4 to 16.1.6 to fix CVE-2025-66478 vulnerability
+✅ **Email Integration**: Added patient email field for better contact options
+✅ **Automatic Notifications**: Email notifications sent to drcanaresprice@gmail.com for new appointments
+✅ **Enhanced Dashboard**: Shows patient email with clickable email/phone links
 
 ## Next Steps for Deployment
 
@@ -43,10 +46,11 @@ Once deployed and the database is set up:
 ## How it Works
 
 ### Appointment Submission Flow
-1. User visits `/book` and fills out the appointment form
+1. User visits `/book` and fills out the appointment form (name, **email**, phone, service, date, time)
 2. Form submits to `/api/appointment`
 3. API saves the appointment to the new Supabase database
-4. User receives confirmation message
+4. **🚀 NEW: Automatic email notification** sent to drcanaresprice@gmail.com with appointment details
+5. User receives confirmation message
 
 ### Admin Dashboard Flow
 1. Admin visits `/dashboard` and logs in
@@ -54,7 +58,15 @@ Once deployed and the database is set up:
    - Original Supabase (for contact forms)
    - New Supabase (for appointments)
 3. All submissions are displayed together, sorted by date
-4. Appointments show additional fields (time, service, phone number)
+4. Appointments show: **email**, phone, service, date, time (with **clickable contact links**)
+
+### 📧 Email Notification Features
+- **Beautiful HTML email** with appointment details
+- **Automatic delivery** to drcanaresprice@gmail.com
+- **Patient contact info** included (email + phone)
+- **Service and timing details** clearly displayed
+- **Branded with Happy Teeth** logo and colors
+- **Fallback handling** - if email fails, appointment still saves
 
 ## Troubleshooting
 

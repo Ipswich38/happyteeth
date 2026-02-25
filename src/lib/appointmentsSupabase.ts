@@ -16,6 +16,7 @@ export interface AppointmentSubmission {
   id: string;
   type: 'appointment';
   name: string;
+  email: string;
   cellphone: string;
   service: string;
   date: string;
