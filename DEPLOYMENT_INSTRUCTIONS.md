@@ -7,6 +7,7 @@
 ✅ **Dashboard Integration**: Modified to fetch appointments from the new database
 ✅ **Form Functionality**: Appointment form now properly submits to the new database
 ✅ **Admin Dashboard**: Updated to display appointment details including time and custom time
+✅ **Security Fix**: Updated Next.js from 15.5.4 to 16.1.6 to fix CVE-2025-66478 vulnerability
 
 ## Next Steps for Deployment
 
