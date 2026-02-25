@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { appointmentsSupabase } from '@/lib/appointmentsSupabase';
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,8 +12,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Store the submission in Supabase if available
-    if (supabase) {
+    // Store the submission in Appointments Supabase database
+    if (appointmentsSupabase) {
       const submission = {
         id: Date.now().toString(),
         type: 'appointment' as const,
@@ -24,21 +24,30 @@ export async function POST(request: NextRequest) {
         time: finalTime || time || '',
         customTime: customTime || '',
         isCustomTime: time === 'custom',
-        appointmentDateTime: appointmentDateTime || date,
+        appointmentDateTime: appointmentDateTime || `${date} ${finalTime || time}`,
         timestamp: new Date().toISOString(),
         read: false
       };
 
-      const { error: dbError } = await supabase
+      const { error: dbError } = await appointmentsSupabase
         .from('submissions')
         .insert([submission]);
 
       if (dbError) {
-        console.error('Database error:', dbError);
-        // Continue with email even if database fails
+        console.error('Appointments database error:', dbError);
+        return NextResponse.json(
+          { error: 'Failed to save appointment request. Please try again.' },
+          { status: 500 }
+        );
       }
+
+      console.log('Appointment saved successfully:', submission.id);
     } else {
-      console.warn('Supabase not configured - skipping database storage');
+      console.error('Appointments Supabase not configured');
+      return NextResponse.json(
+        { error: 'Appointment system not available. Please try again later.' },
+        { status: 503 }
+      );
     }
 
     // Email functionality disabled for now - data is saved to database

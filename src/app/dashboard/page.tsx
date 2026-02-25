@@ -14,6 +14,10 @@ interface Submission {
   message?: string;
   service?: string;
   date?: string;
+  time?: string;
+  customTime?: string;
+  isCustomTime?: boolean;
+  appointmentDateTime?: string;
   timestamp: string;
   read: boolean;
 }
@@ -364,6 +368,21 @@ export default function Dashboard() {
                           </span>
                         </div>
                       )}
+                      {submission.time && (
+                        <div>
+                          <span className="text-gray-500">Preferred Time:</span>
+                          <span className="ml-2 text-gray-900">
+                            {submission.isCustomTime && submission.customTime ? submission.customTime : submission.time}
+                            {submission.isCustomTime ? ' (Custom Time)' : ''}
+                          </span>
+                        </div>
+                      )}
+                      {submission.appointmentDateTime && (
+                        <div>
+                          <span className="text-gray-500">Appointment:</span>
+                          <span className="ml-2 text-gray-900">{submission.appointmentDateTime}</span>
+                        </div>
+                      )}
                       {submission.message && (
                         <div className="md:col-span-2">
                           <span className="text-gray-500">Message:</span>
@@ -422,12 +441,20 @@ export default function Dashboard() {
                           <span className="flex items-center space-x-1 text-gray-600">
                             <span>📅</span>
                             <span>
-                              {new Date(submission.date!).toLocaleDateString('en-US', {
+                              {submission.date ? new Date(submission.date).toLocaleDateString('en-US', {
                                 month: 'short',
                                 day: 'numeric'
-                              })}
+                              }) : 'Date not set'}
                             </span>
                           </span>
+                          {submission.time && (
+                            <span className="flex items-center space-x-1 text-gray-600">
+                              <span>🕐</span>
+                              <span>
+                                {submission.isCustomTime && submission.customTime ? submission.customTime : submission.time}
+                              </span>
+                            </span>
+                          )}
                         </div>
                         <div className="mt-4">
                           <a
