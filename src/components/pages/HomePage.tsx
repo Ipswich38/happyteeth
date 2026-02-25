@@ -14,15 +14,19 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   const [appointmentForm, setAppointmentForm] = useState({
     name: '',
+    email: '',
     cellphone: '',
     service: '',
-    date: ''
+    date: '',
+    time: '',
+    customTime: ''
   });
 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [showContactConfirmation, setShowContactConfirmation] = useState(false);
   const [isSubmittingAppointment, setIsSubmittingAppointment] = useState(false);
   const [isSubmittingContact, setIsSubmittingContact] = useState(false);
+  const [showCustomTime, setShowCustomTime] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageVisible, setIsImageVisible] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -72,11 +76,67 @@ export function HomePage({ onNavigate }: HomePageProps) {
     });
   };
 
+  // Generate time slots every 30 minutes from 8:00 AM to 5:00 PM, excluding 12:00-1:00 PM break
+  const generateTimeSlots = () => {
+    const slots = [];
+    const startTime = 8; // 8:00 AM
+    const endTime = 17; // 5:00 PM
+    const breakStart = 12; // 12:00 PM
+    const breakEnd = 13; // 1:00 PM
+
+    for (let hour = startTime; hour < endTime; hour++) {
+      // Skip break time
+      if (hour >= breakStart && hour < breakEnd) {
+        continue;
+      }
+
+      // Add :00 and :30 slots for each hour
+      const hour12 = hour > 12 ? hour - 12 : hour;
+      const ampm = hour >= 12 ? 'PM' : 'AM';
+      const displayHour = hour12 === 0 ? 12 : hour12;
+
+      slots.push({
+        value: `${hour.toString().padStart(2, '0')}:00`,
+        label: `${displayHour}:00 ${ampm}`
+      });
+
+      slots.push({
+        value: `${hour.toString().padStart(2, '0')}:30`,
+        label: `${displayHour}:30 ${ampm}`
+      });
+    }
+
+    return slots;
+  };
+
+  const timeSlots = generateTimeSlots();
+
   const handleAppointmentChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setAppointmentForm({
-      ...appointmentForm,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+
+    // Handle time selection
+    if (name === 'time') {
+      if (value === 'custom') {
+        setShowCustomTime(true);
+        setAppointmentForm({
+          ...appointmentForm,
+          [name]: value,
+          customTime: ''
+        });
+      } else {
+        setShowCustomTime(false);
+        setAppointmentForm({
+          ...appointmentForm,
+          [name]: value,
+          customTime: ''
+        });
+      }
+    } else {
+      setAppointmentForm({
+        ...appointmentForm,
+        [name]: value
+      });
+    }
   };
 
   const handleAppointmentSubmit = async (e: React.FormEvent) => {
@@ -89,12 +149,18 @@ export function HomePage({ onNavigate }: HomePageProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(appointmentForm),
+        body: JSON.stringify({
+          ...appointmentForm,
+          // Use custom time if selected, otherwise use regular time
+          finalTime: appointmentForm.time === 'custom' ? appointmentForm.customTime : appointmentForm.time,
+          appointmentDateTime: `${appointmentForm.date} ${appointmentForm.time === 'custom' ? appointmentForm.customTime : appointmentForm.time}`
+        }),
       });
 
       if (response.ok) {
         setShowConfirmation(true);
-        setAppointmentForm({ name: '', cellphone: '', service: '', date: '' });
+        setAppointmentForm({ name: '', email: '', cellphone: '', service: '', date: '', time: '', customTime: '' });
+        setShowCustomTime(false);
       } else {
         alert('Failed to send appointment request. Please try again.');
       }
@@ -351,7 +417,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </div>
 
             <form onSubmit={handleAppointmentSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <label htmlFor="appointment-name" className="block text-sm font-medium text-white">
                     Full Name *
@@ -369,8 +435,24 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </div>
 
                 <div className="space-y-2">
+                  <label htmlFor="appointment-email" className="block text-sm font-medium text-white">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="appointment-email"
+                    name="email"
+                    required
+                    value={appointmentForm.email}
+                    onChange={handleAppointmentChange}
+                    className="w-full px-4 py-4 min-h-[44px] border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80 text-base"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                <div className="space-y-2">
                   <label htmlFor="appointment-cellphone" className="block text-sm font-medium text-white">
-                    Cellphone Number *
+                    Mobile Number *
                   </label>
                   <input
                     type="tel"
@@ -420,7 +502,50 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     className="w-full px-4 py-4 min-h-[44px] border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80 text-base"
                   />
                 </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="appointment-time" className="block text-sm font-medium text-white">
+                    Preferred Time *
+                  </label>
+                  <select
+                    id="appointment-time"
+                    name="time"
+                    required
+                    value={appointmentForm.time}
+                    onChange={handleAppointmentChange}
+                    className="w-full px-4 py-4 min-h-[44px] border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 bg-white/80 text-base"
+                  >
+                    <option value="">Choose a time</option>
+                    {timeSlots.map((slot) => (
+                      <option key={slot.value} value={slot.value}>
+                        {slot.label}
+                      </option>
+                    ))}
+                    <option value="custom">🕐 Other Time (Custom)</option>
+                  </select>
+                </div>
               </div>
+
+              {/* Custom Time Input */}
+              {showCustomTime && (
+                <div className="space-y-2">
+                  <label htmlFor="appointment-custom-time" className="block text-sm font-medium text-white">
+                    Please specify your preferred time
+                  </label>
+                  <input
+                    type="time"
+                    id="appointment-custom-time"
+                    name="customTime"
+                    required={appointmentForm.time === 'custom'}
+                    value={appointmentForm.customTime}
+                    onChange={handleAppointmentChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent text-base bg-white/80"
+                  />
+                  <p className="text-xs text-white/80 mt-1">
+                    💡 Custom times are subject to clinic availability and confirmation by our staff.
+                  </p>
+                </div>
+              )}
 
               <div className="text-center pt-4">
                 <button

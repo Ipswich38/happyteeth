@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { appointmentsSupabaseAdmin } from '@/lib/appointmentsSupabase';
 
 function verifyAuth(request: NextRequest): boolean {
   const sessionCookie = request.cookies.get('dashboard-session');
@@ -32,27 +33,52 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    if (!supabase) {
-      return NextResponse.json({
-        submissions: [],
-        message: 'Database not configured'
-      });
+    const allSubmissions = [];
+
+    // Fetch from original Supabase (contact submissions)
+    if (supabase) {
+      try {
+        const { data: contactSubmissions, error: contactError } = await supabase
+          .from('submissions')
+          .select('*')
+          .order('created_at', { ascending: false });
+
+        if (contactError) {
+          console.error('Original Supabase error:', contactError);
+        } else {
+          allSubmissions.push(...(contactSubmissions || []));
+        }
+      } catch (err) {
+        console.error('Error fetching from original Supabase:', err);
+      }
     }
 
-    const { data: submissions, error } = await supabase
-      .from('submissions')
-      .select('*')
-      .order('created_at', { ascending: false });
+    // Fetch from appointments Supabase (appointment submissions)
+    if (appointmentsSupabaseAdmin) {
+      try {
+        const { data: appointmentSubmissions, error: appointmentError } = await appointmentsSupabaseAdmin
+          .from('submissions')
+          .select('*')
+          .order('created_at', { ascending: false });
 
-    if (error) {
-      console.error('Supabase error:', error);
-      return NextResponse.json(
-        { error: 'Failed to load submissions' },
-        { status: 500 }
-      );
+        if (appointmentError) {
+          console.error('Appointments Supabase error:', appointmentError);
+        } else {
+          allSubmissions.push(...(appointmentSubmissions || []));
+        }
+      } catch (err) {
+        console.error('Error fetching from appointments Supabase:', err);
+      }
     }
 
-    return NextResponse.json({ submissions: submissions || [] });
+    // Sort all submissions by timestamp/created_at
+    allSubmissions.sort((a, b) => {
+      const dateA = new Date(a.created_at || a.timestamp);
+      const dateB = new Date(b.created_at || b.timestamp);
+      return dateB.getTime() - dateA.getTime();
+    });
+
+    return NextResponse.json({ submissions: allSubmissions });
   } catch (error) {
     console.error('Error reading submissions:', error);
     return NextResponse.json(
@@ -72,47 +98,80 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    if (!supabase) {
-      return NextResponse.json(
-        { error: 'Database not configured' },
-        { status: 503 }
-      );
-    }
-
     const { submissionId, action } = await request.json();
 
-    if (action === 'markAsRead') {
-      const { error } = await supabase
-        .from('submissions')
-        .update({ read: true })
-        .eq('id', submissionId);
+    // Try to update/delete in both databases
+    let originalSuccess = false;
+    let appointmentsSuccess = false;
 
-      if (error) {
-        console.error('Supabase update error:', error);
+    if (action === 'markAsRead') {
+      // Try original Supabase first
+      if (supabase) {
+        const { error: originalError } = await supabase
+          .from('submissions')
+          .update({ read: true })
+          .eq('id', submissionId);
+
+        if (!originalError) {
+          originalSuccess = true;
+        }
+      }
+
+      // Try appointments Supabase
+      if (appointmentsSupabaseAdmin) {
+        const { error: appointmentError } = await appointmentsSupabaseAdmin
+          .from('submissions')
+          .update({ read: true })
+          .eq('id', submissionId);
+
+        if (!appointmentError) {
+          appointmentsSuccess = true;
+        }
+      }
+
+      if (originalSuccess || appointmentsSuccess) {
+        return NextResponse.json({ success: true });
+      } else {
         return NextResponse.json(
           { error: 'Failed to update submission' },
           { status: 500 }
         );
       }
-
-      return NextResponse.json({ success: true });
     }
 
     if (action === 'delete') {
-      const { error } = await supabase
-        .from('submissions')
-        .delete()
-        .eq('id', submissionId);
+      // Try original Supabase first
+      if (supabase) {
+        const { error: originalError } = await supabase
+          .from('submissions')
+          .delete()
+          .eq('id', submissionId);
 
-      if (error) {
-        console.error('Supabase delete error:', error);
+        if (!originalError) {
+          originalSuccess = true;
+        }
+      }
+
+      // Try appointments Supabase
+      if (appointmentsSupabaseAdmin) {
+        const { error: appointmentError } = await appointmentsSupabaseAdmin
+          .from('submissions')
+          .delete()
+          .eq('id', submissionId);
+
+        if (!appointmentError) {
+          appointmentsSuccess = true;
+        }
+      }
+
+      if (originalSuccess || appointmentsSuccess) {
+        return NextResponse.json({ success: true });
+      } else {
         return NextResponse.json(
           { error: 'Failed to delete submission' },
           { status: 500 }
         );
       }
-
-      return NextResponse.json({ success: true });
     }
 
     return NextResponse.json(
